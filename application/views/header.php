@@ -10,7 +10,7 @@
                       <div class=wpb_wrapper>
                         <ul class=list-inline>
                           <li class=list-inline-item>¿Tienen alguna pregunta?</li>
-                          <li class=list-inline-item><a>(51) 929 498 649</a></li>
+                          <li class=list-inline-item><a><ion-icon ios="ios-call" md="md-call"></ion-icon> (51) 929 498 649</a></li>
                         </ul>
                       </div>
                     </div>
@@ -23,7 +23,7 @@
                     <div class="wpb_text_column wpb_content_element ">
                       <div class=wpb_wrapper>
                         <ul class=list-inline>
-                          <li class=list-inline-item><a><span>contacto@cerebritodigital.com</span></a></li>
+                          <li class="list-inline-item"><a style="margin-right: 20px;"><ion-icon name="mail"></ion-icon> contacto@cerebritodigital.com</a></li>
                         </ul>
                       </div>
                     </div>
@@ -58,17 +58,14 @@
           </div>
           <div class=width-navigation>
             <ul id=primary-menu class=main-menu>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url();?>" class=tc-menu-inner>Inicio</a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4509 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url().'about';?>" class=tc-menu-inner>Acerca</a>
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4509 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Cursos</a>
-                </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                    <a href="<?php echo site_url().'contact';?>" class=tc-menu-inner>Contacto</a>
                 </li>
             </ul>
             <div class="header-right">

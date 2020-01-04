@@ -24,15 +24,6 @@
                   <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Cursos</a>
                   </li>
-                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4093 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="<?php echo site_url().'contact';?>" class=tc-menu-inner>Contacto</a>
-                  </li>
-                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4234 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="<?php echo site_url().'register';?>" class=tc-menu-inner>Registro</a>
-                  </li>
-                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4234 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="<?php echo site_url().'login';?>" class=tc-menu-inner>Inicio de Sesión</a>
-                  </li>
                 </ul>
               </div>
             </aside>

@@ -72,7 +72,7 @@
                       <article class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-3946 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-business course_category-design course_category-marketing pmpro-has-access course">
                         <div class=content>
                           <div class=thumbnail>
-                            <a href="#" class=img_thumbnail>
+                            <a href="<?php echo site_url()."courses/desarrollo-personal/aprende-liderazgo";?>" class=img_thumbnail>
                                 <img width=365 height=405 src="<?php echo site_url().'static/cursos/img/desarrollo_personal365x405.jpg';?>" alt="Desarrollo Personal" class> 
                             </a>
                             <span class=price><span class=course-price>Libre</span>
@@ -89,7 +89,7 @@
                           </div>
                           <div class=sub-content>
                             <h3 class="title">
-                              <a href="#">Aprende Liderazgo</a>
+                              <a href='<?php echo site_url()."courses/desarrollo-personal/aprende-liderazgo";?>'>Aprende Liderazgo</a>
                             </h3>
                             <div class=date-comment>
                               <span class=date-meta>02 Enero, 2019</span></div>

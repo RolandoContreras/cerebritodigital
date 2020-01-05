@@ -210,6 +210,9 @@
             </div>
           </div>
         </div>
+        
+        
+        
         <div class="vc_row wpb_row vc_row-fluid vc_custom_1513933519556">
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class=vc_column-inner>
@@ -223,6 +226,78 @@
             </div>
           </div>
         </div>
+        
+        
+        <div class="vc_row wpb_row vc_row-fluid">
+                  <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner">
+                      <div class="wpb_wrapper">
+                        <div class="vc_empty_space" style="height: 76px"><span class="vc_empty_space_inner"></span></div>
+                        <div class="thim-sc-heading text-center layout-2 home6-heading">
+                          <div class="heading-content">
+                            <h3 class="primary-heading">Corporativo</h3>
+                          </div>
+                          <p class="secondary-heading">Somos los creadores de cerebrito digital, nos orgullece ver que es una empresa que está cambiando la vida de miles de persona a nivel mundial. Tú también puedes ser parte de esta hermosa empresa..</p>
+                        </div>
+                        <div class="vc_empty_space" style="height: 50px"><span class="vc_empty_space_inner"></span></div>
+                        <div class="thim-instructors" id="thim_5df723f6d713a" data-max-page="1" data-page="1">
+                          <div class="wrapper-instruction home_courses_instructor">
+                            <div class="row wrap-teachers">
+                              <div class="item col-md-4 first">
+                                <div class="avatar-item">
+                                  <div class="avatar-instructors">
+                                    <a class="avatar-small">
+                                        <img src="<?php echo site_url().'static/page_front/img/vanessa.png';?>" alt="Vanessa Vega" class="avatar avatar-500 wp-user-avatar wp-user-avatar-500 alignnone photo" width="331" height="326"> 
+                                    </a>
+                                  </div>
+                                  <div class="avartar-info">
+                                    <h5>DIEGO VEGA</h5>
+                                    <div class="author-major">CEO</div>
+                                    <div class="description">
+                                        I am confident with my services and skills that serve any students to the top with highest test result possible. I love to see them
+                                      satisfied with me.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item col-md-4 last">
+                                <div class="avatar-item">
+                                  <div class="avatar-instructors">
+                                    <a class="avatar-small">
+                                        <img src="<?php echo site_url().'static/page_front/img/diego.png';?>" alt="Diego Vega" class="avatar avatar-500 wp-user-avatar wp-user-avatar-500 alignnone photo" width="331" height="326"> 
+                                    </a>
+                                  </div>
+                                  <div class="avartar-info">
+                                    <h5>VANESSA VEGA</h5>
+                                    <div class="author-major">REPRESENTANTE LEGAL</div>
+                                    <div class="description">I want to see the joyful faces of my students with my works and teaching. It's good to make them satisfied. I'm glad that they are
+                                      enjoying mine.</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item col-md-4 last">
+                                <div class="avatar-item">
+                                  <div class="avatar-instructors">
+                                    <a class="avatar-small">
+                                        <img src="<?php echo site_url().'static/page_front/img/maria.png';?>" alt="Maria Vega" class="avatar avatar-500 wp-user-avatar wp-user-avatar-500 alignnone photo" width="331" height="326"> 
+                                    </a>
+                                  </div>
+                                  <div class="avartar-info">
+                                    <h5>MARIA VEGA</h5>
+                                    <div class="author-major">COACH</div>
+                                    <div class="description">Teamwork Projects easily integrates to many common software platforms being used within companies.</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="vc_empty_space" style="height: 60px"><span class="vc_empty_space_inner"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
         <div data-vc-full-width=true data-vc-full-width-init=false class="vc_row wpb_row vc_row-fluid home6-form vc_custom_1515568547119 vc_row-has-fill">
           <div class="wpb_column vc_column_container vc_col-sm-6">
             <div class="vc_column-inner vc_custom_1514103428499">
@@ -271,6 +346,8 @@
               </div>
             </div>
           </div>
+            
+            
           <div class="wpb_column vc_column_container vc_col-sm-6">
             <div class="vc_column-inner vc_custom_1514102030409">
               <div class=wpb_wrapper>

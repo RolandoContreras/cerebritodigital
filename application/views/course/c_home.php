@@ -11,7 +11,7 @@
                   </div>
                   <ul class="breadcrumb">
                       <li class="breadcrumb-item"><a href="<?php echo site_url().'course';?>"><i data-feather="home"></i></a></li>
-                    <li class="breadcrumb-item"><a>Productos Todos</a></li>
+                    <li class="breadcrumb-item"><a>Videos Todos</a></li>
                   </ul>
                 </div>
               </div>
@@ -21,7 +21,17 @@
             <div class="page-wrapper">
               <div class="row">
                 <div class="col-sm-12">
-                    
+                    <?php 
+                    if($kid_id < 1){ ?>
+                        <div class="card">
+                        <div class="card-block">
+                          <div class="alert alert-success alert-dismissible fade show" role="alert">
+                              ¿Desea ver todo el contenido completo? Entonces adquiera un pack <a href="<?php echo site_url().'backoffice/plan';?>">Clic Aquí</a> 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        </div>  
+                        </div>
+                      </div>
+                    <?php } ?>
                     <div class="card">
                       <div class="card-header">
                         <h5><?php echo $category_name;?></h5>
@@ -29,13 +39,13 @@
                       <div class="card-block">
                         <div class="grid">
                         <?php
-                        foreach ($obj_catalog as $value) { ?>
+                        foreach ($obj_videos as $value) { ?>
                           <figure class="effect-apollo">
-                              <img width="400" height="260" src="<?php echo site_url()."static/catalog/$value->img";?>" alt="advance-3">
+                              <img width="365" height="340" src="<?php echo site_url()."static/course/img/$value->img2";?>" alt="advance-3">
                             <figcaption>
                                 <h2><span style="font-size: 32px !important;font-weight: 300 !important;"><?php echo $value->name;?></span></h2>
                               <p><?php echo corta_texto($value->summary, 100);?></p>
-                              <a href="<?php echo site_url()."catalogo/$value->category_slug/$value->slug";?>">Ver Más</a>
+                              <a href="<?php echo site_url()."course/$value->category_slug/$value->slug";?>">Ver Más</a>
                             </figcaption>
                           </figure>
                         <?php } ?>

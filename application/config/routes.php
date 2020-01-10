@@ -58,3 +58,130 @@ $route['courses/([0-9]+)'] = 'courses/index/$1';
 $route['courses/([0-9a-z_-]+)'] = 'courses/category/$1';
 $route['courses/([0-9a-z_-]+)/([0-9]+)'] = 'courses/category/$1';
 $route['courses/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'courses/detail/$1';
+
+$route['dashboard'] = "dashboard";
+$route['dashboard/panel'] = "panel";
+
+$route['dashboard/panel/export'] = "panel/export";
+
+$route['dashboard/panel/guardar_btc'] = "panel/guardar_btc";
+$route['dashboard/panel/cambiar_status'] = "panel/cambiar_status";
+$route['dashboard/panel/masive_messages'] = "panel/masive_messages";
+
+$route['dashboard/comisiones'] = "d_comission";
+$route['dashboard/comisiones/load/([0-9]+)'] = "d_comission/load/$1";
+$route['dashboard/comisiones/validate_customer'] = "d_comission/validate_customer";
+$route['dashboard/comisiones/validate'] = "d_comission/validate";
+
+$route['dashboard/noticias'] = "d_news";
+$route['dashboard/noticias/load'] = "d_news/load";
+$route['dashboard/noticias/load/([0-9]+)'] = "d_news/load/$1";
+$route['dashboard/noticias/validate'] = "d_news/validate";
+
+$route['dashboard/catalogo'] = "d_catalog";
+$route['dashboard/catalogo/load'] = "d_catalog/load";
+$route['dashboard/catalogo/load/([0-9]+)'] = "d_catalog/load/$1";
+$route['dashboard/catalogo/validate'] = "d_catalog/validate";
+
+$route['dashboard/videos'] = "d_videos";
+$route['dashboard/videos/load'] = "d_videos/load";
+$route['dashboard/videos/load/([0-9]+)'] = "d_videos/load/$1";
+$route['dashboard/videos/validate'] = "d_videos/validate";
+
+$route['dashboard/bonos'] = "d_bonus"; 
+$route['dashboard/bonos/load/([0-9]+)'] = "d_bonus/load/$1";
+$route['dashboard/bonos/validate'] = "d_bonus/validate";
+
+$route['dashboard/facturas'] = "d_invoices"; 
+$route['dashboard/facturas/load/([0-9]+)'] = "d_invoices/load/$1";
+$route['dashboard/facturas/validate'] = "d_invoices/validate";
+
+$route['dashboard/facturas_catalogo'] = "d_invoices/catalogo"; 
+$route['dashboard/facturas_catalogo/load/([0-9]+)'] = "d_invoices/catalogo_load/$1";
+$route['dashboard/facturas_catalogo/validate'] = "d_invoices/catalogo_validate";
+$route['dashboard/facturas/ver/([0-9]+)'] = "d_invoices/ver_invoice/$1"; 
+
+$route['dashboard/correos'] = "d_messages_masive"; 
+
+$route['dashboard/rangos'] = "d_ranges";
+$route['dashboard/rangos/load'] = "d_ranges/load";
+$route['dashboard/rangos/load/([0-9]+)'] = "d_ranges/load/$1";
+$route['dashboard/rangos/validate'] = "d_ranges/validate";
+
+$route['dashboard/membresias'] = "d_kit";
+$route['dashboard/membresias/load'] = "d_kit/load";
+$route['dashboard/membresias/load/([0-9]+)'] = "d_kit/load/$1";
+$route['dashboard/membresias/validate'] = "d_kit/validate";
+
+$route['dashboard/clientes'] = "d_customer";
+$route['dashboard/financiados'] = "d_customer/financiados";
+$route['dashboard/clientes/active_customer'] = "d_customer/active_customer";
+$route['dashboard/clientes/no_active_customer'] = "d_customer/no_active_customer";
+$route['dashboard/clientes/load/([0-9]+)'] = "d_customer/load/$1";
+$route['dashboard/clientes/validate'] = "d_customer/validate";
+
+$route['dashboard/categorias'] = "d_category";
+$route['dashboard/categorias/load'] = "d_category/load";
+$route['dashboard/categorias/load/([0-9]+)'] = "d_category/load/$1";
+$route['dashboard/categorias/validate'] = "d_category/validate";
+
+$route['dashboard/comentarios'] = "d_comments";
+$route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
+$route['dashboard/comentarios/cambiar_status_no'] = "d_comments/change_status_no";
+
+$route['dashboard/usuarios'] = "d_users";
+$route['dashboard/usuarios'] = "d_users";
+$route['dashboard/usuarios/load'] = "d_users/load";
+$route['dashboard/usuarios/load/([0-9]+)'] = "d_users/load/$1";
+$route['dashboard/usuarios/validate'] = "d_users/validate";
+
+$route['dashboard/confirmation_activaciones'] = "d_activate/confirmation";
+
+$route['dashboard/activaciones'] = "d_activate";
+$route['dashboard/activaciones/active_customer'] = "d_activate/active_customer";
+$route['dashboard/activaciones/active'] = "d_activate/active";
+$route['dashboard/activaciones/update_confirmation'] = "d_activate/update_confirmation";
+
+$route['dashboard/activaciones_catalogo'] = "d_activate/activaciones_catalogo";
+$route['dashboard/activaciones_catalogo/([0-9]+)'] = "d_activate/order_catalog/$1";
+$route['dashboard/activaciones_catalogo/active_catalogo'] = "d_activate/active_catalogo";
+
+$route['dashboard/activar_pagos'] = "d_active_pays";
+$route['dashboard/activar_pagos/pagado'] = "d_active_pays/pagado";
+$route['dashboard/activar_pagos/devolver'] = "d_active_pays/devolver";
+
+$route['dashboard/pagos'] = "d_pays";
+$route['dashboard/pagos/pagado'] = "d_pays/pagado";
+$route['dashboard/pagos/load/([0-9]+)'] = "d_pays/load/$1";
+$route['dashboard/pagos/devolver'] = "d_pays/devolver";
+$route['dashboard/pagos/load/([0-9]+)'] = "d_pays/load/$1";
+$route['dashboard/pagos/validate_customer'] = "d_pays/validate_customer";
+$route['dashboard/pagos/validate'] = "d_pays/validate";
+
+$route['dashboard/comentarios'] = "d_comments";
+$route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
+$route['dashboard/comentarios/cambiar_status_no'] = "d_comments/change_status_no";
+
+$route['dashboard/usuarios'] = "d_users";
+$route['dashboard/usuarios'] = "d_users";
+$route['dashboard/usuarios/load'] = "d_users/load";
+$route['dashboard/usuarios/load/([0-9]+)'] = "d_users/load/$1";
+$route['dashboard/usuarios/validate'] = "d_users/validate";
+
+
+$route['dashboard/report_customer'] = "d_report_customer";
+$route['dashboard/report_customer/load'] = "d_report_customer/load";
+$route['dashboard/report_customer/export'] = "d_report_customer/export";
+
+$route['dashboard/report_invoice'] = "d_report_invoice";
+$route['dashboard/report_invoice/load'] = "d_report_invoice/load";
+$route['dashboard/report_invoice/export'] = "d_report_invoice/export";
+
+$route['dashboard/report_pay'] = "d_report_pay";
+$route['dashboard/report_pay/load'] = "d_report_pay/load";
+$route['dashboard/report_pay/export'] = "d_report_pay/export";
+
+$route['dashboard/report_global'] = "d_report_global";
+
+
+

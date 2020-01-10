@@ -247,7 +247,7 @@
                                 <div class="avatar-item">
                                   <div class="avatar-instructors">
                                     <a class="avatar-small">
-                                        <img src="<?php echo site_url().'static/page_front/img/vanessa.png';?>" alt="Vanessa Vega" class="avatar avatar-500 wp-user-avatar wp-user-avatar-500 alignnone photo" width="331" height="326"> 
+                                        <img src="<?php echo site_url().'static/page_front/img/diego.png';?>" alt="Diego Vega" class="avatar avatar-500 wp-user-avatar wp-user-avatar-500 alignnone photo" width="331" height="326"> 
                                     </a>
                                   </div>
                                   <div class="avartar-info">
@@ -264,7 +264,7 @@
                                 <div class="avatar-item">
                                   <div class="avatar-instructors">
                                     <a class="avatar-small">
-                                        <img src="<?php echo site_url().'static/page_front/img/diego.png';?>" alt="Diego Vega" class="avatar avatar-500 wp-user-avatar wp-user-avatar-500 alignnone photo" width="331" height="326"> 
+                                        <img src="<?php echo site_url().'static/page_front/img/vanessa.png';?>" alt="Vanessa Vega" class="avatar avatar-500 wp-user-avatar wp-user-avatar-500 alignnone photo" width="331" height="326"> 
                                     </a>
                                   </div>
                                   <div class="avartar-info">

@@ -356,7 +356,7 @@
                     <div class=thim-home6-form>
                       <div class="wpcf7" id=wpcf7-f4354-p4205-o1>
                         <div class=screen-reader-response></div>
-                        <form action="" method="" class="wpcf7-form">
+                        <form action="javascript:void(0);" enctype="multipart/form-data" class="wpcf7-form">
                           <h4>Contáctanos</h4>
                           <h5 class="label" style="text-align:center !important;">Apúrate! Empezaremos en nuevo vídeo en</h5>
                           <div class="thim-sc-count-down " data-countdown="2020/12/20 00:00">
@@ -386,11 +386,19 @@
                                   <input type="text" name="message" id="message" value size=40 class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-tel"placeholder="Mensaje *">
                               </span>
                           </p>
+                          <div class="form-group">
+                                <div class="g-recaptcha" data-sitekey="6LfcPs4UAAAAAHJsduwopVs4E9Otab1oau6Qjj_I"></div>
+                            </div>
                           <p>
-                              <input type=submit value="Enviar Mensaje" class="wpcf7-form-control wpcf7-submit">
+                              <input onclick="send_message();" type=submit value="Enviar Mensaje" class="wpcf7-form-control">
                           </p>
                           <p class="quote">No te preocupes, No te enviaremos spam.</p>
-                          <div class="wpcf7-response-output wpcf7-display-none"></div>
+                            <div class="form-group has-feedback" style="display: none;" id="captcha_messages">
+                                <div class="alert alert-danger validation-errors">
+                                    <p class="user_login_id" style="text-align: center;">Captcha no verificado</p>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback" id="res"></div>
                         </form>
                       </div><br><img src="<?php echo site_url().'static/page_front/img/home-6-person.png';?>" alt="student"></div>
                   </div>
@@ -426,5 +434,7 @@
 		});
 	});
 </script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src='<?php echo site_url().'static/page_front/js/home.js';?>'></script>
 </body>
 </html>

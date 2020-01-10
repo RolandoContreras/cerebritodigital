@@ -42,7 +42,7 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">E-mail</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
-                                    aria-label="Office: activate to sort column ascending">Comentario</th>
+                                    aria-label="Office: activate to sort column ascending">Mensaje</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">Fecha</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
@@ -57,7 +57,7 @@
                                 <th><?php echo $value->comment_id;?></th>
                                 <td><?php echo str_to_first_capital($value->name);?></td>
                                 <td><?php echo $value->email;?></td>
-                                <td><?php echo $value->comment;?></td>
+                                <td><?php echo $value->message;?></td>
                                 <td><?php echo formato_fecha($value->date_comment);?></td>
                                 <td>
                                     <?php if ($value->active == 0) {

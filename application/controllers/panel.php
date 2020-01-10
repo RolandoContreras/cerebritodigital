@@ -7,7 +7,6 @@ class Panel extends CI_Controller{
         $this->load->model("customer_model","obj_customer");
         $this->load->model("invoices_model","obj_invoices");
         $this->load->model("unilevel_model","obj_unilevel");
-        $this->load->model("points_model","obj_points");
         $this->load->model("ranges_model","obj_ranges");
     }
     

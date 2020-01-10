@@ -63,6 +63,6 @@
     <script src="<?php echo site_url().'static/cms/js/vendor-all.min.js';?>"></script>
     <script src="<?php echo site_url().'static/cms/js/bootstrap.min.js';?>"></script>
     <script src="<?php echo site_url().'static/cms/js/pcoded.min.js';?>"></script>
-  <script src="<?php echo site_url().'static/cms/js/script/login.js';?>"></script>
+  <script src="<?php echo site_url().'static/cms/js/login.js';?>"></script>
 </body>
 </html>

@@ -42,15 +42,12 @@ class D_comments extends CI_Controller{
             //UPDATE DATA ORDERS
         if($this->input->is_ajax_request()){   
               $comment_id = $this->input->post("comment_id");
-              
-                if(count($comment_id) > 0){
                     $data = array(
                         'active' => 0,
                         'updated_at' => date("Y-m-d H:i:s"),
                         'updated_by' => $_SESSION['usercms']['user_id'],
                     ); 
                     $this->obj_comments->update($comment_id,$data);
-                }
                 echo json_encode($data);            
         exit();
             }
@@ -60,14 +57,12 @@ class D_comments extends CI_Controller{
             //UPDATE DATA ORDERS
         if($this->input->is_ajax_request()){   
                 $comment_id = $this->input->post("comment_id");
-                if(count($comment_id) > 0){
                     $data = array(
                         'active' => 1,
                         'updated_at' => date("Y-m-d H:i:s"),
                         'updated_by' => $_SESSION['usercms']['user_id'],
                     ); 
                     $this->obj_comments->update($comment_id,$data);
-                }
                 echo json_encode($data);            
         exit();
             }

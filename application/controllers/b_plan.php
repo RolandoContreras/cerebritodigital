@@ -9,8 +9,6 @@ class B_plan extends CI_Controller {
         $this->load->model("customer_model","obj_customer");
         $this->load->model("unilevel_model","obj_unilevel");
         $this->load->model("commissions_model","obj_commissions");
-        $this->load->model("points_model","obj_points");
-        $this->load->library('culqi');
     }
 
     public function index()
@@ -27,7 +25,7 @@ class B_plan extends CI_Controller {
                                     description,
                                     img,
                                     active",
-                        "where" => "status_value = 1",
+                        "where" => "active = 1 and status_value = 1",
                         "order" => "kit_id ASC",
                         );
         $obj_kit = $this->obj_kit->search($params);

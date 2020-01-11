@@ -62,7 +62,7 @@ class B_profile extends CI_Controller {
                $param_customer = array(
                                 "select" => "password",
                                 "where" => "customer_id = '$customer_id' and password = '$pass'");
-                $customer = count($this->obj_customer->get_search_row($param_customer));
+                $customer = $this->obj_customer->total_records($param_customer);
                 if($customer > 0){
                     //UPDATE DATA EN CUSTOMER TABLE
                     $data = array(

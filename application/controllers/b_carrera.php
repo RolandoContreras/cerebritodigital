@@ -6,7 +6,6 @@ class B_carrera extends CI_Controller {
         $this->load->model("customer_model","obj_customer");
         $this->load->model("ranges_model","obj_ranges");
         $this->load->model("unilevel_model","obj_unilevel");
-        $this->load->model("points_model","obj_points");
     }
 
     public function index()
@@ -36,13 +35,7 @@ class B_carrera extends CI_Controller {
                         "order" => "range_id ASC",
                         );
             $obj_range = $this->obj_ranges->search($params);
-            
-            $params = array(
-                        "select" =>"sum(point) as total_point",
-                        "where" => "customer_id = $customer_id"
-                            );
-                    $point_personal = $this->obj_points->get_search_row($params);
-                    $point = $point_personal->total_point;
+            $point = 100;
         
         $this->tmp_backoffice->set("point",$point);
         $this->tmp_backoffice->set("obj_range",$obj_range);

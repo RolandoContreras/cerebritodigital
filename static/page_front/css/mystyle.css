@@ -182,7 +182,18 @@
 
 }
 header#masthead.palette-custom .width-navigation .widget_thim-login a {
-
     color:red !important;
-
+}
+.submit{
+    padding: 0 20px;
+    border: none;
+    border-radius: 50px;
+    transition: .5s;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    height: 50px;
+    cursor: pointer;
+    text-align: center !important;
 }

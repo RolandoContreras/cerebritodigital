@@ -87,19 +87,19 @@
                       <div class=login-form>
                         <div class=sign-in-htm>
                           <h3 class="title">Iniciar Sesión</h3>
-                          <form id="popupLoginForm" action="#" method=post>
+                          <form action="javascript:void(0);" enctype="multipart/form-data" id="popupLoginForm">
                             <p class=login-username>
-                                <input type=text name="user_login" id=popupLoginUser class="input required" value size=20 placeholder="Ingrese Usuario"></p>
+                                <input type=text name="username" id="username" class="input required" size="20" placeholder="Ingrese Usuario"></p>
                             <p class="login-password">
-                                <input type="password" name="pass" id=popupLoginPassword class="input required" value size=20 placeholder="Contraseña">
+                                <input type="password" name="password" id="password" class="input required" size="20" placeholder="Contraseña">
                             </p>
                                 <div class=login-extra-options>
                                   <a class=lost-pass-link href="#" title="Lost Password">¿Olvidaste tu contraseña?</a>
                                 </div>
                                 <p class=login-submit>
-                                    <input type=submit name=wp-submit id=popupLoginSubmit class="button button-primary button-large" value=Login>
+                                    <input onclick="login();" id="popupLoginSubmit" class="submit button button-primary button-large" value="Iniciar Sesión">
                                 </p>
-                                <div class=popup-message></div>
+                                <div class="form-group has-feedback" id="res_login"></div>
                           </form>
                         </div>
                     </div>

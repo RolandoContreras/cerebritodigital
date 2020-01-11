@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Oficina Virtual - FK Corporación</title>
+  <title>Oficina Virtual - Cerebrito Digital</title>
   <meta charset="utf-8">
   <meta content="ie=edge" http-equiv="x-ua-compatible">
   <meta name="description" content="Multiplica tu dinero en el mercado financiero con nosotros. BCA CAPITAL una empresa financiera que te ayudará a aumentar tus finanzas, Clic en el siguiente enlace.">
@@ -53,24 +53,13 @@
   <script type="text/javascript">
     var site = '<?php echo site_url();?>';
   </script>
-<!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = 'a38afe7d888e2f6aee2b1c4df7553d92f790f730';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
 </head>
 <body class="menu-position-side menu-side-left color-scheme-white full-screen with-content-panel">
   <div class="all-wrapper with-side-panel solid-bg-all">
     <div class="layout-w">
       <div class="menu-mobile menu-activated-on-click color-scheme-dark">
         <div class="mm-logo-buttons-w" style="background: #3d2b16"> <a class="mm-logo" href="<?php echo site_url().'backoffice';?>"> 
-                <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" style="max-width: 100%; width: 70px;"> <span></span> </a>
+                <img src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" style="max-width: 100%; width: 100px;"> <span></span> </a>
           <div class="mm-buttons">
             <div class="mobile-menu-trigger">
               <div class="os-icon os-icon-hamburger-menu-1"></div>
@@ -80,22 +69,11 @@ window.smartsupp||(function(d) {
         <div class="menu-and-user">
           <ul class="main-menu" style="background: #4a3116;">
             <li>
-            <center>
               <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-light">
                 <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
                       <span>Plataforma de Cursos</span>                
                   </div>
               </a>
-             </center>
-            </li>
-            <li>
-            <center>
-                <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-secondary">
-                  <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
-                      <span>Catalogo de productos</span>                
-                  </div>
-                </a>
-                </center>
              </li>
             <li>
               <a href="<?php echo site_url().'backoffice';?>" class="active" style="margin-top:30px;">
@@ -165,7 +143,7 @@ window.smartsupp||(function(d) {
       </div>
             <div class="menu-w selected-menu-color-bright menu-activated-on-hover menu-has-selected-link color-scheme-dark color-style-default sub-menu-color-bright menu-position-side menu-side-left menu-layout-compact sub-menu-style-over">
         <div class="logo-w" style="padding: 4px 1rem 4px 1.7rem !important;"> <a class="logo" style="width: 100%;" align="center"> 
-                <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" style="max-width: 80px;"> 
+                <img src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" style="max-width: 150px;"> 
             </a>          
         </div>
         <div class="logged-user-w avatar-inline">
@@ -188,13 +166,6 @@ window.smartsupp||(function(d) {
                     </a>
                  </li>
                  <hr/>
-                 <li>
-                <a href="<?php echo site_url().'catalogo';?>" target="_blank" class="btn btn-secondary">
-                  <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
-                      <span>Catalogo de productos</span>                
-                  </div>
-                </a>
-             </li>
           <li class="sub-header"> <span>Menú</span> </li>
           <li>
             <a href="<?php echo site_url().'backoffice';?>" class="active">

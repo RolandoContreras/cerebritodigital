@@ -59,6 +59,32 @@ $route['courses/([0-9a-z_-]+)'] = 'courses/category/$1';
 $route['courses/([0-9a-z_-]+)/([0-9]+)'] = 'courses/category/$1';
 $route['courses/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'courses/detail/$1';
 
+$route['backoffice'] = "b_home";
+
+$route['backoffice/profile'] = "b_profile";
+$route['backoffice/profile/update_password'] = "b_profile/update_password";
+$route['backoffice/profile/update_bank'] = "b_profile/update_bank";
+
+$route['backoffice/plan'] = "b_plan";
+$route['backoffice/plan/create_invoice'] = "b_plan/create_invoice";
+
+$route['backoffice/referred'] = "b_network";
+$route['backoffice/unilevel'] = "b_network/unilevel";
+$route['backoffice/unilevel/([0-9a-z_A-Z-=+/]+)'] = "b_network/unilevel/unilevel/$1";
+
+$route['backoffice/history'] = "b_finance";
+$route['backoffice/invoice'] = "b_finance/invoice";
+$route['backoffice/invoice/upload'] = "b_finance/upload";
+
+$route['backoffice/files'] = "b_files";
+
+$route['backoffice/carrera'] = "b_carrera";
+
+$route['backoffice/pay'] = "b_pay";
+$route['backoffice/pay/validate_amount'] = "b_pay/validate_amount";
+$route['backoffice/pay/make_pay'] = "b_pay/make_pay";
+
+
 $route['dashboard'] = "dashboard";
 $route['dashboard/panel'] = "panel";
 

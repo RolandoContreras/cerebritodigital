@@ -123,7 +123,7 @@ class Register extends CI_Controller {
 	}
         
         public function message($username, $pass, $name, $email){    
-                $img = site_url().'static/page_front/images/logo_header.png';           
+                $img = site_url().'static/page_front/img/logo_header.png';           
                 $mensaje = wordwrap("<html>
                     
  <div bgcolor='#E9E9E9' style='background:#fff;margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>

@@ -26,7 +26,7 @@
                 <div class="thim-sc-text-box style-4 size-small text-home-6">
                     <h2 class="title_h3">LA MEJOR PLATAFORMA DE EDUCACIÓN</h2>
                   <div class="p_header">
-                      <p class="secondary-heading">We pride ourselves on providing the most up-to-date content for our students to learn each course.</p>
+                      <p class="secondary-heading">Somos cerebrito digital te invito a conocernos, da clic abaj e inicia el recorrido.</p>
                   </div>
                     <br/>
                     <a href="javascript:void(0)" id="ir"><button class="button_header">Iniciar Recorrido</button></a>
@@ -73,15 +73,15 @@
                 <div class="thim-sc-text-box style-4 size-small text-home-6">
                   <div class=title-1>Cerebrito Digital</div>
                   <div class=title-2>
-                    <p>La finalidad de cerebrito digital es la de cambiar vidas, durante muchos años el staff de nuestra empresa vienen trabajando para cambiar la realidad de nuestra sociedad. Contamos con profesional calificados para instruir a todos nuestros alumnos, profesionales que se han sumado a la visión de hacer un mundo mejor.</p>
+                    <p>Somos un grupo de emprendedores peruanos con la finalidad de fortalecer la educación y llevar información transparente sobre las nuevas tendencias mundiales.</p>
                   </div>
                 </div>
                 <div class=vc_empty_space style="height: 35px"><span class=vc_empty_space_inner></span></div>
                 <div class="thim-sc-counter-box home6 demo-test-prep style-2" data-line=has-line>
                   <div class="counter_box has-line"><span class=separator style></span>
-                    <div class=number style="color: #ffffff"><span class=number_counter data-number=8 data-thousands-sep></span></div>
+                    <div class=number style="color: #ffffff"><span class=number_counter data-number=10 data-thousands-sep></span></div>
                     <div class=title_counter>
-                      <h4 class="title" style="color: #ffffff">EXPERIENCIA</h4>
+                      <h4 class="title" style="color: #ffffff">AÑOS DE EXPERIENCIA</h4>
                     </div>
                   </div>
                   <div class="counter_box has-line"><span class=separator style></span>
@@ -91,15 +91,9 @@
                     </div>
                   </div>
                   <div class="counter_box has-line"><span class=separator style></span>
-                    <div class=number style="color: #ffffff"><span class=number_counter data-number=12 data-thousands-sep></span></div>
-                    <div class=title_counter>
-                      <h4 class="title" style="color: #ffffff">PROFESORES</h4>
-                    </div>
-                  </div>
-                  <div class="counter_box has-line"><span class=separator style></span>
                     <div class=number style="color: #ffffff"><span class=number_counter data-number=300 data-thousands-sep></span></div>
                     <div class=title_counter>
-                      <h4 class="title" style="color: #ffffff">ESTUDIANTES</h4>
+                      <h4 class="title" style="color: #ffffff">SOCIOS</h4>
                     </div>
                   </div>
                 </div>
@@ -210,9 +204,6 @@
             </div>
           </div>
         </div>
-        
-        
-        
         <div class="vc_row wpb_row vc_row-fluid vc_custom_1513933519556">
           <div class="wpb_column vc_column_container vc_col-sm-12">
             <div class=vc_column-inner>
@@ -226,8 +217,6 @@
             </div>
           </div>
         </div>
-        
-        
         <div class="vc_row wpb_row vc_row-fluid">
                   <div class="wpb_column vc_column_container vc_col-sm-12">
                     <div class="vc_column-inner">
@@ -237,7 +226,7 @@
                           <div class="heading-content">
                             <h3 class="primary-heading">Corporativo</h3>
                           </div>
-                          <p class="secondary-heading">Somos los creadores de cerebrito digital, nos orgullece ver que es una empresa que está cambiando la vida de miles de persona a nivel mundial. Tú también puedes ser parte de esta hermosa empresa..</p>
+                          <p class="secondary-heading">Somos los creadores de cerebrito digital, nos orgullece ver que es una empresa que está cambiando la vida de miles de persona a nivel mundial. Tú también puedes ser parte de nosotros.</p>
                         </div>
                         <div class="vc_empty_space" style="height: 50px"><span class="vc_empty_space_inner"></span></div>
                         <div class="thim-instructors" id="thim_5df723f6d713a" data-max-page="1" data-page="1">
@@ -252,10 +241,9 @@
                                   </div>
                                   <div class="avartar-info">
                                     <h5>DIEGO VEGA</h5>
-                                    <div class="author-major">CEO</div>
+                                    <div class="author-major">FUNDADOR-DIRECTOR</div>
                                     <div class="description">
-                                        I am confident with my services and skills that serve any students to the top with highest test result possible. I love to see them
-                                      satisfied with me.
+                                       15 años de experiencia en entidades financieras. Egresado del instituto de formación bancaria (IFB) a la vez es analista de negocios senior y experto en economía digital.
                                     </div>
                                   </div>
                                 </div>
@@ -269,9 +257,8 @@
                                   </div>
                                   <div class="avartar-info">
                                     <h5>VANESSA VEGA</h5>
-                                    <div class="author-major">REPRESENTANTE LEGAL</div>
-                                    <div class="description">I want to see the joyful faces of my students with my works and teaching. It's good to make them satisfied. I'm glad that they are
-                                      enjoying mine.</div>
+                                    <div class="author-major">SOCIA</div>
+                                    <div class="description">5 años de experiencia en entidades financieras. Titulada de la carrera de administración bancaria (IFB) también es egresada de la universidad privada del norte (UPN) y profesional en criptoeconomia.</div>
                                   </div>
                                 </div>
                               </div>
@@ -283,9 +270,9 @@
                                     </a>
                                   </div>
                                   <div class="avartar-info">
-                                    <h5>MARIA VEGA</h5>
-                                    <div class="author-major">COACH</div>
-                                    <div class="description">Teamwork Projects easily integrates to many common software platforms being used within companies.</div>
+                                    <h5>MARISA SULCA</h5>
+                                    <div class="author-major">SOCIA</div>
+                                    <div class="description">Emprendedora y empresaria con 20 años de experiencia en atención al cliente. Ha participado en la capacitación de educación financiera con Robert Kiyosaki en Puebla, México y también asesora en economía digital.</div>
                                   </div>
                                 </div>
                               </div>

@@ -6,7 +6,7 @@
             <aside id=text-3 class="home-6-info widget widget_text">
               <div class=textwidget>
                   <p><img class="wp-image-4261 size-full alignnone" src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" alt width=131 height=45 data-mce-src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>"></p>
-                    <p>Únete a cientos de personas y ten una vida diferente. Cientos de personas estan cambiando su vida. "Ahora es tu oportunidad"</p>
+                    <p>Somos un grupo de emprendedores peruanos con la finalidad de fortalecer la educación y llevar información transparente sobre las nuevas tendencias mundiales.</p>
               </div>
             </aside>
           </div>
@@ -67,7 +67,7 @@
             </div>
             <div class="col-sm-6 text-right">
               <ul id=copyright-menu class=list-inline>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href=https://www.facebook.com/thimpress class=tc-menu-inner>Facebook</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="https://www.facebook.com/cerebritodigitaloficial/" target="_blank" class=tc-menu-inner>Facebook</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4232 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href=https://www.youtube.com/thimpress class=tc-menu-inner>Youtube</a></li>
               </ul>
             </div>

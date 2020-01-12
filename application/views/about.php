@@ -85,11 +85,7 @@
                                     <h3 class="title-box">Nuestra Historia</h3>
                                     <p class=underline></p>
                                     <div class=content>
-                                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium laudantium, totam rem aperiam, eaque ipsa
-                                        quae ab illo inventore veritatis,et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam,voluptatem
-                                        quia voluptas sit aspernatur aut odit aut fugit, sed quia,consequuntur magni dolores eos qui ratione voluptatem
-                                        sequi nesciunt.,Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, adipisci velit, sed quia non numquam
-                                        eius modi tempora</p>
+                                      <p>Somos cerebrito digital una empresa de educación con un staff de emprendedores peruanos con la finalidad de fortalecer la educación y llevar información transparente sobre las nuevas tendencias mundiales.</p>
                                     </div>
                                   </div>
                                 </div>
@@ -108,11 +104,9 @@
                                     <h3 class="title-box">Visión</h3>
                                     <p class=underline></p>
                                     <div class=content>
-                                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium laudantium, totam rem aperiam, eaque ipsa
-                                        quae ab illo inventore veritatis,et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam,voluptatem
-                                        quia voluptas sit aspernatur aut odit aut fugit, sed quia,consequuntur magni dolores eos qui ratione voluptatem
-                                        sequi nesciunt.,Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, adipisci velit, sed quia non numquam
-                                        eius modi tempora</p>
+                                      <p>Ser la plataforma virtual líder en educación y capacitación financiera para emprendedores y personas en general.
+                                          <b>Nuestro objetivo es llevar educación, capacitación, entrenamiento e información actualizada y transparente sobre la economía digital y sus beneficios.</b>
+                                    </p>
                                     </div>
                                   </div>
                                 </div>
@@ -127,16 +121,12 @@
                                   <span class=number style="color: rgba(255,255,255,0.6)">03</span>
                                 </div>
                                 <div class="col-sm-12 col-lg-6 text-content">
-                                    <img src="<?php echo site_url().'static/page_front/img/layer_42.png';?>" class=bg-content>
+                                    <img style="height:500px;" src="<?php echo site_url().'static/page_front/img/layer_42.png';?>" class=bg-content>
                                   <div class=text-content-inner>
                                     <h3 class="title-box">Misión</h3>
                                     <p class=underline></p>
                                     <div class=content>
-                                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium laudantium, totam rem aperiam, eaque ipsa
-                                        quae ab illo inventore veritatis,et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam,voluptatem
-                                        quia voluptas sit aspernatur aut odit aut fugit, sed quia,consequuntur magni dolores eos qui ratione voluptatem
-                                        sequi nesciunt.,Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, adipisci velit, sed quia non numquam
-                                        eius modi tempora</p>
+                                      <p>Brindar capacitación y entrenamiento sobre educación financiera y afines a todas las personas dispuestas a superarse.</p>
                                     </div>
                                   </div>
                                 </div>

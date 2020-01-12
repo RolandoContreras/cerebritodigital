@@ -186,10 +186,10 @@ class Register extends CI_Controller {
   </table>
   </div>
                             .</html>", 70, "\n", true);
-                    $titulo = "Bienvenido - [CULTURA FK]";
+                    $titulo = "Bienvenido - [CEREBRITO DIGITAL]";
                     $headers = "MIME-Version: 1.0\r\n"; 
                     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-                    $headers .= "From: CULTURA FK <contacto@culturafk.com>\r\n";
+                    $headers .= "From: CEREBRITO DIGITAL <cerebritodigitalperu.com>\r\n";
                     $bool = mail("$email",$titulo,$mensaje,$headers);
                     
     }

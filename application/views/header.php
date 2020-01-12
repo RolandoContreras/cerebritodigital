@@ -29,7 +29,7 @@
                     </div>
                     <div class="thim-sc-social-links ">
                       <ul class=socials>
-                        <li><a target=_blank href="https://facebook.com">facebook</a></li>
+                        <li><a target=_blank href="https://www.facebook.com/cerebritodigitaloficial/">facebook</a></li>
                         <li><a target=_blank href="https://youtube.com">youtube</a></li>
                       </ul>
                     </div>

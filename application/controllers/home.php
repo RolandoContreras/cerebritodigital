@@ -6,9 +6,11 @@ class Home extends CI_Controller {
         parent::__construct();
         $this->load->model("comments_model","obj_comments");
         $this->load->model("customer_model","obj_customer");
+        $this->load->model("paises_model","obj_paises");
     }   
 
         public function index(){
+             //get paises
 		$this->load->view('home');
 	}
         
@@ -36,8 +38,4 @@ class Home extends CI_Controller {
                 exit();
             }
 	}
-        
-        
-        
-        
 }

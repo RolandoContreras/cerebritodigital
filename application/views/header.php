@@ -67,23 +67,20 @@
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4509 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Cursos</a>
                 </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4509 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                    <a href="<?php echo site_url()."register";?>" class=tc-menu-inner>¡Regístrate!</a>
+                </li>
             </ul>
             <div class="header-right">
               <div class="circle-style widget widget_thim-login">
                 <div class="thim-link-login thim-login-popup">
-                    <a class=register href="javascript:void(0);">Regístrate</a>
-                        <span class=slash>/</span>
                     <a href="javascript:void(0);" class=login>Login</a>
                 </div>
                 <div id=thim-popup-login>
                   <div class=thim-login-container>
-                    <div class=login-html>
+                    <div class="login-html">
                         <div class=login-banner style="background-image: url(<?php echo site_url().'static/page_front/img/login_images.png';?>)">
                        </div>
-                      <div class=link-to-form>
-                        <p class="content-register wrapper">¿Aún no tienes una cuenta? <a class=register-link>Regístrate Ahora</a></p>
-                        <p class="content-login wrapper">¿Ya eres miembro? <a href=# class=login-link>Iniciar Sesión</a></p>
-                        </div>
                       <div class=login-form>
                         <div class=sign-in-htm>
                           <h3 class="title">Iniciar Sesión</h3>
@@ -94,7 +91,7 @@
                                 <input type="password" name="password" id="password" class="input required" size="20" placeholder="Contraseña">
                             </p>
                                 <div class=login-extra-options>
-                                  <a class=lost-pass-link href="#" title="Lost Password">¿Olvidaste tu contraseña?</a>
+                                    <a class=lost-pass-link href="<?php echo site_url().'forget';?>" title="Lost Password">¿Olvidaste tu contraseña?</a>
                                 </div>
                                 <p class=login-submit>
                                     <input onclick="login();" id="popupLoginSubmit" class="submit button button-primary button-large" value="Iniciar Sesión">
@@ -103,23 +100,8 @@
                           </form>
                         </div>
                     </div>
-                      <div class=register-form>
-                        <div class=sign-in-htm>
-                          <h3 class="title">Regístrate con Nosotros</h3>
-                          <form name=loginform class=auto_login id=popupRegisterForm action="#" method=post>
-                            <p><input id=popupRegisterName placeholder=Username type=text name=user_login class="input required"></p>
-                            <p><input id=popupRegisterPassword placeholder="Contraseña" type=password name=password class="input required"></p>
-                            <p><input id=popupRegisterCPassword placeholder="Nombres" type=password name=repeat_password class="input required"></p>
-                            <p><input id=popupRegisterEmail placeholder="Email" type=email name=user_email class="input required"></p>
-                            <p><input id=popupRegisterCPassword placeholder="Direccion" type=password name=repeat_password class="input required"></p>
-                            <p><input id=popupRegisterCPassword placeholder="Teléfono" type=password name=repeat_password class="input required"></p>
-                            <p class=login-submit>
-                                <input type=submit name=wp-submit id=popupRegisterSubmit class="button button-primary button-large" value="Sign Up">
-                            </p>
-                            <div class=popup-message></div>
-                          </form>
-                        </div>
-                      </div><span class=close-popup> <ion-icon name="close"></ion-icon></span></div>
+                     <span class=close-popup> <ion-icon name="close"></ion-icon></span>
+                    </div>
                     <div class=thim-loading-icon>
                       <div class=sk-folding-cube>
                         <div class="sk-cube1 sk-cube"></div>

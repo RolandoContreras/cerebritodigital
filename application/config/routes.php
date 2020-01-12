@@ -59,6 +59,11 @@ $route['courses/([0-9a-z_-]+)'] = 'courses/category/$1';
 $route['courses/([0-9a-z_-]+)/([0-9]+)'] = 'courses/category/$1';
 $route['courses/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'courses/detail/$1';
 
+
+$route['register/validate_username'] = "register/validate_username";
+$route['register/validate'] = "register/validate";
+$route['register/([0-9a-z_-]+)'] = "register/index/$1";
+
 $route['backoffice'] = "b_home";
 
 $route['backoffice/profile'] = "b_profile";

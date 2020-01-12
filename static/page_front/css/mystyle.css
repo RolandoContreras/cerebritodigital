@@ -197,3 +197,29 @@ header#masthead.palette-custom .width-navigation .widget_thim-login a {
     cursor: pointer;
     text-align: center !important;
 }
+.register-form select {
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    color: #aaa;
+    padding: 10px 20px;
+    border: 1px solid #e6e6e6;
+    line-height: 1.6em;
+    box-sizing: border-box;
+}
+
+.thim-home6-form .wpcf7-form select {
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 3px;
+    font-family: Roboto;
+    padding: 0 20px;
+    background:#fff;
+    width: 100%;
+    float: left;
+    height: 45px;
+    color:#999;
+    border: 1px solid #ccc;
+}
+.margin-top{
+    margin-top: 20px; 
+}

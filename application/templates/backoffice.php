@@ -69,7 +69,7 @@
         <div class="menu-and-user">
           <ul class="main-menu" style="background: #4a3116;">
             <li>
-              <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-light">
+              <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-glow-primary">
                 <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
                       <span>Plataforma de Cursos</span>                
                   </div>
@@ -159,7 +159,7 @@
         </div>
         <ul class="main-menu">
                 <li>
-                    <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-light">
+                    <a href="<?php echo site_url().'course';?>" target="_blank">
                       <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
                           <span>Plataforma de Cursos</span>                
                       </div>

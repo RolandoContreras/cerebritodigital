@@ -68,12 +68,6 @@
                         <div class="label"> País </div>
                       </div>
                     </div>
-                    <div class="col-sm-12 b-b">
-                      <div class="el-tablo centered padded-v">
-                        <div class="value" style="font-size: 18px;"> <?php echo $obj_customer->address;?> </div>
-                        <div class="label"> Dirección </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>

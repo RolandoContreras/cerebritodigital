@@ -119,13 +119,13 @@
                   <div class="os-icon os-icon-wallet-loaded"></div>
                 </div> <span>Cobros</span> </a>
             </li>
-            <li>
+<!--            <li>
               <a href="<?php echo site_url().'backoffice/carrera';?>">
                 <div class="icon-w"> 
                     <i class="os-icon os-icon-map"></i> 
                 </div> <span>Plan Carrera</span> 
               </a>
-            </li>
+            </li>-->
             <li>
               <a href="<?php echo site_url().'backoffice/files';?>" class="" style="padding-top: 4px; padding-bottom: 4px;">
                 <div class="icon-w">

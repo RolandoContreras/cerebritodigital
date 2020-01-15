@@ -13,7 +13,6 @@ class D_ranges extends CI_Controller{
             $params = array(
                             "select" =>"range_id,
                                         name,
-                                        point_personal,
                                         point_grupal,
                                         img,
                                         active",
@@ -57,7 +56,6 @@ class D_ranges extends CI_Controller{
         $range_id = $this->input->post("range_id");
         $name =  $this->input->post('name');
         $img = $this->input->post("img2");
-        $point_personal =  $this->input->post('point_personal');
         $point_grupal =  $this->input->post('point_grupal');
         $active =  $this->input->post('active');
         

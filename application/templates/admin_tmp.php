@@ -8,23 +8,23 @@
   <meta name="description" content="">
   <meta name="author" content="Cerebrito Digital">
   <meta name="keyword" content="Cerebrito Digital, cursos online">
-   <!--START FAVICON-->
-    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/img/logo/favico/apple-icon-57x57.png';?>">
-    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo site_url().'static/page_front/img/logo/favico/apple-icon-60x60.png';?>">
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo site_url().'static/page_front/img/logo/favico/apple-icon-72x72.png';?>">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo site_url().'static/page_front/img/logo/favico/apple-icon-76x76.png';?>">
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo site_url().'static/page_front/img/logo/favico/apple-icon-114x114.png';?>">
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo site_url().'static/page_front/img/logo/favico/apple-icon-120x120.png';?>">
-    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo site_url().'static/page_front/img/logo/favico/apple-icon-144x144.png';?>">
-    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo site_url().'static/page_front/img/logo/favico/apple-icon-152x152.png';?>">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'static/page_front/img/logo/favico/apple-icon-180x180.png';?>">
-    <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo site_url().'static/page_front/img/logo/favico/android-icon-192x192.png';?>">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'static/page_front/img/logo/favico/favicon-32x32.png';?>">
-    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo site_url().'static/page_front/img/logo/favico/favicon-96x96.png';?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'static/page_front/img/logo/favico/favicon-16x16.png';?>">
-    <link rel="manifest" href="<?php echo site_url().'static/page_front/img/logo/favico/manifest.json';?>">
+    <!--START FAVICON-->
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-57x57.png';?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-60x60.png';?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-72x72.png';?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-76x76.png';?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-114x114.png';?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-120x120.png';?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-144x144.png';?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-152x152.png';?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-180x180.png';?>">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo site_url().'static/page_front/img/logo/favicon/android-icon-192x192.png';?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'static/page_front/img/logo/favicon/favicon-32x32.png';?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo site_url().'static/page_front/img/logo/favicon/favicon-96x96.png';?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'static/page_front/img/logo/favicon/favicon-16x16.png';?>">
+    <link rel="manifest" href="<?php echo site_url().'static/page_front/img/logo/favicon/manifest.json';?>">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="<?php echo site_url().'static/page_front/img/logo/favico/ms-icon-144x144.png';?>">
+    <meta name="msapplication-TileImage" content="<?php echo site_url().'static/page_front/img/logo/favicon/ms-icon-144x144.png';?>">
     <meta name="theme-color" content="#ffffff">
   <!--END FAVICON-->
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/style.css';?>">
@@ -38,6 +38,24 @@
   <script src="<?php echo site_url().'static/cms/js/core/bootbox.all.min.js';?>"></script>
   <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js';?>"></script>
   <script src="<?php echo site_url().'static/cms/js/core/bootstrap.min.js';?>"></script>
+  <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/core/bootstrap-datepicker3.min.css';?>">
+  <script>
+        var page = {
+            bootstrap: 3
+        };
+
+        function swap_bs() {
+            page.bootstrap = 3;
+        }
+    </script>
+    <style>
+        .datepicker>.datepicker-days {
+            display: block;
+        }
+        ol.linenums {
+            margin: 0 0 0 -8px;
+        }
+    </style>
 </head>
 
 <body class="layout-6" style="background-image: url('<?php echo site_url().'static/page_front/images/header_image.jpg';?>'); background-size: cover;">
@@ -65,19 +83,22 @@
             $activaciones_syle = "";
             $pagos_syle = "";
             $mantenimiento_syle = "";
-            
+            $report_syle = "";
             switch ($nav) {
                 case "panel":
                     $panel_syle = "active";
                     break;
-                case "activaciones":
-                    $activaciones_syle = "active";
+                 case "report_global":
+                    $report_syle = "active";
                     break;
-                case "activar_pagos":
-                    $pagos_syle = "active";
+                case "report_customer":
+                    $report_syle = "active";
                     break;
-                case "document":
-                    $document_syle = "active";
+                case "report_invoice":
+                    $report_syle = "active";
+                    break;
+                case "report_pay":
+                    $report_syle = "active";
                     break;
                 default:
                     $mantenimiento_syle = "active";
@@ -109,7 +130,7 @@
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/videos";?>"><i class="icon-large icon-th"></i>Videos</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/membresias";?>"><i class="icon-large icon-th"></i>Pack</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/pagos";?>"><i class="icon-large icon-th"></i>Pagos</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/rangos";?>"><i class="icon-large icon-th"></i>Rangos</a></li>
+                <!--<li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/rangos";?>"><i class="icon-large icon-th"></i>Rangos</a></li>-->
                 <?php if($_SESSION['usercms']['privilage'] > 1){ ?>
                 <li class="pcoded-hasmenu" ><a href="<?php echo site_url()."dashboard/usuarios";?>"><i class="icon-large icon-th"></i>Usuarios</a></li>
                 <?php } ?>
@@ -124,16 +145,17 @@
             </a>
         </li>
         <li class="nav-item pcoded-hasmenu">
-            <a href="#!" class="">
+            <a href="#!" class="nav-link <?php echo $report_syle;?>">
                 <span class="pcoded-micon">
-                    <i data-feather="book-open"></i>
+                    <i data-feather="printer"></i>
                 </span>
                 <span class="pcoded-mtext">Reportes</span>
             </a>
             <ul class="pcoded-submenu">
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/panel";?>"><i class="icon-large icon-th"></i>Panel</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/videos";?>"><i class="icon-large icon-th"></i>Videos</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/bonos";?>"><i class="icon-large icon-th"></i>Bonos</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_global";?>"><i class="icon-large icon-th"></i>Datos</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_customer";?>"><i class="icon-large icon-th"></i>Clientes</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_invoice";?>"><i class="icon-large icon-th"></i>Ventas</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_pay";?>"><i class="icon-large icon-th"></i>Pagos</a></li>
             </ul>
         </li>
     </ul>
@@ -146,7 +168,7 @@
         <div class="b-bg">
             <img src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" alt="Logo" width="100"/>
         </div>
-            <span class="b-title">BCA CAPITAL</span></a>
+            <span class="b-title">CEREBRITO DIGITAL</span></a>
     </div>
       <a class="mobile-menu" id="mobile-header" href="#!">
           <i class="feather icon-more-horizontal"></i>
@@ -212,5 +234,7 @@
 <script>
   feather.replace();
 </script>
+<script src="<?php echo site_url().'static/cms/js/core/bootstrap-datepicker.min.js';?>"></script>    
+<script src="<?php echo site_url().'static/cms/js/core/ac-datepicker.js';?>"></script>  
 </body>
 </html>

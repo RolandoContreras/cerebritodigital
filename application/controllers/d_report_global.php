@@ -8,7 +8,6 @@ class D_report_global extends CI_Controller{
         $this->load->model("customer_model","obj_customer");
         $this->load->model("invoices_model","obj_invoices");
         $this->load->model("unilevel_model","obj_unilevel");
-        $this->load->model("points_model","obj_points");
         $this->load->model("ranges_model","obj_ranges");
     }   
                 
@@ -48,17 +47,13 @@ class D_report_global extends CI_Controller{
                 $params = array(
                         "select" =>"sum(price) as total_mes,
                                     (SELECT sum(total) FROM (invoices) WHERE date >= '$primer_dia_ano' AND date < '$primer_dia_ano_next' AND invoices.active = 2 ) as sum_total_year_next,
-                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$primer_dia_ano' AND date < '$primer_dia_ano_next' AND invoices.active = 2 and invoices.type = 1) as sum_total_year_pack_next,
-                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$primer_dia_ano' AND date < '$primer_dia_ano_next' AND invoices.active = 2 and invoices.type = 2) as sum_total_year_catalogo_next,
+                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$primer_dia_ano' AND date < '$primer_dia_ano_next' AND invoices.active = 2) as sum_total_year_pack_next,
                                     (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last' AND date < '$primer_dia_ano' AND invoices.active = 2 ) as sum_total_year_last,
-                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last' AND date < '$primer_dia_ano' AND invoices.active = 2 and invoices.type = 1) as sum_total_year_pack_last,
-                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last' AND date < '$primer_dia_ano' AND invoices.active = 2 and invoices.type = 2) as sum_total_year_catalogo_last,
+                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last' AND date < '$primer_dia_ano' AND invoices.active = 2) as sum_total_year_pack_last,
                                     (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last_2' AND date < '$ultimo_dia_ano_last' AND invoices.active = 2 ) as sum_total_year_last_2,
-                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last_2' AND date < '$ultimo_dia_ano_last' AND invoices.active = 2 and invoices.type = 1) as sum_total_year_pack_last_2,
-                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last_2' AND date < '$ultimo_dia_ano_last' AND invoices.active = 2 and invoices.type = 2) as sum_total_year_catalogo_last_2,
+                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last_2' AND date < '$ultimo_dia_ano_last' AND invoices.active = 2) as sum_total_year_pack_last_2,
                                     (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last_3' AND date < '$ultimo_dia_ano_last_2' AND invoices.active = 2 ) as sum_total_year_3,
-                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last_3' AND date < '$ultimo_dia_ano_last_2' AND invoices.active = 2 and invoices.type = 1) as sum_total_year_pack_last_3,
-                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last_3' AND date < '$ultimo_dia_ano_last_2' AND invoices.active = 2 and invoices.type = 2) as sum_total_year_catalogo_last_3,
+                                    (SELECT sum(total) FROM (invoices) WHERE date >= '$ultimo_dia_ano_last_3' AND date < '$ultimo_dia_ano_last_2' AND invoices.active = 2) as sum_total_year_pack_last_3,
                                     (SELECT count(total) FROM (invoices) WHERE date BETWEEN '$year-01-01' AND '$year-01-31' and invoices.active = 2) as sum_ene,
                                     (SELECT count(total) FROM (invoices) WHERE date BETWEEN '$year-02-01' AND '$year-02-31' and invoices.active = 2) as sum_feb,
                                     (SELECT count(total) FROM (invoices) WHERE date BETWEEN '$year-03-01' AND '$year-03-31' and invoices.active = 2) as sum_mar,
@@ -89,7 +84,7 @@ class D_report_global extends CI_Controller{
                                     (SELECT count(*) FROM (invoices) WHERE date BETWEEN '$first_day_month' AND '$last_day_month' AND invoices.active = 2) as count_total_mes,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$first_day_month' AND '$last_day_month' AND invoices.active = 2) as sum_total_mes",
                 "join" => array( 'kit, invoices.kit_id = kit.kit_id'),
-                "where" => "date BETWEEN '$first_day_month' AND '$last_day_month' and invoices.type = 1 and invoices.active = 2");
+                "where" => "date BETWEEN '$first_day_month' AND '$last_day_month' and invoices.active = 2");
             //GET DATA FROM CUSTOMER
             $obj_invoices = $this->obj_invoices->get_search_row($params);
             
@@ -170,11 +165,7 @@ class D_report_global extends CI_Controller{
             }else{
                 $sum_total_year_pack_last_3 = $obj_invoices->sum_total_year_pack_last_3;
             }
-            if($obj_invoices->sum_total_year_catalogo_last_3 == ""){
-                $sum_total_year_catalogo_last_3 = 0;
-            }else{
-                $sum_total_year_catalogo_last_3 = $obj_invoices->sum_total_year_catalogo_last_3;
-            }
+           
             if($obj_invoices->sum_total_year_3 == ""){
                 $sum_total_year_3 = 0;
             }else{
@@ -186,11 +177,7 @@ class D_report_global extends CI_Controller{
             }else{
                 $sum_total_year_pack_last_2 = $obj_invoices->sum_total_year_pack_last_2;
             }
-            if($obj_invoices->sum_total_year_catalogo_last_2 == ""){
-                $sum_total_year_catalogo_last_2 = 0;
-            }else{
-                $sum_total_year_catalogo_last_2 = $obj_invoices->sum_total_year_catalogo_last_2;
-            }
+            
             if($obj_invoices->sum_total_year_last_2 == ""){
                 $sum_total_year_2 = 0;
             }else{
@@ -202,11 +189,7 @@ class D_report_global extends CI_Controller{
             }else{
                 $sum_total_year_pack_last = $obj_invoices->sum_total_year_pack_last;
             }
-            if($obj_invoices->sum_total_year_catalogo_last == ""){
-                $sum_total_year_catalogo_last = 0;
-            }else{
-                $sum_total_year_catalogo_last = $obj_invoices->sum_total_year_catalogo_last;
-            }
+          
             if($obj_invoices->sum_total_year_last == ""){
                 $sum_total_year_last = 0;
             }else{
@@ -219,11 +202,7 @@ class D_report_global extends CI_Controller{
             }else{
                 $sum_total_year_pack_next = $obj_invoices->sum_total_year_pack_next;
             }
-            if($obj_invoices->sum_total_year_catalogo_next == ""){
-                $sum_total_year_catalogo_next = 0;
-            }else{
-                $sum_total_year_catalogo_next = $obj_invoices->sum_total_year_catalogo_next;
-            }
+       
             if($obj_invoices->sum_total_year_next == ""){
                 $sum_total_year_next = 0;
             }else{
@@ -353,18 +332,13 @@ class D_report_global extends CI_Controller{
         $this->tmp_mastercms->set("sum_nov",$sum_nov);
         $this->tmp_mastercms->set("sum_dic",$sum_dic);
         $this->tmp_mastercms->set("sum_total_year_next",$sum_total_year_next);
-        $this->tmp_mastercms->set("sum_total_year_catalogo_next",$sum_total_year_catalogo_next);
         $this->tmp_mastercms->set("sum_total_year_pack_next",$sum_total_year_pack_next);
         $this->tmp_mastercms->set("sum_total_year_last",$sum_total_year_last);
-        $this->tmp_mastercms->set("sum_total_year_catalogo_last",$sum_total_year_catalogo_last);
         $this->tmp_mastercms->set("sum_total_year_pack_last",$sum_total_year_pack_last);
         $this->tmp_mastercms->set("sum_total_year_2",$sum_total_year_2);
-        $this->tmp_mastercms->set("sum_total_year_catalogo_last_2",$sum_total_year_catalogo_last_2);
         $this->tmp_mastercms->set("sum_total_year_pack_last_2",$sum_total_year_pack_last_2);
         $this->tmp_mastercms->set("sum_total_year_3",$sum_total_year_3);
-        $this->tmp_mastercms->set("sum_total_year_catalogo_last_3",$sum_total_year_catalogo_last_3);
         $this->tmp_mastercms->set("sum_total_year_pack_last_3",$sum_total_year_pack_last_3);
-        
         $this->tmp_mastercms->render("dashboard/reporte_global/report_global");
     }
     

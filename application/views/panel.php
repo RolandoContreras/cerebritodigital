@@ -31,8 +31,7 @@
                   <div class="card-block">
                     <h5 class="f-w-400 m-b-15">Facturas</h5>
                     <h4 class="f-w-300 mb-3"><?php echo $obj_total->total_invoices;?></h4>
-                    <span class="text-muted"><label class="label theme-bg text-white f-12 f-w-400"><?php echo $obj_pending->pending_invoices_pack;?></label> Pendientes Pack &nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span class="text-muted"><label class="label theme-bg text-white f-12 f-w-400"><?php echo $obj_pending->pending_invoices_catalog;?></label> Pendientes Catalogo</span>
+                    <span class="text-muted">Total</span>
                   </div>
                 </div>
               </div>
@@ -114,7 +113,7 @@
                     <h3 class="text-white m-t-20 f-w-300"><?php echo $obj_total->total_comments;?></h3>
                     <span class="text-white"><?php echo $obj_pending->pending_comments;?> Pendientes</span></div>
                 </div>
-                <div class="card">
+<!--                <div class="card">
                   <div class="card-block">
                     <div class="row">
                       <div class="col">
@@ -125,7 +124,7 @@
                         <h3 class="text-c-green f-w-300"><?php echo $obj_invoices->total_invoice_catalog_week_active;?></h3><span class="text-muted d-block">Pedidos Procesados</span><span class="badge theme-bg text-white m-t-20"><?php echo $obj_invoices->total_invoice_catalog_week;?></span></div>
                     </div>
                   </div>
-                </div>
+                </div>-->
               </div>
             <div class="col-md-6 col-xl-4">
               <div class="card">

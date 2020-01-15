@@ -15,7 +15,6 @@ class D_report_invoice extends CI_Controller{
         $params = array(
                         "select" =>"invoices.invoice_id,
                                     invoices.date,
-                                    invoices.type,
                                     invoices.total,
                                     customer.customer_id,
                                     customer.username,
@@ -75,7 +74,6 @@ class D_report_invoice extends CI_Controller{
         $params = array(
                         "select" =>"invoices.invoice_id,
                                     invoices.date,
-                                    invoices.type,
                                     invoices.total,
                                     customer.customer_id,
                                     customer.username,
@@ -104,7 +102,6 @@ class D_report_invoice extends CI_Controller{
             //send data
             $date_start = $this->input->post('date_start');
             $date_end = $this->input->post('date_end');
-            $type = $this->input->post('type');
             $active = $this->input->post('active');
             
             if($date_start == ""){
@@ -114,20 +111,13 @@ class D_report_invoice extends CI_Controller{
             }else{
                 $where_date = "invoices.date BETWEEN '$date_start' AND '$date_end'";
             }
-            
-            if($type == -1){
-                $where_type = "";    
-            }else{
-                $where_type = "and invoices.type = $type";
-            }
-            
             if($active == -1){
                 $where_active = "";    
             }else{
                 $where_active = "and invoices.active = $active";
             }
                 
-        $where = "$where_date $where_type $where_active";
+        $where = "$where_date $where_active";
         
         if($where == ""){
             $where = "";
@@ -138,7 +128,6 @@ class D_report_invoice extends CI_Controller{
         $param_data = array(
                         "select" =>"invoices.invoice_id as codigo,
                                     invoices.date as fecha,
-                                    invoices.type as tipo,
                                     invoices.total,
                                     customer.customer_id id_cliente,
                                     customer.username as usuario,

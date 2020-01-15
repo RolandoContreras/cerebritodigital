@@ -17,8 +17,6 @@ class Panel extends CI_Controller{
          //GET PENDING ROWS
         $params = array("select" =>"count(*) as pending_comments,
                                     (select count(*) from pay where active = 1) as pending_pay,
-                                    (select count(*) from invoices where active = 1 and type = 2) as pending_invoices_catalog,
-                                    (select count(*) from invoices where active = 1 and type = 1) as pending_invoices_pack,
                                     ",
                         "where" => "active = 1");
         $obj_pending = $this->obj_comments->get_search_row($params);
@@ -46,8 +44,7 @@ class Panel extends CI_Controller{
                 $params = array(
                         "select" =>"sum(price) as total_mes,
                                     (SELECT sum(total) FROM (invoices) WHERE invoices.active = 2) as sum_total_invoice,
-                                    (SELECT sum(total) FROM (invoices) WHERE invoices.type = 1 and invoices.active = 2) as sum_total_pack,
-                                    (SELECT sum(total) FROM (invoices) WHERE invoices.type = 2 and invoices.active = 2) as sum_total_catalog,
+                                    (SELECT sum(total) FROM (invoices) WHERE invoices.active = 2) as sum_total_pack,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-01-01' AND '$year-01-31' and invoices.active = 2) as sum_ene,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-02-01' AND '$year-02-31' and invoices.active = 2) as sum_feb,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-03-01' AND '$year-03-31' and invoices.active = 2) as sum_mar,
@@ -60,14 +57,12 @@ class Panel extends CI_Controller{
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-10-01' AND '$year-10-31' and invoices.active = 2) as sum_oct,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-11-01' AND '$year-11-31' and invoices.active = 2) as sum_nov,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$year-12-01' AND '$year-12-31' and invoices.active = 2) as sum_dic,
-                                    (SELECT count(*) FROM (invoices) WHERE date BETWEEN '$lunes_semana_actual' AND '$domingo_semana_actual' AND invoices.type = 2 and invoices.active = 2) as total_invoice_catalog_week_active,
-                                    (SELECT count(*) FROM (invoices) WHERE date BETWEEN '$lunes_semana_actual' AND '$domingo_semana_actual' AND invoices.type = 2) as total_invoice_catalog_week,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$lunes_semana_actual' AND '$domingo_semana_actual' AND invoices.active = 2 ) as sum_total_week_invoice,
                                     (SELECT count(*) FROM (invoices) WHERE date BETWEEN '$first_day_month' AND '$last_day_month' AND invoices.active = 2) as count_total_mes,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$first_day_month' AND '$last_day_month' AND invoices.active = 2) as sum_total_mes,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$primer_dia_ano' AND '$ultimo_dia_ano' AND invoices.active = 2) as total_year",
                 "join" => array( 'kit, invoices.kit_id = kit.kit_id'),
-                "where" => "date BETWEEN '$first_day_month' AND '$last_day_month' and invoices.type = 1 and invoices.active = 2");
+                "where" => "date BETWEEN '$first_day_month' AND '$last_day_month' and invoices.active = 2");
             //GET DATA FROM CUSTOMER
             $obj_invoices = $this->obj_invoices->get_search_row($params);
             
@@ -75,7 +70,7 @@ class Panel extends CI_Controller{
                 $params = array(
                         "select" =>"sum(price) as total_semana",
                 "join" => array( 'kit, invoices.kit_id = kit.kit_id'),
-                "where" => "date BETWEEN '$lunes_semana_actual' AND '$domingo_semana_actual' AND invoices.type = 1 and invoices.active = 2");
+                "where" => "date BETWEEN '$lunes_semana_actual' AND '$domingo_semana_actual' and invoices.active = 2");
             //GET DATA FROM CUSTOMER
             $obj_invoices_semana = $this->obj_invoices->get_search_row($params);
             $total_semana = $obj_invoices_semana->total_semana;

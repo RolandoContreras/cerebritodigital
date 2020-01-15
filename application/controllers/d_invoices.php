@@ -27,7 +27,7 @@ class D_invoices extends CI_Controller{
                 "join" => array( 'kit, invoices.kit_id = kit.kit_id',
                                  'customer, invoices.customer_id = customer.customer_id'),
                 "where" => "invoices.status_value = 1",
-                "order" => "invoices.invoice_id ASC");
+                "order" => "invoices.invoice_id DESC");
             //GET DATA FROM CUSTOMER
             $obj_invoices = $this->obj_invoices->search($params);
             

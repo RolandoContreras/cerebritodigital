@@ -80,13 +80,15 @@
                 $nav = "";
             }
             $panel_syle = "";
-            $activaciones_syle = "";
             $pagos_syle = "";
             $mantenimiento_syle = "";
             $report_syle = "";
             switch ($nav) {
                 case "panel":
                     $panel_syle = "active";
+                    break;
+                case "activar_pagos":
+                    $pagos_syle = "active";
                     break;
                  case "report_global":
                     $report_syle = "active";

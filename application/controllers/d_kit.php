@@ -19,6 +19,7 @@ class D_kit extends CI_Controller{
                                         active,
                                         description,
                                         status_value",
+                            "order" => "kit_id DESC"
                             );            
             //GET DATA COMMISSIONS
             $obj_kit= $this->obj_kit->search($params);

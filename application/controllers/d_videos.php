@@ -18,7 +18,8 @@ class D_videos extends CI_Controller{
                                     videos.name,
                                     videos.summary,
                                     videos.type,
-                                    videos.img2 as img,
+                                    videos.img,
+                                    videos.img2,
                                     videos.video,
                                     videos.date,
                                     videos.active,
@@ -85,21 +86,41 @@ class D_videos extends CI_Controller{
         $description =  $this->input->post('description');
         $category =  $this->input->post('category');
         $active =  $this->input->post('active');
+        $img_2 = $this->input->post("img_2");
+        $img_3 = $this->input->post("img_3");
         
-        if(isset($_FILES["image_file_2"]["name"])){
+        if(isset($_FILES["image_file"]["name"])){
                 $config['upload_path']          = './static/course/img';
                 $config['allowed_types']        = 'gif|jpg|png';
                 $config['max_size']             = 3000;
                 $this->load->library('upload', $config);
-                    if ( ! $this->upload->do_upload('image_file_2')){
+                    if ( ! $this->upload->do_upload('image_file')){
                          $error = array('error' => $this->upload->display_errors());
                           echo '<div class="alert alert-danger">'.$error['error'].'</div>';
                     }else{
                         $data = array('upload_data' => $this->upload->data());
                     }
-                $img_2 = $_FILES["image_file_2"]["name"];        
+                $img = $_FILES["image_file"]["name"];        
+                 if($img == ""){
+                     $img = $img_2;
+                 }   
+            }
+        
+        
+        if(isset($_FILES["image_file2"]["name"])){
+                $config['upload_path']          = './static/course/img';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 3000;
+                $this->load->library('upload', $config);
+                    if ( ! $this->upload->do_upload('image_file2')){
+                         $error = array('error' => $this->upload->display_errors());
+                          echo '<div class="alert alert-danger">'.$error['error'].'</div>';
+                    }else{
+                        $data = array('upload_data' => $this->upload->data());
+                    }
+                $img_2 = $_FILES["image_file2"]["name"];        
                  if($img_2 == ""){
-                     $img_2 = $this->input->post("img3");
+                     $img_2 = $img_3;
                  }   
             }
         
@@ -107,6 +128,7 @@ class D_videos extends CI_Controller{
              $data = array(
                 'name' => $name,
                 'slug' => $slug,
+                'img' => $img,
                 'img2' => $img_2,
                 'type' => $type,
                 'video' => $video,
@@ -124,6 +146,7 @@ class D_videos extends CI_Controller{
                 'name' => $name,
                 'slug' => $slug,
                 'video' => $video,
+                'img' => $img,
                 'img2' => $img_2,
                 'type' => $type,
                 'summary' => $summary,

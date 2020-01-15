@@ -16,6 +16,7 @@ class D_category extends CI_Controller{
                                     type,
                                     active",
                 "where" => "status_value = 1",
+                "order" => "category_id DESC"
             );
             //GET DATA COMMENTS
             $obj_category= $this->obj_category->search($params);

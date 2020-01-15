@@ -34,11 +34,11 @@
                             <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="zero-configuration_info">
                               <thead>
                                 <tr role="row">
-                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 267px;" aria-sort="ascending"
+                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 120px;" aria-sort="ascending"
                                     aria-label="Name: activate to sort column descending">ID</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 392px;"
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
                                     aria-label="Position: activate to sort column ascending">Nombre</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 120px;"
                                     aria-label="Office: activate to sort column ascending">Precio</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Imagen</th>
@@ -57,7 +57,11 @@
                             <tr>
                             <th><?php echo $value->kit_id;?></th>
                             <td><?php echo str_to_first_capital($value->name);?></td>
-                            <td><?php echo format_number_dolar($value->price);?></td>
+                            <td>
+                                <span class="badge badge-pill badge-success" style="font-size: 100%;">
+                                    S/. <?php echo $value->price;?>    
+                                </span>
+                            </td>
                             <td>
                                 <img width="100" src="<?php echo site_url()."static/backoffice/images/plan/$value->img";?>" alt="<?php echo $value->name;?>"/>
                             </td>

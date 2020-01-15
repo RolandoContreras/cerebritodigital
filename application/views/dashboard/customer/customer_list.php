@@ -46,6 +46,8 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Kit</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
+                                    aria-label="Age: activate to sort column ascending">Activacion Mensual</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Estado</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Start date: activate to sort column ascending">Acciones</th>
@@ -73,6 +75,16 @@
                                 </td>
                                 <td><?php echo $value->email;?></td>
                                 <td><?php echo $value->kit;?></td>
+                                <td>
+                                    <?php if ($value->active_month == 1) {
+                                        $valor = "Activo";
+                                        $stilo = "label label-success";
+                                    }else{
+                                        $valor = "No Activo";
+                                        $stilo = "label label-danger";
+                                    } ?>
+                                    <span class="<?php echo $stilo;?>"><?php echo $valor;?></span>
+                                </td>
                                 <td>
                                     <?php if ($value->active == 0) {
                                         $valor = "No Activo";

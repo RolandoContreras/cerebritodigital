@@ -42,10 +42,6 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">Cliente</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Tipo</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Imagen</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Kit</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Fecha</th>
@@ -58,28 +54,9 @@
                               <tbody>
                                   <?php foreach ($obj_invoices as $key => $value): ?>
                                 <td><?php echo $value->invoice_id;?></td>
-                                <td><?php echo format_number_dolar($value->total);?></td>
+                                <td><?php echo format_number_moneda_soles($value->total);?></td>
                                 <td><?php echo "@".$value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
-                                <td>
-                                    <?php if ($value->type == 1) {
-                                        $valor = "Activación";
-                                        $stilo = "label label-info";
-                                    }else{
-                                        $valor = "Catalogo";
-                                        $stilo = "label label-waring";
-                                    }?>
-                                    <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
-                                </td>
-                                <td>
-                                    <?php 
-                                    if($value->img != ""){?>
-                                    <img id="<?php echo $key;?>" onclick="modal_img(<?php echo $key;?>);" src='<?php echo site_url()."static/backoffice/invoice/$value->img";?>' width="40" alt="imagen" />
-                                    <?php }else{
-                                        echo "---";
-                                    }
-                                    ?>
-                                </td>
                                 <td><?php echo $value->name;?></td>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
                                 <td>

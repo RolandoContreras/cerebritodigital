@@ -59,7 +59,7 @@
                                 <td><?php echo "@".$value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td><?php echo str_to_first_capital($value->bonus);?></td>
-                                <td><?php echo $value->amount;?></td>
+                                <td>S/. <?php echo $value->amount;?></td>
                                 <td>
                                     <?php if (($value->active == 1) || ($value->active == 2)) {
                                         $valor = "Abonado";

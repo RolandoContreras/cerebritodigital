@@ -19,6 +19,8 @@ class D_customer extends CI_Controller{
                                     customer.first_name,
                                     customer.bank_id,
                                     customer.email,
+                                    customer.date_month,
+                                    customer.active_month,
                                     customer.last_name,
                                     customer.created_at,
                                     customer.active,
@@ -29,7 +31,6 @@ class D_customer extends CI_Controller{
                );
            //GET DATA FROM CUSTOMER
            $obj_customer= $this->obj_customer->search($params);
-  
            /// PAGINADO
             $modulos ='clientes'; 
             $seccion = 'Lista';        
@@ -52,10 +53,8 @@ class D_customer extends CI_Controller{
         }else{
             $date_start = $this->input->post('date_start');
         }
-        $financy =  $this->input->post('financy');
         $kit =  $this->input->post('kit');
         $range =  $this->input->post('rango');
-        
         //GET CUSTOMER_ID
         $customer_id = $this->input->post("customer_id");
         $data = array(
@@ -68,13 +67,14 @@ class D_customer extends CI_Controller{
                 'dni' => $this->input->post('dni'),  
                 'date_start' => $date_start,  
                 'phone' => $this->input->post('phone'),
+                'date_month' => $this->input->post('date_month'),
                 'country' => $this->input->post('pais'),
                 'kit_id' => $kit,
-                'address' => $this->input->post('address'),
                 'bank_id' => $this->input->post('bank_id'),
                 'bank_account' => $this->input->post('bank_account'),
                 'bank_number' => $this->input->post('bank_number'),
                 'bank_number_cci' => $this->input->post('bank_number_cci'),
+                'active_month' => $this->input->post('active_month'),
                 'active' => $this->input->post('active'),
                 'updated_at' => date("Y-m-d H:i:s"),
                 'updated_by' => $_SESSION['usercms']['user_id']
@@ -94,7 +94,6 @@ class D_customer extends CI_Controller{
                          "where" => $where,
             ); 
             $obj_customer  = $this->obj_customer->get_search_row($params); 
-            
             //RENDER
             $this->tmp_mastercms->set("obj_customer",$obj_customer);
           }

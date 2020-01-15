@@ -51,44 +51,13 @@
                                   <label>Fecha</label>
                                     <input class="form-control" type="text" id="date" name="date"  placeholder="YYYY/mm/dd" value="<?php echo isset($obj_invoices->date)?formato_fecha_db_time($obj_invoices->date):"";?>" class="input-xlarge-fluid" placeholder="Fecha">
                               </div>
+                              
+                             
+                          </div>
+                          <div class="form-group col-md-6">
                               <div class="form-group">
                                   <label>Importe</label>
                                     <input class="form-control" type="text" name="price" id="price" value="<?php echo isset($obj_invoices->price)?($obj_invoices->price):"";?>" class="input-xlarge-fluid" placeholder="Precio">
-                              </div>
-                              <div class="form-group">
-                                  <label for="inputState">Estado</label>
-                                    <select name="active" id="active" class="form-control">
-                                        <option value="">[ Seleccionar ]</option>
-                                        <option value="0" <?php if(isset($obj_invoices)){
-                                            if($obj_invoices->active == 0){ echo "selected";}
-                                        }else{echo "";} ?>>Sin Acción</option>
-                                        <option value="1" <?php if(isset($obj_invoices)){
-                                            if($obj_invoices->active == 1){ echo "selected";}
-                                        }else{echo "";} ?>>Esperando Activación</option>
-                                        <option value="2" <?php if(isset($obj_invoices)){
-                                            if($obj_invoices->active == 2){ echo "selected";}
-                                        }else{echo "";} ?>>Procesado</option>
-                                        <option value="3" <?php if(isset($obj_invoices)){
-                                            if($obj_invoices->active == 3){ echo "selected";}
-                                        }else{echo "";} ?>>Cancelado</option>
-                                </select>
-                              </div>
-                          </div>
-                          <div class="form-group col-md-6">
-                             <?php 
-                              if(isset($obj_invoices->invoice_id)){ ?>
-                                    <div class="form-group">
-                                          <label>Imagen Actual</label><br/>
-                                          <img src='<?php echo site_url()."static/backoffice/invoice/$obj_invoices->img";?>' width="100" />
-                                          <input class="form-control" type="hidden" name="img2" id="img2" value="<?php echo isset($obj_invoices)?$obj_invoices->img:"";?>">
-                                      </div>
-                              <?php } ?>
-                              <div class="form-group">
-                                    <label>Imagen</label>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file" id="image_file">
-                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                    </div>
                               </div>
                               <div class="form-group">
                               <label for="inputState">Kit</label>
@@ -110,16 +79,23 @@
                                     <?php endforeach; ?>
                                 </select>
                               </div>
-                              <div class="form-group">
-                              <label for="inputState">Tipo</label>
-                                    <select name="type" id="type" class="form-control">
-                                    <option value="1" <?php if(isset($obj_invoices)){
-                                          if($obj_invoices->type == 1){ echo "selected";}
-                                      }else{echo "";} ?>>Pago de Kit</option>
-                                    <option value="2" <?php if(isset($obj_invoices)){
-                                          if($obj_invoices->type == 2){ echo "selected";}
-                                      }else{echo "";} ?>>Pago Reconsumos</option>
-                                    </select>
+                               <div class="form-group">
+                                  <label for="inputState">Estado</label>
+                                    <select name="active" id="active" class="form-control">
+                                        <option value="">[ Seleccionar ]</option>
+                                        <option value="0" <?php if(isset($obj_invoices)){
+                                            if($obj_invoices->active == 0){ echo "selected";}
+                                        }else{echo "";} ?>>Sin Acción</option>
+                                        <option value="1" <?php if(isset($obj_invoices)){
+                                            if($obj_invoices->active == 1){ echo "selected";}
+                                        }else{echo "";} ?>>Esperando Activación</option>
+                                        <option value="2" <?php if(isset($obj_invoices)){
+                                            if($obj_invoices->active == 2){ echo "selected";}
+                                        }else{echo "";} ?>>Procesado</option>
+                                        <option value="3" <?php if(isset($obj_invoices)){
+                                            if($obj_invoices->active == 3){ echo "selected";}
+                                        }else{echo "";} ?>>Cancelado</option>
+                                </select>
                               </div>
                           </div>
                         </div>

@@ -28,7 +28,6 @@
     <meta name="theme-color" content="#ffffff">
   <!--END FAVICON-->
   <link type="text/css" media="only screen and (max-width: 768px)" href="<?php echo site_url().'static/page_front/css/style_5.css';?>" rel="stylesheet">
-  <!--[if lt IE 9]><linkrel=stylesheet id=vc_lte_ie9-css href=http://c2a2v9c8.stackpathcdn.com/demo-test-prep/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css type=text/css media=screen><![endif]-->
   <script src="<?php echo site_url().'static/page_front/js/jquery.js';?>"></script>
   <script>
     var lpGlobalSettings = {"localize":{}};

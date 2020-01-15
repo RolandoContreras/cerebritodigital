@@ -59,7 +59,6 @@ $route['courses/([0-9a-z_-]+)'] = 'courses/category/$1';
 $route['courses/([0-9a-z_-]+)/([0-9]+)'] = 'courses/category/$1';
 $route['courses/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'courses/detail/$1';
 
-
 $route['register/validate_username'] = "register/validate_username";
 $route['register/validate'] = "register/validate";
 $route['register/([0-9a-z_-]+)'] = "register/index/$1";
@@ -89,6 +88,11 @@ $route['backoffice/pay'] = "b_pay";
 $route['backoffice/pay/validate_amount'] = "b_pay/validate_amount";
 $route['backoffice/pay/make_pay'] = "b_pay/make_pay";
 
+$route['course'] = "c_home";
+$route['course/([0-9]+)'] = 'c_home/index/$1';
+$route['course/([0-9a-z_-]+)'] = 'c_home/category/$1';
+$route['course/([0-9a-z_-]+)/([0-9]+)'] = 'c_home/category/$1';
+$route['course/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'c_home/detail/$1';
 
 $route['dashboard'] = "dashboard";
 $route['dashboard/panel'] = "panel";

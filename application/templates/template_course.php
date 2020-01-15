@@ -23,15 +23,16 @@
     <meta name="msapplication-TileImage" content="<?php echo site_url().'static/page_front/img/logo/favicon/ms-icon-144x144.png';?>">
     <meta name="theme-color" content="#ffffff">
   <!--END FAVICON-->
-  <link type=text/css media=all href=http://wordpresslms.thimpress.com/demo-test-prep/wp-content/cache/autoptimize/9/css/autoptimize_d8ed8daf3270558ee5d6730cfe03410e.css rel=stylesheet>
-  <link type=text/css media=screen href=http://wordpresslms.thimpress.com/demo-test-prep/wp-content/cache/autoptimize/9/css/autoptimize_fc6c4d0dbfbf9079e139f0464fbe69ae.css rel=stylesheet>
-  <link type=text/css media="only screen and (max-width: 768px)" href=http://wordpresslms.thimpress.com/demo-test-prep/wp-content/cache/autoptimize/9/css/autoptimize_dcb2de333eec7ab4ae31385ed8d6a393.css rel=stylesheet>
-  <link rel=stylesheet id=dashicons-css href=http://c2a2v9c8.stackpathcdn.com/demo-test-prep/wp-includes/css/dashicons.min.css type=text/css media=all>
-  <link rel=stylesheet id=thim-style-options-css href=http://wordpresslms.thimpress.com/demo-test-prep/wp-content/cache/autoptimize/9/css/autoptimize_single_cf73edda1d1be399b698c9cfe2521e20.css type=text/css media=all>
-  <script src=http://c2a2v9c8.stackpathcdn.com/demo-test-prep/wp-includes/js/jquery/jquery.js></script>
+  <link type="text/css" media="all" href="<?php echo site_url().'static/course/css/autoptimize_d8.css';?>" rel="stylesheet">
+  <link type="text/css" media="screen" href="<?php echo site_url().'static/course/css/autoptimize_fc6.css';?>" rel="stylesheet">
+  <link type="text/css" media="only screen and (max-width: 768px)" href="<?php echo site_url().'static/course/css/autoptimize_dcb.css';?>" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo site_url().'static/course/css/dashicons.min.css';?>" type="text/css" media="all">
+  <link rel="stylesheet" href="<?php echo site_url().'static/course/css/autoptimize_single_cf7.css';?>" type=text/css media="all">
+  <script src="<?php echo site_url().'static/course/js/jquery.js';?>"></script>
   <script>
     var lpGlobalSettings = {"localize":{}};
   </script>
+  <script src="https://use.fontawesome.com/bd71157fab.js"></script>
 </head>
 <body class="lp_course-template-default single single-lp_course postid-486 wp-embed-responsive theme-wordpress-lms wordpress-lms learnpress learnpress-page pmpro-body-has-access woocommerce-no-js pagetitle-show bg-type-color thim-body-visual-composer responsive lp_login_popup box-shadow auto-login ltr learnpress-v3 course-free header-template-overlay thim-lp-layout-2 lp-landing wpb-js-composer js-comp-ver-6.0.5 vc_responsive course-item-popup viewing-course-item viewing-course-item-489 course-item-lp_lesson">
   <div id=thim-preloading>
@@ -130,6 +131,6 @@
   <script>
     WebFont.load({google:{families:['Roboto:400,300']}});
   </script>
-  <script defer src=http://wordpresslms.thimpress.com/demo-test-prep/wp-content/cache/autoptimize/9/js/autoptimize_ff6f2f9b560d054925d62b4dc5a021ad.js></script>
+  <script defer src="<?php echo site_url().'static/course/js/autoptimize_ff6.js';?>"></script>
 </body>
 </html>

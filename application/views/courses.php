@@ -42,7 +42,11 @@
                         <span>Inicio</span></a>
                     <span class="breadcrum-icon"><i class="fa fa-angle-right" aria-hidden=true></i></span>
                 </li>
-                <li><span title="Todos los Cursos">Todos los Cursos</span></li>
+                <li>
+                    <a href="<?php echo site_url().'courses';?>">
+                        <span title="Todos los Cursos">Todos los Cursos</span>
+                    </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -58,77 +62,76 @@
                       <a href=javascript:; class="grid switchToGrid switcher-active"> <ion-icon name="grid"></ion-icon></a>
                       <a href=javascript:; class="list switchToList"> <ion-icon name="grid"></ion-icon></a></div>
                     <div class=course-index>
-                      <span>Showing 1-9 of 19 results</span></div>
+                      <span>Mostrando 12 de <?php echo $total;?> resultados</span></div>
                     <div class=courses-searching>
-                      <form method="get" action="#">
-                          <input type="text" value name="" placeholder="Busca tu curso" class="form-control course-search-filter" autocomplete=off>
-                          <button type="submit"> <ion-icon name="search"></ion-icon></button>
-                          <span class=widget-search-close></span>
-                      </form>
+                        <form method="get" action="<?php echo site_url().'courses';?>">
+                            <input type="text" name="search" placeholder="Busca tu curso" class="form-control course-search-filter" autocomplete="off">
+                            <button type="submit">
+                                <ion-icon name="search"></ion-icon>
+                            </button>
+                            <span class="widget-search-close"></span>
+                        </form>
                     </div>
                   </div>
                   <div class="archive-courses course-grid archive_switch">
                     <div class="learn-press-courses row">
-                      <article class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-3946 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-business course_category-design course_category-marketing pmpro-has-access course">
-                        <div class=content>
-                          <div class=thumbnail>
-                            <a href="<?php echo site_url()."courses/desarrollo-personal/aprende-liderazgo";?>" class=img_thumbnail>
-                                <img width=365 height=405 src="<?php echo site_url().'static/cursos/img/desarrollo_personal365x405.jpg';?>" alt="Desarrollo Personal" class> 
-                            </a>
-                            <span class=price><span class=course-price>Libre</span>
-                            </span>
-                            <div class="review ">
-                              <div class=sc-review-stars>
-                                <div class=review-stars-rated>
-                                  <div class="review-stars empty"></div>
-                                  <div class="review-stars filled" style=width:100%;></div>
+                      <?php 
+                      foreach ($obj_videos_all as $value) { ?>  
+                            <article class="col-md-4 col-12 col-sm-6 col-xs-6 lpr-course post-3946 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-business course_category-design course_category-marketing pmpro-has-access course">
+                            <div class=content>
+                              <div class=thumbnail>
+                                <a href="<?php echo site_url()."courses/$value->category_slug/$value->slug";?>" class="img_thumbnail">
+                                    <img width=365 height=405 src="<?php echo site_url()."static/course/img/$value->img";?>" alt="<?php echo $value->name;?>"> 
+                                </a>
+                                <span class="price">
+                                    <span class=course-price>Libre</span>
+                                </span>
+                                <div class="review ">
+                                  <div class=sc-review-stars>
+                                    <div class=review-stars-rated>
+                                      <div class="review-stars empty"></div>
+                                      <div class="review-stars filled" style=width:100%;></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="button-when-logged has-wishlist"></div>
+                              </div>
+                              <div class=sub-content>
+                                <h3 class="title">
+                                  <a href='<?php echo site_url()."courses/$value->category_slug/$value->slug";?>'><?php echo $value->name;?></a>
+                                </h3>
+                                <div class=date-comment>
+                                    <span class=date-meta><?php echo formato_fecha_dia_mes($value->date);?></span></div>
+                                <div class=content-list>
+                                  <div class=course-description>
+                                    <p><?php echo $value->summary;?></p>
+                                  </div>
+                                  <ul class="courses_list_info">
+                                    <li>
+                                      <label>Revisar:</label>
+                                      <div class="review ">
+                                        <div class=sc-review-stars>
+                                          <div class=review-stars-rated>
+                                            <div class="review-stars empty"></div>
+                                            <div class="review-stars filled" style=width:100%;></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                             </div>
-                            <div class="button-when-logged has-wishlist"></div>
-                          </div>
-                          <div class=sub-content>
-                            <h3 class="title">
-                              <a href='<?php echo site_url()."courses/desarrollo-personal/aprende-liderazgo";?>'>Aprende Liderazgo</a>
-                            </h3>
-                            <div class=date-comment>
-                              <span class=date-meta>02 Enero, 2019</span></div>
-                            <div class=content-list>
-                              <div class=course-description>
-                                <p>If you are a newbie to managing a WordPress website, then congratulations! You are here at the right track with us because
-                                  we are going to introduce you one of the most basic knowledge when owning a WordPress page</p>
-                              </div>
-                              <ul class=courses_list_info>
-                                <li>
-                                  <label>Review:</label>
-                                  <div class="review ">
-                                    <div class=sc-review-stars>
-                                      <div class=review-stars-rated title="0 out of 5 stars">
-                                        <div class="review-stars empty"></div>
-                                        <div class="review-stars filled" style=width:100%;></div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </li>
-                              </ul>
+                            <div class=course-info>
+                              <div class=course-price>
+                                <span class=price>Libre</span></div>
                             </div>
-                          </div>
-                        </div>
-                        <div class=course-info>
-                          <div class=course-price>
-                            <span class=price>Libre</span></div>
-                        </div>
-                      </article>
+                          </article>
+                      <?php } ?>  
                     </div>
-                    <nav class=learn-press-pagination>
-                      <ul class=page-numbers>
-                        <li><span aria-current=page class='page-numbers current'>1</span></li>
-                        <li><a class=page-numbers href="#">2</a>
-                        </li>
-                        <li><a class=page-numbers href="#">3</a>
-                        </li>
-                        <li><a class="next page-numbers" href="#">></a>
-                        </li>
+                    <nav class="learn-press-pagination">
+                      <ul class="page-numbers">
+                        <?php  echo $obj_pagination; ?>
                       </ul>
                     </nav>
                     <div class=thim-loading-icon>
@@ -148,12 +151,12 @@
             <aside id=thim-courses-categories-2 class="widget widget_thim-courses-categories">
               <h4 class="widget-title">Categorias</h4>
               <ul class=courses-categories>
-                <li class="cat-item ">
-                  <a href="#">Desarrollo Personal</a>
-                </li>
-                <li class="cat-item ">
-                  <a href="#">Finanzas</a>
-                </li>
+                  <?php 
+                  foreach ($obj_category_videos as $value) { ?>
+                        <li class="cat-item">
+                            <a href="<?php echo site_url()."courses/$value->slug";?>"><?php echo $value->name;?></a>
+                        </li>
+                  <?php } ?>
               </ul>
             </aside>
         </aside>

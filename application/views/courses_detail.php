@@ -22,11 +22,11 @@
         <div class="main-top parallax" style="background-image:url(<?php echo site_url().'static/page_front/img/learn_3.png';?>);"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.1);"></span>
           <div class="content container">
             <div class=text-title>
-              <h1>Desarrollo Personal para Empresarios</h1>
+              <h1><?php echo $obj_video->name;?></h1>
             </div>
             <div class=text-description>
               <div class=banner-description>
-                  A través de este vídeo aprenderás cuales son los factores que necesitas para seguir avanzando en tu día a día.</div>
+                  CURSO DE HOY</div>
             </div>
           </div>
         </div>
@@ -45,19 +45,22 @@
                       <div class=landing-2>
                         <div class=main-course>
                           <div class=course-thumbnail>
-                              <img src="<?php echo site_url().'static/cursos/img/desarrollo_personal.jpg';?>" alt=home-1-bg title=home-1-bg>
-                            <a href="https://www.youtube.com/watch?v=i0yC9FWrgfw" class="play-button video-thumbnail"><span class="video-thumbnail hvr-push"></span></a>
+                              <img src="<?php echo site_url()."static/course/img/$obj_video->img2";?>" alt="<?php echo $obj_video->name;?>" title="<?php echo $obj_video->name;?>">
+                              <a href="<?php echo $obj_video->video;?>" class="play-button video-thumbnail"><span class="video-thumbnail hvr-push"></span></a>
                             <div class=time>
-                              <div class=date-start>21</div>
-                              <div class=month-start>Jul</div>
+                                <div class=date-start><?php echo formato_fecha_dia($obj_video->date);?></div>
+                                <div class=month-start><?php echo formato_fecha_mes($obj_video->date);?></div>
                             </div>
                           </div>
                           <div class=course-info>
                             <ul class="list-inline clearfix">
                               <li class="list-inline-item item-categories"><label>Categoria</label>
-                              <span class=cat-links><a href="#">Desarrollo Personal</a></span></li>
+                                <span class=cat-links>
+                                    <a><?php echo $obj_video->category_name;?></a>
+                                </span>
+                              </li>
                             <li class="list-inline-item item-review"><label>Review</label>
-                              <div class=review-stars-rated title="0 out of 5 stars">
+                              <div class=review-stars-rated title="5 out of 5 stars">
                                 <div class="review-stars empty"></div>
                                 <div class="review-stars filled" style=width:100%;></div>
                               </div>
@@ -70,7 +73,7 @@
                               <div class="container wrapper clearfix">
                                 <div class="course-purchase-info has-wishlist">
                                   <div class="learn-press-course-buttons lp-course-buttons">
-                                    <form name=enroll-course class=enroll-course method=post enctype=multipart/form-data>
+                                      <form name="enroll-course" class=enroll-course action="<?php echo site_url().'register';?>" enctype="multipart/form-data">
                                       <button class="lp-button button button-enroll-course">Regístrate </button>
                                     </form>
                                   </div>
@@ -79,86 +82,38 @@
                             </div>
                             <div class=course-description id=learn-press-course-description>
                               <div id=tab-overview>
-                                <h4>Descripción</h4>
-                                <p>If you are a newbie to managing a WordPress website, then congratulations! You are here at the right track with us because
-                                  we are going to introduce you one of the most basic knowledge when owning a WordPress page: how to find your site the
-                                  best WordPress Hosting service. This process is often overlooked by most of the website owners. But it can be considered
-                                  the most important key point to bring your site to stand out of the crowd. A great hosting service could help you to
-                                  improve SEO and increase sales as well.</p>
-                                <h4>Logros</h4>
-                                <ul>
-                                  <li>Over 37 lectures and 55.5 hours of content!</li>
-                                  <li>LIVE PROJECT End to End Software Testing Training Included.</li>
-                                  <li>Learn Software Testing and Automation basics from a professional trainer from your own desk.</li>
-                                  <li>Information packed practical training starting from basics to advanced testing techniques.</li>
-                                  <li>Best suitable for beginners to advanced level users and who learn faster when demonstrated.</li>
-                                  <li>Course content designed by considering current software testing technology and the job market.</li>
-                                  <li>Practical assignments at the end of every session.</li>
-                                  <li>Practical learning experience with live project work and examples.</li>
-                                </ul>
+                                  <?php echo $obj_video->description;?>
                               </div>
                             </div>
                             <div id=tab-curriculum style="height: 68px;"></div>
-                            <div class=course-curriculum id=learn-press-course-curriculum>
-                              <div class=curriculum-heading>
-                                <div class=title>
-                                  <h2 class="course-curriculum-title">Contenido de la Categoría</h2>
-                                </div>
-                                <span class=total-lessons>Total learning: <span class=text>8 lessons</span><span class=text> / 3 quizzes</span></span>
-                                <span  class=total-time>Time: <span class=text>10 weeks</span></span>
-                              </div>
-                              <ul class=curriculum-sections>
-                                <li class=section id=section-236 data-id=236>
-                                  <h4 class="section-header"><span class=collapse></span>Section 1 <span class=section-description>Desarrollo Personal</span>
-                                    <span class=meta><span class=step>0/4</span></span>
-                                  </h4>
-                                  <ul class=section-content>
-                                    <li class="course-item course-item-lp_lesson course-item-487 item-preview has-status" data-type=lp_lesson>
-                                        <span class=course-format-icon><ion-icon name="desktop"></ion-icon></span>
-                                        <a class=section-item-link href="#">
-                                          <span class=item-name>Cursos de Marketing</span>
-                                          <span class=course-item-meta>
-                                            <span class="lp-label lp-label-preview">Ver</span>
-                                          </span>
-                                        </a>
-                                    </li>
-                                    <li class="course-item course-item-lp_lesson course-item-488 item-preview has-status" data-type=lp_lesson>
-                                        <span class=course-format-icon><ion-icon name="desktop"></ion-icon></span>
-                                        <a class="section-item-link" href="#">
-                                              <span class=item-name>Introducción a la aplicaciones web</span>
-                                              <span class=course-item-meta>
-                                                <span class="lp-label lp-label-preview">Ver</span>
-                                              </span>
-                                        </a>
-                                    </li>
-                                  </ul>
-                                </li>
-                              </ul>
-                            </div>
                           <div class=thim-related-course>
                             <h3 class="related-title">Cursos Relacionados</h3>
                             <div class="courses-carousel archive-courses course-grid owl-carousel owl-theme" data-cols=3>
                               <!--CARRUCEL-->
-                              <div class="inner-course in-membership">
-                                <div class=wrapper-course-thumbnail>
-                                    <a href="<?php echo site_url().'courses/desarrollo-personal/aprende-liderazgo'?>" class="img_thumbnail">
-                                      <img width=277 height=310 src="<?php echo site_url().'static/cursos/img/desarrollo_personal365x405.jpg';?>" alt="Desarrollo personasl" class></a>
-                                  <div class=course-price><span class=course-origin-price>&#36;33.00</span><span class=price>&#036;22.00</span></div>
-                                  <div class=course-rating>
-                                    <div class=review-stars-rated title="0 out of 5 stars">
-                                      <div class="review-stars empty"></div>
-                                      <div class="review-stars filled" style=width:0%;></div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class=item-list-center>
-                                  <div class=course-title>
-                                    <h2 class="title">
-                                        <a href="<?php echo site_url().'courses/desarrollo-personal/aprende-liderazgo'?>"> Marketing y Programación Web</a>
-                                    </h2>
-                                  </div><span class=date-comment><span class=date>July 21, 2017</span></span>
-                                </div>
-                              </div>
+                              <?php 
+                              foreach ($obj_videos_rand as $value) { ?>
+                                    <div class="inner-course in-membership">
+                                        <div class=wrapper-course-thumbnail>
+                                            <a href="<?php echo site_url()."courses/$value->category_slug/$value->slug"?>" class="img_thumbnail">
+                                              <img width=277 height=310 src="<?php echo site_url()."static/course/img/$value->img";?>" alt="<?php echo $value->name;?>"></a>
+                                          <div class=course-rating>
+                                            <div class=review-stars-rated title="0 out of 5 stars">
+                                              <div class="review-stars empty"></div>
+                                              <div class="review-stars filled" style=width:0%;></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class=item-list-center>
+                                          <div class=course-title>
+                                            <h2 class="title">
+                                                <a href="<?php echo site_url()."courses/$value->category_slug/$value->slug"?>"><?php echo $value->name;?></a>
+                                            </h2>
+                                          </div><span class="date-comment">
+                                              <span class="date"><?php echo formato_fecha($value->date);?></span>
+                                          </span>
+                                        </div>
+                                      </div>
+                              <?php } ?>
                             </div>
                           </div>
                         </div>
@@ -170,7 +125,7 @@
                         <div class=inner-content>
                           <div class=button-box>
                             <div class="learn-press-course-buttons lp-course-buttons">
-                              <form name=enroll-course class=enroll-course method=post enctype=multipart/form-data>
+                                <form name="enroll-course" class=enroll-course action="<?php echo site_url().'register';?>" enctype="multipart/form-data">
                                   <button class="lp-button button button-enroll-course">Regístrate </button>
                                </form>
                             </div>

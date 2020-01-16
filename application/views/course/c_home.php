@@ -1,7 +1,7 @@
 <div class=content-item-wrap>
   <div class="learn-press-video-intro thim-lesson-media">
     <div class=wrapper>
-        <iframe width=980 height=550 src="https://www.youtube.com/embed/<?php echo $video_link;?>?rel=0&amp;showinfo=0" frameborder allowfullscreen></iframe>
+        <iframe width=980 height=550 src="https://www.youtube.com/embed/<?php echo $video_link;?>" frameborder allowfullscreen></iframe>
     </div>
   </div>
   <div class=content-item-summary>

@@ -56,18 +56,44 @@
                 <img class=retina-logo-sticky src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" alt="Cerebrito Digital" width=695 height=100>
             </a>
           </div>
+             <?php
+          $url = explode("/",uri_string());
+            if(isset($url[0])){
+                $nav = $url[0];
+            }else{
+                $nav = "";
+            }
+            $home_syle = "";
+            $about_syle = "";
+            $courses_syle = "";
+            $register_syle = "";
+            switch ($nav) {
+                case "about":
+                    $about_syle = "current-menu-parent";
+                    break;
+                case "courses":
+                    $courses_syle = "current-menu-parent";
+                    break;
+                case "register":
+                    $register_syle = "current-menu-parent";
+                    break;
+                default:
+                    $home_syle = "current-menu-parent";
+                    break;
+            }
+          ?>
           <div class=width-navigation>
             <ul id=primary-menu class=main-menu>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                <li class="menu-item menu-item-object-custom menu-item-22 <?php echo $home_syle;?> tc-menu-item tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url();?>" class=tc-menu-inner>Inicio</a>
                 </li>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-22 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                <li class="menu-item menu-item-object-custom menu-item-22 <?php echo $about_syle;?> tc-menu-item tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url().'about';?>" class=tc-menu-inner>Acerca</a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4509 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                <li class="menu-item menu-item-object-custom menu-item-22 <?php echo $courses_syle;?> tc-menu-item tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Cursos</a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4509 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                <li class="menu-item menu-item-object-custom <?php echo $register_syle;?> menu-item-22 tc-menu-item tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url()."register";?>" class=tc-menu-inner>¡Regístrate!</a>
                 </li>
             </ul>

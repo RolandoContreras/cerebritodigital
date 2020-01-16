@@ -18,7 +18,7 @@
                   <div class="profile-tile">
                     <a class="profile-tile-box">
                         <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/posicion.png';?>"> </div>
-                      <div class="pt-user-name"> <b><?php echo $obj_total->total_posicion;?> Kits</b> <br> Posición </div>
+                      <div class="pt-user-name"> <b><?php echo $obj_total->total_posicion;?> Kit</b> <br> Posición </div>
                     </a>
                   </div>
                 </div>
@@ -26,7 +26,7 @@
                   <div class="profile-tile">
                     <a class="profile-tile-box" href="#">
                       <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/plan.png';?>"> </div>
-                      <div class="pt-user-name"> <b><?php echo $obj_total->total_pack_1;?> Kits</b> <br> Pack1 </div>
+                      <div class="pt-user-name"> <b><?php echo $obj_total->total_pack_1;?> Kit</b> <br> STANDAR </div>
                     </a>
                   </div>
                 </div>
@@ -38,7 +38,7 @@
                   <div class="profile-tile">
                     <a class="profile-tile-box" href="#">
                       <div class="pt-avatar-w"> <img src="<?php echo site_url().'static/backoffice/images/plan/plan_2.png';?>"> </div>
-                      <div class="pt-user-name"> <b><?php echo $obj_total->total_pack_2;?> Kits</b> <br> Pack2 </div>
+                      <div class="pt-user-name"> <b><?php echo $obj_total->total_pack_2;?> Kit</b> <br> PREMIUM </div>
                     </a>
                   </div>
                 </div>

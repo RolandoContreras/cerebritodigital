@@ -24,6 +24,9 @@
                   <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Cursos</a>
                   </li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                      <a href="<?php echo site_url().'register';?>" class=tc-menu-inner>Regístrate</a>
+                  </li>
                 </ul>
               </div>
             </aside>
@@ -33,12 +36,13 @@
               <h3 class="widget-title">Cursos</h3>
               <div class=menu-links-container>
                 <ul id="menu-links" class="menu">
-                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Desarrollo Personal</a>
-                  </li>
-                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Finanzas</a>
-                  </li>
+                    <?php 
+                     foreach ($obj_category_videos as $value) { ?>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                            <a href="<?php echo site_url()."courses/$value->slug";?>" class=tc-menu-inner><?php echo $value->name;?></a>
+                        </li>
+                    <?php } ?>
+                  
                 </ul>
               </div>
             </aside>

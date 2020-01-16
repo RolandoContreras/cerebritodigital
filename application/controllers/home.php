@@ -7,11 +7,13 @@ class Home extends CI_Controller {
         $this->load->model("comments_model","obj_comments");
         $this->load->model("customer_model","obj_customer");
         $this->load->model("paises_model","obj_paises");
+        $this->load->model("category_model","obj_category");
     }   
 
         public function index(){
-             //get paises
-		$this->load->view('home');
+             //get data nav courses category
+            $data['obj_category_videos'] = $this->nav_videos();
+            $this->load->view('home',$data);
 	}
         
         public function send_messages(){
@@ -38,4 +40,15 @@ class Home extends CI_Controller {
                 exit();
             }
 	}
+        
+        public function nav_videos(){
+            $params_category_videos = array(
+                        "select" =>"category_id,
+                                    slug,
+                                    name",
+                "where" => "type = 1 and active = 1",
+            );
+            //GET DATA COMMENTS
+            return $obj_category_videos = $this->obj_category->search($params_category_videos);
+        }
 }

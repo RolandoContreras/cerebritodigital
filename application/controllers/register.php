@@ -7,10 +7,14 @@ class Register extends CI_Controller {
         $this->load->model("customer_model","obj_customer");
         $this->load->model("paises_model","obj_paises");
         $this->load->model("unilevel_model","obj_unilevel");
+        $this->load->model("category_model","obj_category");
     }
 
 	public function index()
 	{
+            //get data nav courses category
+            $data['obj_category_videos'] = $this->nav_videos();
+            
             $url = explode("/", uri_string());
             if (isset($url[1])) {
                 $username = $url[1];
@@ -214,5 +218,16 @@ class Register extends CI_Controller {
                 "where" => "id_idioma = 7");
             $obj_paises = $this->obj_paises->search($params);
             return $obj_paises;
+        }
+        
+        public function nav_videos(){
+            $params_category_videos = array(
+                        "select" =>"category_id,
+                                    slug,
+                                    name",
+                "where" => "type = 1 and active = 1",
+            );
+            //GET DATA COMMENTS
+            return $obj_category_videos = $this->obj_category->search($params_category_videos);
         }
 }

@@ -90,6 +90,9 @@
                             <p class="login-password">
                                 <input type="password" name="password" id="password" class="input required" size="20" placeholder="Contraseña">
                             </p>
+                            <div class="form-group margin-top">
+                                <div class="g-recaptcha" data-sitekey="6LfcPs4UAAAAAHJsduwopVs4E9Otab1oau6Qjj_I"></div>
+                            </div>
                                 <div class=login-extra-options>
                                     <a class=lost-pass-link href="<?php echo site_url().'forget';?>" title="Lost Password">¿Olvidaste tu contraseña?</a>
                                 </div>

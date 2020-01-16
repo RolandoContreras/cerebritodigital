@@ -59,9 +59,9 @@
                                         default:$kit = "POSICIÓN";$img = "posicion.png";break;
                                   }
                                   if($obj_customer->active_month == 1){
-                                    $text = "Activo";
+                                    $text = "<div class='value badge badge-pill badge-success'> Activo </div>";
                                   }else{
-                                    $text = "Inactivo";  
+                                    $text = "<div class='value badge badge-pill badge-danger'> Inactivo </div>";  
                                   }?>
                                   <div id="level-0" data-html="true" data-toggle="popover" data-content="&lt;b&gt;Usuario:&lt;/b&gt; <?php echo $obj_customer->username;?> &lt;br&gt; &lt;b&gt;Nombre:&lt;/b&gt; <?php echo $obj_customer->first_name." ".$obj_customer->last_name;?> &lt;br&gt; &lt;b&gt;Plan:&lt;/b&gt; <?php echo $kit;?>  &lt;/b&gt; &lt;br&gt; &lt;b&gt;Estado:&lt;/b&gt; <?php echo $text;?> &lt;/b&gt; &lt;br&gt; &lt;b&gt;">
                                       <img src='<?php echo site_url()."static/backoffice/images/plan/$img";?>' class="img-responsive" style="width: 110px;"> </div>
@@ -78,9 +78,9 @@
                                                     default:$kit = "POSICIÓN";$img = "posicion.png";break;
                                               }
                                              if($value->active_month == 1){
-                                                $text_2 = "Activo";
+                                                $text_2 = "<div class='value badge badge-pill badge-success'> Activo </div>";
                                               }else{
-                                                $text_2 = "Inactivo";  
+                                                $text_2 = "<div class='value badge badge-pill badge-danger'> Inactivo </div>";  
                                               }?>
                                                 <li>
                                                     <a href="<?php echo site_url().'backoffice/unilevel/'.encrypt($value->customer_id);?>">
@@ -100,9 +100,9 @@
                                                                        default:$kit = "POSICIÓN";$img = "posicion.png";break;
                                                                       }
                                                                  if($value3->active_month == 1){
-                                                                    $text_3 = "Activo";
+                                                                    $text_3 = "<div class='value badge badge-pill badge-success'> Activo </div>";
                                                                   }else{
-                                                                    $text_3 = "Inactivo";  
+                                                                    $text_3 = "<div class='value badge badge-pill badge-danger'> Inactivo </div>";
                                                                   }?>
                                                                 <?php if($value->customer_id == $value3->parend_id){ ?>
                                                                     <li>
@@ -122,9 +122,10 @@
                                                                                                    default:$kit = "POSICIÓN";$img = "posicion.png";break;
                                                                                                   }
                                                                                                 if($value4->active_month == 1){
-                                                                                                    $text_4 = "Activo";
+                                                                                                    $text_4 = "<div class='value badge badge-pill badge-success'> Activo </div>";
                                                                                                   }else{
-                                                                                                    $text_4 = "Inactivo";  
+                                                                                                    $text_4 = "<div class='value badge badge-pill badge-danger'> Inactivo </div>";
+                                                                                                    
                                                                                                   }?>
                                                                                             <?php if($value3->customer_id == $value4->parend_id){ ?>
                                                                                                     <li>

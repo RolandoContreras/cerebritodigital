@@ -15,9 +15,42 @@
               <div class="element-box p-2">
                 <div class="card">
                   <div class="body pad-materiais" align="center"> 
-                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/images/imagen_presentacion.jpg';?>">
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/logo.png';?>">
                     <p class="titulo-materiais">[ES] Presentación de negocios</p> 
-                    <a href="<?php echo site_url().'static/backoffice/files/presentacion_embajada_fk.pptx';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Hacer Descarga </a> 
+                    <a href="<?php echo site_url().'static/backoffice/files/presentacion_embajada_fk.pptx';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Descargar </a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="col-md-3">
+              <div class="element-box p-2">
+                <div class="card">
+                  <div class="body pad-materiais" align="center"> 
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/logo.png';?>">
+                    <p class="titulo-materiais">Logo Cerebrito Digital</p> 
+                    <a href="<?php echo site_url().'static/backoffice/files/logo.png';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Descargar </a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="col-md-3">
+              <div class="element-box p-2">
+                <div class="card">
+                  <div class="body pad-materiais" align="center"> 
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/logo_black.png';?>">
+                    <p class="titulo-materiais">Logo Negro Cerebrito Digital</p> 
+                    <a href="<?php echo site_url().'static/backoffice/files/logo_black.png';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Descargar </a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="element-box p-2">
+                <div class="card">
+                  <div class="body pad-materiais" align="center"> 
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/cd.png';?>">
+                    <p class="titulo-materiais">Logo CD Cerebrito Digital</p> 
+                    <a href="<?php echo site_url().'static/backoffice/files/cd.png';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Descargar </a> 
                   </div>
                 </div>
               </div>

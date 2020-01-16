@@ -15,6 +15,7 @@ class B_home extends CI_Controller {
         $this->get_session();
         //GET CUSTOMER_ID
         $customer_id = $_SESSION['customer']['customer_id'];
+        $active_month = $_SESSION['customer']['active_month'];
         //GET DATA CUSTOMER
         $params = array(
                         "select" =>"customer.username,
@@ -95,6 +96,7 @@ class B_home extends CI_Controller {
         $this->tmp_backoffice->set("obj_next_range",$obj_next_range);
         $this->tmp_backoffice->set("obj_total_referidos",$obj_total_referidos);
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
+        $this->tmp_backoffice->set("active_month",$active_month);
         $this->tmp_backoffice->render("backoffice/b_home");
     }
     

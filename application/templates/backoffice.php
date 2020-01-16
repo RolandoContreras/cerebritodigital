@@ -58,7 +58,7 @@
   <div class="all-wrapper with-side-panel solid-bg-all">
     <div class="layout-w">
       <div class="menu-mobile menu-activated-on-click color-scheme-dark">
-        <div class="mm-logo-buttons-w" style="background: #3d2b16"> <a class="mm-logo" href="<?php echo site_url().'backoffice';?>"> 
+        <div class="mm-logo-buttons-w" style="background: rgb(253, 92, 99);"> <a class="mm-logo" href="<?php echo site_url().'backoffice';?>"> 
                 <img src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" style="max-width: 100%; width: 100px;"> <span></span> </a>
           <div class="mm-buttons">
             <div class="mobile-menu-trigger">
@@ -67,7 +67,19 @@
           </div>
         </div>
         <div class="menu-and-user">
-          <ul class="main-menu" style="background: #4a3116;">
+          <ul class="main-menu" style="background: rgb(253, 92, 99);;">
+              <li>
+                <center>
+                   <span>
+                         <?php 
+                    if($_SESSION['customer']['active_month'] == 1){ ?>
+                            <div class="value badge badge-pill badge-success"> Activo </div>
+                    <?php  }else{ ?>
+                          <div class="value badge badge-pill badge-danger"> Inactivo </div>
+                    <?php } ?>
+                    </span> 
+                </center>
+             </li>
             <li>
               <a href="<?php echo site_url().'course';?>" target="_blank" class="btn btn-glow-primary">
                 <div class="access-dam" align="center" style="background: #00000052; border-radius: 3px; color: #fff; font-weight: 600; padding: 15px;"> 
@@ -119,13 +131,6 @@
                   <div class="os-icon os-icon-wallet-loaded"></div>
                 </div> <span>Cobros</span> </a>
             </li>
-<!--            <li>
-              <a href="<?php echo site_url().'backoffice/carrera';?>">
-                <div class="icon-w"> 
-                    <i class="os-icon os-icon-map"></i> 
-                </div> <span>Plan Carrera</span> 
-              </a>
-            </li>-->
             <li>
               <a href="<?php echo site_url().'backoffice/files';?>" class="" style="padding-top: 4px; padding-bottom: 4px;">
                 <div class="icon-w">
@@ -154,6 +159,12 @@
             <div class="logged-user-info-w">
               <div class="logged-user-name"> <?php echo $_SESSION['customer']['name']; ?></div>
               <div class="logged-user-role"> <?php echo $_SESSION['customer']['username']; ?> </div>
+               <?php 
+                    if($_SESSION['customer']['active_month'] == 1){ ?>
+                            <div class="value badge badge-pill badge-success"> Activo </div>
+                    <?php  }else{ ?>
+                          <div class="value badge badge-pill badge-danger"> Inactivo </div>
+                    <?php } ?>
             </div>
           </div>
         </div>
@@ -217,12 +228,6 @@
                 </ul>
               </div>
             </div>
-          </li>
-          <li>
-            <a href="<?php echo site_url().'backoffice/carrera';?>">
-              <div class="icon-w">
-                <div class="os-icon os-icon-map"></div>
-              </div> <span>Plan Carrera</span> </a>
           </li>
           <li class="sub-header"> <span>Documentos</span> </li>
           <li>

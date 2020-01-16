@@ -25,7 +25,7 @@
                               </div>
                               <div class="plan-body">
                                 <div class="plan-price-w">
-                                    <div class="price-value" style="font-size: 30px;"> <span style="font-size: 10px;"></span> <?php echo format_number_dolar($value->price);?> </div>
+                                    <div class="price-value" style="font-size: 30px;"> <span style="font-size: 10px;"></span>S/. <?php echo $value->price;?> </div>
                                 </div>
                                   <div class="plan-btn-w"> 
                                       <a>

@@ -20,7 +20,7 @@
                     <div class="value-pair">
                       <div class="label"> Estado: </div>
                       <?php 
-                      if($obj_customer->active == "1"){ ?>
+                      if($obj_customer->active_month == "1"){ ?>
                             <div class="value badge badge-pill badge-success"> Activo </div>
                       <?php  }else{ ?>
                           <div class="value badge badge-pill badge-danger"> Inactivo </div>

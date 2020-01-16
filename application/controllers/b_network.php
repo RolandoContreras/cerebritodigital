@@ -69,6 +69,7 @@ class B_network extends CI_Controller {
         $params = array(
                         "select" =>"customer_id,
                                     username,
+                                    active_month,
                                     first_name,
                                     last_name,
                                     kit_id,
@@ -86,6 +87,7 @@ class B_network extends CI_Controller {
                                     customer.last_name,
                                     customer.kit_id,
                                     customer.range_id,
+                                    customer.active_month,
                                     customer.active",
                         "where" => "unilevel.parend_id = $obj_customer->customer_id and customer.status_value = 1",
                         "join" => array('unilevel, unilevel.customer_id = customer.customer_id'),
@@ -106,7 +108,7 @@ class B_network extends CI_Controller {
                  }
                  //DELETE LAST CARACTER ON STRING
                  $customer_id_n2 = substr ($customer_id_n2, 0, strlen($customer_id_n2) - 1);
-                 if(count($customer_id_n2) > 0){
+                 if($customer_id_n2 != ""){
                      $params_customer_n3 = array(
                                     "select" =>"customer.customer_id,
                                                 customer.username,
@@ -114,6 +116,7 @@ class B_network extends CI_Controller {
                                                 customer.last_name,
                                                 customer.kit_id,
                                                 customer.range_id,
+                                                customer.active_month,
                                                 unilevel.parend_id,
                                                 customer.active",
                                 "where" => "unilevel.parend_id in ($customer_id_n2) and customer.status_value = 1",
@@ -151,10 +154,6 @@ class B_network extends CI_Controller {
                                 "order" => "unilevel.unilevel_id ASC"
                                                 );
                             $obj_customer_n4 = $this->obj_customer->search($params_customer_n3);
-                            
-//                            var_dump($obj_customer_n4);
-//                            die();
-                            
                             $direct_4 = count($obj_customer_n4);
                             $this->tmp_backoffice->set("direct_4",$direct_4);
                             $this->tmp_backoffice->set("obj_customer_n4",$obj_customer_n4);   

@@ -17,9 +17,9 @@ class Home extends CI_Controller {
             
             //GET LINK VIDEO HOME FROM OTROS TABLE
             $params = array("select" =>"valor",
-                            "where" => "status_value = 1",
+                            "where" => "otros_id = 1 and status_value = 1",
                                         );
-        $data['video_home'] = $this->obj_otros->get_search_row($params);
+            $data['video_home'] = $this->obj_otros->get_search_row($params);
         $this->load->view('home',$data);
 	}
         

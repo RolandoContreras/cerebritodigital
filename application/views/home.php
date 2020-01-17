@@ -333,8 +333,6 @@
               </div>
             </div>
           </div>
-            
-            
           <div class="wpb_column vc_column_container vc_col-sm-6">
             <div class="vc_column-inner vc_custom_1514102030409">
               <div class=wpb_wrapper>

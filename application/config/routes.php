@@ -63,6 +63,8 @@ $route['register/validate_username'] = "register/validate_username";
 $route['register/validate'] = "register/validate";
 $route['register/([0-9a-z_-]+)'] = "register/index/$1";
 
+$route['forget/recover_pass'] = "forget/recover_pass";
+
 $route['backoffice'] = "b_home";
 
 $route['backoffice/profile'] = "b_profile";

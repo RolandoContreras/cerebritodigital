@@ -1,16 +1,6 @@
 function login(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    var response = grecaptcha.getResponse();
-    if(response.length == 0){
-            $("#res_login").html();
-            var texto = "";
-            texto = texto+'<div class="alert alert-danger">';
-            texto = texto+'<p style="text-align: center;">Captcha no verificado</p>';
-            texto = texto+'</div>';                 
-            $("#res_login").html(texto);
-    }else{
-    
         if(username == ""){
             $("#res_login").html();
             var texto = "";
@@ -55,7 +45,6 @@ function login(){
                }         
              });
             }
-        }
 }
 
 function validar_email( email ){

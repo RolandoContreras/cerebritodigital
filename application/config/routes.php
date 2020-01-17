@@ -96,8 +96,7 @@ $route['course/([0-9a-z_-]+)/([0-9a-z_-]+)'] = 'c_home/detail/$1';
 
 $route['dashboard'] = "dashboard";
 $route['dashboard/panel'] = "panel";
-
-$route['dashboard/panel/export'] = "panel/export";
+$route['dashboard/panel/save_video_home'] = "panel/save_video_home";
 
 $route['dashboard/panel/guardar_btc'] = "panel/guardar_btc";
 $route['dashboard/panel/cambiar_status'] = "panel/cambiar_status";

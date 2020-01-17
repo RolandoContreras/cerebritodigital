@@ -10,16 +10,16 @@
             </bookmark>
         </file>
         <file>
-            <url>application/views/home.php</url>
-            <bookmark id="3">
+            <url>application/views/nav.php</url>
+            <bookmark id="2">
                 <name/>
                 <line>0</line>
                 <key/>
             </bookmark>
         </file>
         <file>
-            <url>application/views/nav.php</url>
-            <bookmark id="2">
+            <url>application/views/home.php</url>
+            <bookmark id="3">
                 <name/>
                 <line>0</line>
                 <key/>
@@ -28,7 +28,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/static/page_front/js/login.js</file>
             <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/header.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/static/page_front/js/home.js</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/home.php</file>
         </group>
     </open-files>
 </project-private>

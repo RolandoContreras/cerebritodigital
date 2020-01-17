@@ -57,10 +57,15 @@
                 </div>
               </div>
               <div class="col-md-6 col-xl-4">
-                <div class="card user-card">
+                  <div class="card user-card">
                   <div class="card-block">
-                    <h5 class="f-w-400 m-b-15">Rangos</h5>
-                    <h4 class="f-w-300 mb-3"><?php echo $obj_total->total_ranges;?></h4><span class="text-muted">Total</span></div>
+                    <h5 class="f-w-400 m-b-15">Video de Inicio</h5>
+                    <h4 class="f-w-300 mb-3">
+                        <input class="form-control" type="text" id="video_home" name="video_home" class="input-xlarge-fluid" value="<?php echo isset($obj_invoices->video_home)?$obj_invoices->video_home:"";?>" placeholder="Ingrese Enlace de Vídeo">
+                    </h4>
+                    <a href="javascript:void(0);" onclick="save_video_home();" class="btn btn-primary  text-uppercase btn-block">Guardar</a>
+                    <div id="res_panel"></div>
+                  </div>
                 </div>
               </div>
               <div class="col-md-6 col-xl-4">
@@ -113,18 +118,6 @@
                     <h3 class="text-white m-t-20 f-w-300"><?php echo $obj_total->total_comments;?></h3>
                     <span class="text-white"><?php echo $obj_pending->pending_comments;?> Pendientes</span></div>
                 </div>
-<!--                <div class="card">
-                  <div class="card-block">
-                    <div class="row">
-                      <div class="col">
-                          <i class="text-c-green" data-feather="shopping-cart" text-c-green></i>
-                        <h6 class="m-t-50 m-b-0">Total Pedido Semana</h6>
-                      </div>
-                      <div class="col text-right">
-                        <h3 class="text-c-green f-w-300"><?php echo $obj_invoices->total_invoice_catalog_week_active;?></h3><span class="text-muted d-block">Pedidos Procesados</span><span class="badge theme-bg text-white m-t-20"><?php echo $obj_invoices->total_invoice_catalog_week;?></span></div>
-                    </div>
-                  </div>
-                </div>-->
               </div>
             <div class="col-md-6 col-xl-4">
               <div class="card">
@@ -295,3 +288,4 @@ $(window).on('resize',function(){
                        ,"valueAxes":[{"gridAlpha":0,"axisAlpha":0,"lineAlpha":0,"fontSize":0,}],"startDuration":1,"graphs":[{"balloonText":"<b>[[category]]: [[value]]</b>","fillColorsField":"color","fillAlphas":0.9,"lineAlpha":0.2,"columnWidth":0.2,"type":"column","valueField":"visits"}],"chartCursor":{"categoryBalloonEnabled":false,"cursorAlpha":0,"zoomable":false},"categoryField":"age","categoryAxis":{"gridPosition":"start","gridAlpha":0,"axisAlpha":0,"lineAlpha":0,}});
     setTimeout(function(){},400);});$('#mobile-collapse').on('click',function(){setTimeout(function(){floatchart();},700);});function floatchart(){$(function(){var options={legend:{show:false},series:{label:"",curvedLines:{active:true,nrSplinePoints:20},},tooltip:{show:true,content:"x : %x | y : %y"},grid:{hoverable:true,borderWidth:0,labelMargin:0,axisMargin:0,minBorderMargin:0,},yaxis:{min:0,max:80,color:'transparent',font:{size:0,}},xaxis:{color:'transparent',font:{size:0,}}};var options_nospace={legend:{show:false},series:{label:"",curvedLines:{active:true,nrSplinePoints:0},},tooltip:{show:true,content:"x : %x | y : %y"},grid:{hoverable:true,borderWidth:0,labelMargin:0,axisMargin:0,minBorderMargin:20,},yaxis:{min:0,max:80,color:'transparent',font:{size:0,}},xaxis:{}};$.plot($("#transactions"),[{data:[[0,48],[1,30],[2,25],[3,30],[4,20],[5,40],[6,30],],color:"#1dc4e9",bars:{show:true,lineWidth:1,fill:true,fillColor:{colors:[{opacity:1},{opacity:1}]},barWidth:0.2,align:'center',horizontal:false},points:{show:false,radius:3,fill:true},curvedLines:{apply:false,}}],{series:{label:"",curvedLines:{active:true,nrSplinePoints:0},},tooltip:{show:true,content:"x : %x | y : %y"},grid:{hoverable:true,borderWidth:0,labelMargin:0,axisMargin:0,minBorderMargin:0,},yaxis:{min:0,max:50,color:'transparent',font:{size:0,}},xaxis:{color:'transparent',font:{size:0,}}});$.plot($("#transactions1"),[{data:[[0,48],[1,30],[2,25],[3,30],[4,20],[5,40],[6,30],],color:"#a389d4",bars:{show:true,lineWidth:1,fill:true,fillColor:{colors:[{opacity:1},{opacity:1}]},barWidth:0.2,align:'center',horizontal:false},points:{show:false,radius:3,fill:true},curvedLines:{apply:false,}}],{series:{label:"",curvedLines:{active:true,nrSplinePoints:0},},tooltip:{show:true,content:"x : %x | y : %y"},grid:{hoverable:true,borderWidth:0,labelMargin:0,axisMargin:0,minBorderMargin:0,},yaxis:{min:0,max:50,color:'transparent',font:{size:0,}},xaxis:{color:'transparent',font:{size:0,}}});$.plot($("#transactions2"),[{data:[[0,44],[1,26],[2,22],[3,35],[4,28],[5,35],[6,28],],color:"#1dc4e9",bars:{show:true,lineWidth:1,fill:true,fillColor:{colors:[{opacity:1},{opacity:1}]},barWidth:0.2,align:'center',horizontal:false},points:{show:false,radius:3,fill:true},curvedLines:{apply:false,}}],{series:{label:"",curvedLines:{active:true,nrSplinePoints:0},},tooltip:{show:true,content:"x : %x | y : %y"},grid:{hoverable:true,borderWidth:0,labelMargin:0,axisMargin:0,minBorderMargin:0,},yaxis:{min:0,max:50,color:'transparent',font:{size:0,}},xaxis:{color:'transparent',font:{size:0,}}});$.plot($("#transactions3"),[{data:[[0,40],[1,30],[2,25],[3,38],[4,30],[5,38],[6,30],],color:"#1dc4e9",bars:{show:true,lineWidth:1,fill:true,fillColor:{colors:[{opacity:1},{opacity:1}]},barWidth:0.2,align:'center',horizontal:false},points:{show:false,radius:3,fill:true},curvedLines:{apply:false,}}],{series:{label:"",curvedLines:{active:true,nrSplinePoints:0},},tooltip:{show:true,content:"x : %x | y : %y"},grid:{hoverable:true,borderWidth:0,labelMargin:0,axisMargin:0,minBorderMargin:0,},yaxis:{min:0,max:50,color:'transparent',font:{size:0,}},xaxis:{color:'transparent',font:{size:0,}}});});}
 </script>
+<script src="<?php echo site_url().'static/cms/js/script/panel.js';?>"></script>

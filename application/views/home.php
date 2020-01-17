@@ -343,7 +343,7 @@
                     <div class=thim-home6-form>
                       <div class="wpcf7" id=wpcf7-f4354-p4205-o1>
                         <div class=screen-reader-response></div>
-                        <form action="javascript:void(0);" enctype="multipart/form-data" class="wpcf7-form">
+                        <form action="javascript:void(0);" class="wpcf7-form">
                           <h4>Contáctanos</h4>
                           <h5 class="label" style="text-align:center !important;">Apúrate! Empezaremos en nuevo vídeo en</h5>
                           <div class="thim-sc-count-down " data-countdown="2020/12/20 00:00">
@@ -377,16 +377,10 @@
                                 <div class="g-recaptcha" data-sitekey="6LfcPs4UAAAAAHJsduwopVs4E9Otab1oau6Qjj_I"></div>
                             </div>
                           <p>
-                              <input onclick="send_message();" type=submit value="Enviar Mensaje" class="wpcf7-form-control">
+                              <input onclick="send_message();" value="Enviar Mensaje" class="submit wpcf7-form-control">
                           </p>
                           
                           <p class="quote">No te preocupes, No te enviaremos spam.</p>
-                          
-                            <div class="form-group has-feedback" style="display: none;" id="captcha_messages">
-                                <div class="alert alert-danger validation-errors">
-                                    <p class="user_login_id" style="text-align: center;">Captcha no verificado</p>
-                                </div>
-                            </div>
                             <div class="form-group has-feedback" id="res"></div>
                             <p>
                               <a href="https://api.whatsapp.com/send?phone=51993764410" title="Whatssapp Ubicua Offices" target="_blank" rel="noopener">

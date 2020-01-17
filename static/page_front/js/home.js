@@ -5,12 +5,17 @@ function send_message(){
     var message = document.getElementById("message").value;
     //GET DATA RECAPTCHA
     var response = grecaptcha.getResponse();
-    if(response.length == 0){
-        document.getElementById("captcha_messages").style.display = "block";
-    }
-    else{
-        if(name == ""){
-            document.getElementById("captcha_messages").style.display = "none";
+        
+        if(response.length == 0){
+                    $("#res").html();
+                    var texto = "";
+                    texto = texto+'<div class="alert alert-danger">';
+                    texto = texto+'<button class="close" data-dismiss="alert" type="button">×</button>';
+                    texto = texto+'<p style="text-align: center;">Captcha no verificado</p>';
+                    texto = texto+'</div>';                 
+                    $("#res").html(texto);
+        }else{
+            if(name == ""){
                     $("#res").html();
                     var texto = "";
                     texto = texto+'<div class="alert alert-danger">';
@@ -20,7 +25,6 @@ function send_message(){
                     $("#res").html(texto);
             $("#name").focus();
         }else if(email == ""){
-            document.getElementById("captcha_messages").style.display = "none";
                     $("#res").html();
                     var texto = "";
                     texto = texto+'<div class="alert alert-danger">';
@@ -30,7 +34,6 @@ function send_message(){
                     $("#res").html(texto);
             $("#email").focus();
         }else if(phone == ""){
-            document.getElementById("captcha_messages").style.display = "none";
                     $("#res").html();
                     var texto = "";
                     texto = texto+'<div class="alert alert-danger">';
@@ -40,7 +43,6 @@ function send_message(){
                     $("#res").html(texto);
             $("#phone").focus();
         }else if(message == ""){
-            document.getElementById("captcha_messages").style.display = "none";
                     $("#res").html();
                     var texto = "";
                     texto = texto+'<div class="alert alert-danger">';
@@ -63,7 +65,6 @@ function send_message(){
                           },
                    success:function(data){
                        if(data.message == true){
-                           document.getElementById("captcha_messages").style.display = "none";
                            $("#res").html();
                             var texto = "";
                             texto = texto+'<div class="alert alert-success">';
@@ -75,7 +76,6 @@ function send_message(){
                    }         
                  });
             }else{
-                document.getElementById("captcha_messages").style.display = "none";
                     $("#res").html();
                     var texto = "";
                     texto = texto+'<div class="alert alert-danger">';
@@ -87,9 +87,8 @@ function send_message(){
             }
         }
     }
-    
-    
 }
+
 function validar_email( email ){
     var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email) ? true : false;

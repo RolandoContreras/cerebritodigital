@@ -7,7 +7,7 @@ class Panel extends CI_Controller{
         $this->load->model("customer_model","obj_customer");
         $this->load->model("invoices_model","obj_invoices");
         $this->load->model("unilevel_model","obj_unilevel");
-        $this->load->model("ranges_model","obj_ranges");
+        $this->load->model("otros_model","obj_otros");
     }
     
     public function index(){
@@ -60,7 +60,8 @@ class Panel extends CI_Controller{
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$lunes_semana_actual' AND '$domingo_semana_actual' AND invoices.active = 2 ) as sum_total_week_invoice,
                                     (SELECT count(*) FROM (invoices) WHERE date BETWEEN '$first_day_month' AND '$last_day_month' AND invoices.active = 2) as count_total_mes,
                                     (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$first_day_month' AND '$last_day_month' AND invoices.active = 2) as sum_total_mes,
-                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$primer_dia_ano' AND '$ultimo_dia_ano' AND invoices.active = 2) as total_year",
+                                    (SELECT sum(total) FROM (invoices) WHERE date BETWEEN '$primer_dia_ano' AND '$ultimo_dia_ano' AND invoices.active = 2) as total_year,
+                                    (SELECT valor FROM (otros) WHERE otros_id = 1) as video_home",
                 "join" => array( 'kit, invoices.kit_id = kit.kit_id'),
                 "where" => "date BETWEEN '$first_day_month' AND '$last_day_month' and invoices.active = 2");
             //GET DATA FROM CUSTOMER
@@ -268,6 +269,18 @@ class Panel extends CI_Controller{
         exit();
         }
     } 
+    
+    public function save_video_home(){
+        if($this->input->is_ajax_request()){   
+              $video_home = $this->input->post("video_home");
+                    $data = array(
+                        'valor' => $video_home,
+                    ); 
+                    $this->obj_otros->update(1,$data);
+                echo json_encode($data);            
+        exit();
+        }
+    }
     
     public function export(){
         //GET C

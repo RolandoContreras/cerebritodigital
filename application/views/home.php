@@ -118,7 +118,7 @@
                   <div class=video>
                       <div class=video-box style="background-image: url(<?php echo site_url().'static/page_front/img/video_img.jpg';?>)">
                       <div class=play-button>
-                          <a href=https://vimeo.com/228674632 class=video-thumbnail><i class=icon-play></i></a>
+                          <a href="<?php echo $video_home->valor;?>" class=video-thumbnail><i class=icon-play></i></a>
                       </div>
                     </div>
                   </div>

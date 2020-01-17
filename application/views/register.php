@@ -170,6 +170,5 @@
 	});
 </script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<script src='<?php echo site_url().'static/page_front/js/register.js';?>'></script>
 </body>
 </html>

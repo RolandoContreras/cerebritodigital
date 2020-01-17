@@ -19,7 +19,6 @@ function forget(){
                     $("#res_forget").html(texto);
                     $("#user_pass").focus();
             }else{
-                
                    $.ajax({
                         type: "post",
                         url: site+"forget/recover_pass",

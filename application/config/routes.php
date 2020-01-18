@@ -73,6 +73,8 @@ $route['backoffice/profile/update_bank'] = "b_profile/update_bank";
 
 $route['backoffice/plan'] = "b_plan";
 $route['backoffice/plan/create_invoice'] = "b_plan/create_invoice";
+$route['backoffice/recompra'] = "b_plan/recompra";
+$route['backoffice/plan/create_invoice_recompra'] = "b_plan/create_invoice_recompra";
 
 $route['backoffice/referred'] = "b_network";
 $route['backoffice/unilevel'] = "b_network/unilevel";

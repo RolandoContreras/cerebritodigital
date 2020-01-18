@@ -1,4 +1,5 @@
 <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js'; ?>"></script>
+
 <div class="content-w">
         <div class="top-bar color-scheme-dark"> </div>
         <ul class="breadcrumb">
@@ -12,6 +13,15 @@
               <div class="col-sm-12 col-xxl-12">
                 <div class="element-wrapper">
                   <h6 class="element-header"> Resumen </h6>
+                  <?php 
+                  if(isset($result_date)){
+                      if($result_date < 11){ ?>
+                          <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                              Hola <?php echo $_SESSION['customer']['name'];?> quedan solo <strong><?php echo $result_date;?> días para </strong>su recompra mensual. Manténganse activo para que sigan ganando en el plan.  <button onclick="go_recompras();" type="button" class="buyButton btn btn-default" data-price="11000" data-price2="110.00" data-kit="2">Ir a Recompras</button>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            </div>
+                      <?php }
+                  } ?>
                   <div class="row">
                     <div class="col-md-3">
                       <div class="element-box el-tablo">
@@ -153,3 +163,4 @@
     } );
 } );
 </script>
+<script src="<?php echo site_url().'static/backoffice/js/script/home.js'; ?>"></script>

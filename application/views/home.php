@@ -375,7 +375,7 @@
                                 <div class="g-recaptcha" data-sitekey="6LfcPs4UAAAAAHJsduwopVs4E9Otab1oau6Qjj_I"></div>
                             </div>
                           <p>
-                              <input onclick="send_message();" value="Enviar Mensaje" class="submit wpcf7-form-control">
+                              <input onclick="send_message();"  type="submit" value="Enviar Mensaje" class="wpcf7-form-control">
                           </p>
                           
                           <p class="quote">No te preocupes, No te enviaremos spam.</p>

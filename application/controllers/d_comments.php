@@ -19,7 +19,7 @@ class D_comments extends CI_Controller{
                                     comments.active,
                                     comments.status_value,
                                     comments.date_comment",
-                         "order" => "date_comment ASC"
+                         "order" => "date_comment DESC"
             );
             //GET DATA COMMENTS
             $obj_comments= $this->obj_comments->search($params);

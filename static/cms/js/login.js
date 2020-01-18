@@ -1,14 +1,14 @@
 /* VALIDACIONES Y FUNCIONABILIDAD DEL MODULO LOGIN
      * ======================================================= */
 $(".btn-primary").on("click",function(){
-     username = $("#username").val();
+     email = $("#email").val();
      password = $("#password").val();     
      
     $.ajax({
         type: "Post",
         url: "dashboard/validate",
         dataType: "json",
-        data: {email : username, password:password},
+        data: {email : email, password:password},
         success:function(data){            
             if (data.message == "false"){                         
                 $("#mensaje").html();

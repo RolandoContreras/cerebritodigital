@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Administración - Cerebrito Digital</title>
+  <title>Administración - Cultura FK</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="Somos cerebrito digital una empresa de educación con un staff de emprendedores peruanos con la finalidad de fortalecer la educación y llevar información transparente sobre las nuevas tendencias mundiales.">
-  <meta name="author" content="Cerebrito Digital">
-  <meta name="keyword" content="Cerebrito Digital, Cerebrito Digital Perú, Plataforma Educativa, mlm, mmn, cursos onlines">
-    <!--START FAVICON-->
+  <meta name="description" content="Somos la primera organización Neuronal de EMPRENDEDORES con PROPÓSITO en Latinoamérica, compartimos una cultura donde se crean en los sueños y se compartan herramientas para el logro de estos mismos">
+  <meta name="author" content="Cultura Fk">
+  <meta name="keyword" content="Cultura Fk, fk, Fk embajadores, Fk social, Fk corporación, mlm, mmn, cursos onlines, cursos liderazgo">
+   <!--START FAVICON-->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-57x57.png';?>">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-60x60.png';?>">
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-72x72.png';?>">
@@ -27,7 +27,7 @@
     <meta name="msapplication-TileImage" content="<?php echo site_url().'static/page_front/img/logo/favicon/ms-icon-144x144.png';?>">
     <meta name="theme-color" content="#ffffff">
   <!--END FAVICON-->
-  <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/style.css';?>">
+  <link rel="stylesheet" href="<?php echo site_url().'static/course/css/style.css';?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="<?php echo site_url().'static/cms/css/animate.min.css';?>">
   <script src="https://unpkg.com/feather-icons"></script>
@@ -59,20 +59,19 @@
   
 </head>
 
-<body class="layout-6">
+<body class="layout-6" style="background-image: url('<?php echo site_url().'static/page_front/images/header_image.jpg';?>'); background-size: cover;">
   <nav class="pcoded-navbar menu-light brand-lightblue menupos-static">
     <div class="navbar-wrapper">
       <div class="navbar-brand header-logo">
           <a href="<?php echo site_url().'course';?>" class="b-brand">
           <div class="b-bg">
-              <img src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" alt="Logo"/>
+              <img src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" alt="Logo" width="35"/>
           </div>
               <span class="b-title">Administración</span>
           </a>
           <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a></div>
       <div class="navbar-content scroll-div">
-          
-          <ul class="nav pcoded-inner-navbar">
+       <ul class="nav pcoded-inner-navbar">
           <li class="nav-item pcoded-menu-caption"><label>Navegación</label></li>
           <?php
           $url = explode("/",uri_string());
@@ -175,8 +174,6 @@
             </ul>
         </li>
     </ul>
-
-        
     </div>
     </div>
   </nav>
@@ -223,10 +220,10 @@
   </header>
   <?php echo $body;?>
 <!--[if lt IE 11]> <div class="ie-warning"> <h1>Warning!!</h1> <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website. </p> <div class="iew-container"> <ul class="iew-download"> <li> <a href="http://www.google.com/chrome/"> <img src="../assets/images/browser/chrome.png" alt="Chrome"> <div>Chrome</div> </a> </li> <li> <a href="https://www.mozilla.org/en-US/firefox/new/"> <img src="../assets/images/browser/firefox.png" alt="Firefox"> <div>Firefox</div> </a> </li> <li> <a href="http://www.opera.com"> <img src="../assets/images/browser/opera.png" alt="Opera"> <div>Opera</div> </a> </li> <li> <a href="https://www.apple.com/safari/"> <img src="../assets/images/browser/safari.png" alt="Safari"> <div>Safari</div> </a> </li> <li> <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"> <img src="../assets/images/browser/ie.png" alt=""> <div>IE (11 & above)</div> </a> </li> </ul> </div> <p>Sorry for the inconvenience!</p> </div> <![endif]-->
-<script src="<?php echo site_url().'static/cms/js/vendor-all.min.js';?>"></script>
-<script src="<?php echo site_url().'static/cms/js/pcoded.min.js';?>"></script>
-<script src="<?php echo site_url().'static/cms/js/ekko-lightbox.min.js';?>"></script>
-<script src="<?php echo site_url().'static/cms/js/ac-lightbox.js';?>"></script>
+<script src="<?php echo site_url().'static/course/js/vendor-all.min.js';?>"></script>
+<script src="<?php echo site_url().'static/course/js/pcoded.min.js';?>"></script>
+<script src="<?php echo site_url().'static/course/js/ekko-lightbox.min.js';?>"></script>
+<script src="<?php echo site_url().'static/course/js/ac-lightbox.js';?>"></script>
 <script src="<?php echo site_url().'static/cms/js/datatables.min.js';?>"></script>
 <script src="<?php echo site_url().'static/cms/js/tbl-datatable-custom.js';?>"></script>
 <script src="<?php echo site_url().'static/cms/js/core/amcharts.js';?>"></script>
@@ -249,5 +246,8 @@
 <script src="<?php echo site_url().'static/cms/js/core/bootstrap-datepicker.min.js';?>"></script>    
 <script src="<?php echo site_url().'static/cms/js/core/ac-datepicker.js';?>"></script>  
 <!--<script src="http://html.codedthemes.com/datta-able/bootstrap/assets/js/pages/chart.js"></script>-->    
+
+
+
 </body>
 </html>

@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="">
+  <meta name="description" content="Somos cerebrito digital una empresa de educación con un staff de emprendedores peruanos con la finalidad de fortalecer la educación y llevar información transparente sobre las nuevas tendencias mundiales.">
   <meta name="author" content="Cerebrito Digital">
-  <meta name="keyword" content="Cerebrito Digital, cursos online">
+  <meta name="keyword" content="Cerebrito Digital, Cerebrito Digital Perú, Plataforma Educativa, mlm, mmn, cursos onlines">
     <!--START FAVICON-->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-57x57.png';?>">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-60x60.png';?>">
@@ -56,21 +56,23 @@
             margin: 0 0 0 -8px;
         }
     </style>
+  
 </head>
 
-<body class="layout-6" style="background-image: url('<?php echo site_url().'static/page_front/images/header_image.jpg';?>'); background-size: cover;">
+<body class="layout-6">
   <nav class="pcoded-navbar menu-light brand-lightblue menupos-static">
     <div class="navbar-wrapper">
       <div class="navbar-brand header-logo">
           <a href="<?php echo site_url().'course';?>" class="b-brand">
           <div class="b-bg">
-              <img src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" alt="Logo" width="35"/>
+              <img src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" alt="Logo"/>
           </div>
               <span class="b-title">Administración</span>
           </a>
           <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a></div>
       <div class="navbar-content scroll-div">
-        <ul class="nav pcoded-inner-navbar">
+          
+          <ul class="nav pcoded-inner-navbar">
           <li class="nav-item pcoded-menu-caption"><label>Navegación</label></li>
           <?php
           $url = explode("/",uri_string());
@@ -133,7 +135,6 @@
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/videos";?>"><i class="icon-large icon-th"></i>Videos</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/membresias";?>"><i class="icon-large icon-th"></i>Pack</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/pagos";?>"><i class="icon-large icon-th"></i>Pagos</a></li>
-                <!--<li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/rangos";?>"><i class="icon-large icon-th"></i>Rangos</a></li>-->
                 <?php if($_SESSION['usercms']['privilage'] > 1){ ?>
                 <li class="pcoded-hasmenu" ><a href="<?php echo site_url()."dashboard/usuarios";?>"><i class="icon-large icon-th"></i>Usuarios</a></li>
                 <?php } ?>
@@ -174,6 +175,8 @@
             </ul>
         </li>
     </ul>
+
+        
     </div>
     </div>
   </nav>
@@ -181,9 +184,9 @@
     <div class="m-header"><a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
         <a href="<?php echo site_url().'course';?>" class="b-brand">
         <div class="b-bg">
-            <img src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" alt="Logo" width="100"/>
+            <img src="<?php echo site_url().'static/page_front/images/logo/logo_negro.png';?>" alt="Logo" width="35"/>
         </div>
-            <span class="b-title">CEREBRITO DIGITAL</span></a>
+            <span class="b-title">BCA CAPITAL</span></a>
     </div>
       <a class="mobile-menu" id="mobile-header" href="#!">
           <i class="feather icon-more-horizontal"></i>
@@ -218,20 +221,14 @@
       </ul>
     </div>
   </header>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
-      </ul>
   <?php echo $body;?>
-  <!--[if lt IE 11]> <div class="ie-warning"> <h1>Warning!!</h1> <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website. </p> <div class="iew-container"> <ul class="iew-download"> <li> <a href="http://www.google.com/chrome/"> <img src="../assets/images/browser/chrome.png" alt="Chrome"> <div>Chrome</div> </a> </li> <li> <a href="https://www.mozilla.org/en-US/firefox/new/"> <img src="../assets/images/browser/firefox.png" alt="Firefox"> <div>Firefox</div> </a> </li> <li> <a href="http://www.opera.com"> <img src="../assets/images/browser/opera.png" alt="Opera"> <div>Opera</div> </a> </li> <li> <a href="https://www.apple.com/safari/"> <img src="../assets/images/browser/safari.png" alt="Safari"> <div>Safari</div> </a> </li> <li> <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"> <img src="../assets/images/browser/ie.png" alt=""> <div>IE (11 & above)</div> </a> </li> </ul> </div> <p>Sorry for the inconvenience!</p> </div> <![endif]-->
-  <script src="<?php echo site_url().'static/cms/js/vendor-all.min.js';?>"></script>
-  <script src="<?php echo site_url().'static/cms/js/pcoded.min.js';?>"></script>
-  <script src="<?php echo site_url().'static/cms/js/ekko-lightbox.min.js';?>"></script>
-  <script src="<?php echo site_url().'static/cms/js/ac-lightbox.js';?>"></script>
-  <script src="<?php echo site_url().'static/cms/js/datatables.min.js';?>"></script>
-  <script src="<?php echo site_url().'static/cms/js/tbl-datatable-custom.js';?>"></script>
+<!--[if lt IE 11]> <div class="ie-warning"> <h1>Warning!!</h1> <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website. </p> <div class="iew-container"> <ul class="iew-download"> <li> <a href="http://www.google.com/chrome/"> <img src="../assets/images/browser/chrome.png" alt="Chrome"> <div>Chrome</div> </a> </li> <li> <a href="https://www.mozilla.org/en-US/firefox/new/"> <img src="../assets/images/browser/firefox.png" alt="Firefox"> <div>Firefox</div> </a> </li> <li> <a href="http://www.opera.com"> <img src="../assets/images/browser/opera.png" alt="Opera"> <div>Opera</div> </a> </li> <li> <a href="https://www.apple.com/safari/"> <img src="../assets/images/browser/safari.png" alt="Safari"> <div>Safari</div> </a> </li> <li> <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"> <img src="../assets/images/browser/ie.png" alt=""> <div>IE (11 & above)</div> </a> </li> </ul> </div> <p>Sorry for the inconvenience!</p> </div> <![endif]-->
+<script src="<?php echo site_url().'static/cms/js/vendor-all.min.js';?>"></script>
+<script src="<?php echo site_url().'static/cms/js/pcoded.min.js';?>"></script>
+<script src="<?php echo site_url().'static/cms/js/ekko-lightbox.min.js';?>"></script>
+<script src="<?php echo site_url().'static/cms/js/ac-lightbox.js';?>"></script>
+<script src="<?php echo site_url().'static/cms/js/datatables.min.js';?>"></script>
+<script src="<?php echo site_url().'static/cms/js/tbl-datatable-custom.js';?>"></script>
 <script src="<?php echo site_url().'static/cms/js/core/amcharts.js';?>"></script>
 <script src="<?php echo site_url().'static/cms/js/core/gauge.js';?>"></script>
 <script src="<?php echo site_url().'static/cms/js/core/serial.js';?>"></script>
@@ -251,5 +248,6 @@
 </script>
 <script src="<?php echo site_url().'static/cms/js/core/bootstrap-datepicker.min.js';?>"></script>    
 <script src="<?php echo site_url().'static/cms/js/core/ac-datepicker.js';?>"></script>  
+<!--<script src="http://html.codedthemes.com/datta-able/bootstrap/assets/js/pages/chart.js"></script>-->    
 </body>
 </html>

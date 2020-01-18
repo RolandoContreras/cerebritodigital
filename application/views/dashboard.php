@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Dashboard - FK Coportación</title>
+  <title>Dashboard - Cerebrito Digital</title>
   <base href="<?php echo site_url();?>">
   <!--[if lt IE 10]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="author" content="Cultura Fk" />
+  <meta name="author" content="Cerebrito digital" />
   <meta name="robots" content="noindex, nofollow" />
   <!--START FAVICON-->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-57x57.png';?>">
@@ -52,7 +52,7 @@
               </div>
               <div class="form-group text-left">
               </div>
-              <button type="button" class="btn btn-primary">Iniciar Sesión</button>
+              <button type="button" onclick="login();" class="btn btn-primary">Iniciar Sesión</button>
           </form>
             <br/>
             <div id="mensaje"></div>
@@ -64,5 +64,6 @@
     <script src="<?php echo site_url().'static/cms/js/bootstrap.min.js';?>"></script>
     <script src="<?php echo site_url().'static/cms/js/pcoded.min.js';?>"></script>
   <script src="<?php echo site_url().'static/cms/js/login.js';?>"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 </html>

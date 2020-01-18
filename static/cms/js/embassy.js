@@ -1,4 +1,4 @@
-function change_state(comment_id){
+function change_state(embassy_id){
   bootbox.confirm({
     message: "Confirma que desea marcarlo como contestado?",
     buttons: {
@@ -14,9 +14,9 @@ function change_state(comment_id){
     callback: function () {
          $.ajax({
                    type: "post",
-                   url: site+"dashboard/comentarios/cambiar_status",
+                   url: site+"dashboard/embassy/cambiar_status",
                    dataType: "json",
-                   data: {comment_id : comment_id},
+                   data: {embassy_id : embassy_id},
                    success:function(data){                             
                    location.reload();
                    }         
@@ -24,7 +24,7 @@ function change_state(comment_id){
     }
 });
 }
-function change_state_no(comment_id){
+function change_state_no(embassy_id){
     bootbox.confirm({
     message: "Confirma que desea marcarlo como no contestado?",
     buttons: {
@@ -40,9 +40,9 @@ function change_state_no(comment_id){
     callback: function () {
          $.ajax({
                    type: "post",
-                   url: site+"dashboard/comentarios/cambiar_status_no",
+                   url: site+"dashboard/embassy/cambiar_status_no",
                    dataType: "json",
-                   data: {comment_id : comment_id},
+                   data: {embassy_id : embassy_id},
                    success:function(data){                             
                    location.reload();
                    }         

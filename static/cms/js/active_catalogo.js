@@ -25,8 +25,18 @@ function active(invoice_id,customer_id,kit_id,type){
                    }         
            });
     }
-});
+    });
 }
+function view_order(invoice_id){
+    var url = 'dashboard/activaciones_catalogo/'+invoice_id;
+     location.href = site+url;   
+}
+
+function back_list_catalogo(){
+    var url = 'dashboard/activaciones_catalogo/';
+     location.href = site+url;   
+}
+
 function modal_img(id){
     // Get the modal
     var modal = document.getElementById('myModal');

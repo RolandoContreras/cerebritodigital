@@ -30,7 +30,7 @@ class Forget extends CI_Controller {
             
             if(isset($customer->customer_id) != ""){
                 //SEND MESSAGE
-//                $this->message($user_pass, $customer->password,$customer->first_name, $customer->email);
+                $this->message($user_pass, $customer->password,$customer->first_name, $customer->email);
                 $data['status'] = true;
             }else{
                 $data['status'] = false;

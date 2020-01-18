@@ -56,7 +56,7 @@
                                   switch ($obj_customer->kit_id) {
                                         case 1:$kit = "STANDAR";$img = "plan.png";break;
                                         case 2:$kit = "PREMIUM";$img = "plan_2.png";break;
-                                        default:$kit = "POSICIÓN";$img = "posicion.png";break;
+                                        default:$kit = "POSICIÓN";$img = "posicion_black.png";break;
                                   }
                                   if($obj_customer->active_month == 1){
                                     $text = "<div class='value badge badge-pill badge-success'> Activo </div>";
@@ -75,7 +75,7 @@
                                             switch ($value->kit_id) {
                                                     case 1:$kit = "STANDAR";$img = "plan.png";break;
                                                     case 2:$kit = "PREMIUM";$img = "plan_2.png";break;
-                                                    default:$kit = "POSICIÓN";$img = "posicion.png";break;
+                                                    default:$kit = "POSICIÓN";$img = "posicion_black.png";break;
                                               }
                                              if($value->active_month == 1){
                                                 $text_2 = "<div class='value badge badge-pill badge-success'> Activo </div>";
@@ -97,7 +97,7 @@
                                                                     switch ($value3->kit_id) {
                                                                        case 1:$kit = "STANDAR";$img = "plan.png";break;
                                                                        case 2:$kit = "PREMIUM";$img = "plan_2.png";break;
-                                                                       default:$kit = "POSICIÓN";$img = "posicion.png";break;
+                                                                       default:$kit = "POSICIÓN";$img = "posicion_black.png";break;
                                                                       }
                                                                  if($value3->active_month == 1){
                                                                     $text_3 = "<div class='value badge badge-pill badge-success'> Activo </div>";
@@ -119,7 +119,7 @@
                                                                                         foreach ($obj_customer_n4 as $value4) { switch ($value4->kit_id) {
                                                                                                     case 1:$kit = "STANDAR";$img = "plan.png";break;
                                                                                                    case 2:$kit = "PREMIUM";$img = "plan_2.png";break;
-                                                                                                   default:$kit = "POSICIÓN";$img = "posicion.png";break;
+                                                                                                   default:$kit = "POSICIÓN";$img = "posicion_black.png";break;
                                                                                                   }
                                                                                                 if($value4->active_month == 1){
                                                                                                     $text_4 = "<div class='value badge badge-pill badge-success'> Activo </div>";

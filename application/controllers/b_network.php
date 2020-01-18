@@ -143,6 +143,7 @@ class B_network extends CI_Controller {
                                 "select" =>"customer.customer_id,
                                             customer.username,
                                             customer.first_name,
+                                            customer.active_month,
                                             customer.last_name,
                                             customer.kit_id,
                                             customer.range_id,

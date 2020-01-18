@@ -1,10 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="<?php echo site_url().'static/backoffice/css/jquery.modal.min.css';?>"/>
-
-
-
-
 <div class="content-w">
   <ul class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?php echo site_url().'backoffice';?>">Tablero</a></li>
@@ -21,9 +17,6 @@
               <div class="table-responsive">
                 <!-------------------- START - Basic Table -------------------->
                 <div id="financial_history_wrapper" class="dataTables_wrapper">
-                    
-                    
-                    
                   <table class="table table-padded dataTable display" id="financial_history" cellspacing="0" width="100%" role="grid" style="width: 100%;">
                     <thead>
                       <tr role="row">
@@ -73,15 +66,13 @@
                       </tbody>
                   </table>
                 </div> 
-                
-            
             <?php foreach ($obj_invoices as $value) { ?>
                     <div class="modal text-center" id="modal_<?php echo $value->invoice_id;?>">
                           <div class="onboarding-content with-gradient">
                             <div class="onboarding-text" id="modalMsgBody">
                               <form id="upload_form">
                             <div class="onboarding-media" style="padding-top: 20px;">
-                                 <h4 class="onboarding-title" id="modalMsgTitle">SUBIR IMAGEN</h4>
+                                 <h4 class="onboarding-title" id="modalMsgTitle">SUBIR COMPROBANTE</h4>
                             </div>
                                 <div class="form-group"><br>
                                     <label>Seleccionar Imagen del envio</label>
@@ -94,7 +85,9 @@
                                 </div>
                                 <div class="form-group"> 
                                     <div class="col-lg-12"> 
-                                        <label class="control-label"><br>La cuenta se activar en las próximas horas. Gracias</label> 
+                                        <div class="alert alert-info" role="alert"> <strong>Información de Activación </strong><br> 
+                                            Luego de hacer el envio, la cuenta se activar en las próximas horas. Gracias
+                                        </div>
                                     </div>
                                 </div>
                                  <div id="uploaded_image"></div>
@@ -103,10 +96,6 @@
                           </div>
                         </div>
             <?php } ?>
-            
-            
-                 
-                
               </div> 
             </div> 
           </div> 
@@ -115,7 +104,6 @@
     </div> 
   </div> 
 </div>
-
 <script type="text/javascript">
    $(document).ready(function() {
     $('#financial_history').dataTable( {

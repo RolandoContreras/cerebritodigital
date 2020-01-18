@@ -51,6 +51,7 @@ class B_plan extends CI_Controller {
                     'sub_total' => $price,
                     'igv' => 0,
                     'total' => $price,
+                    'recompra' => 0,
                     'date' => date("Y-m-d H:i:s"),
                     'active' => 0,
                     'status_value' => 1,

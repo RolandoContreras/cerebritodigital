@@ -83,6 +83,7 @@
             $pagos_syle = "";
             $mantenimiento_syle = "";
             $report_syle = "";
+            $activaciones_syle = "";
             switch ($nav) {
                 case "panel":
                     $panel_syle = "active";
@@ -136,6 +137,18 @@
                 <?php if($_SESSION['usercms']['privilage'] > 1){ ?>
                 <li class="pcoded-hasmenu" ><a href="<?php echo site_url()."dashboard/usuarios";?>"><i class="icon-large icon-th"></i>Usuarios</a></li>
                 <?php } ?>
+            </ul>
+        </li>
+        <li class="nav-item pcoded-hasmenu">
+            <a href="#!" class="nav-link <?php echo $activaciones_syle;?>">
+                <span class="pcoded-micon">
+                    <i data-feather="check-circle"></i>
+                </span>
+                <span class="pcoded-mtext">Activaciones</span>
+            </a>
+            <ul class="pcoded-submenu">
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/activaciones";?>"><i class="icon-large icon-th"></i>Membresías</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/activaciones_catalogo";?>"><i class="icon-large icon-th"></i>Re-Compra</a></li>
             </ul>
         </li>
         <li class="nav-item">

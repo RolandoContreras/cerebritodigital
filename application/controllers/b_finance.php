@@ -18,7 +18,8 @@ class B_finance extends CI_Controller {
         
         //GET PLAN INFORMATION
         $params = array("select" =>"sum(amount) as total_maching,
-                                    (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and bonus_id = 1 and status_value = 1) as total_unilevel,
+                                    (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and bonus_id = 1 and status_value = 1) as total_direct,
+                                    (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and bonus_id = 2 and status_value = 1) as total_unilevel,
                                     (SELECT sum(amount) FROM commissions WHERE customer_id = $customer_id and status_value = 1) as total",
                         "where" => "customer_id = $customer_id and bonus_id = 3 and status_value = 1",
                                     );

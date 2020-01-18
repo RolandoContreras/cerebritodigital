@@ -67,7 +67,7 @@
                                 </div>
                                   <div class="plan-btn-w"> 
                                       <a href="#modal_<?php echo $value->kit_id;?>" rel="modal:open">
-                                          <button  class="mr-2 mb-2 btn btn-warning" <?php echo $value->active == "0"? "disabled":"";?>> Selecionar Pack</button>
+                                          <button  class="mr-2 mb-2 btn btn-warning" <?php echo $value->kit_id <= $kit_id? "disabled":"";?>> Selecionar Pack</button>
                                       </a> 
                                   </div>
                               </div>

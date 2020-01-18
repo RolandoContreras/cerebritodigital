@@ -8,7 +8,7 @@
   <div class="content-i">
     <div class="content-box">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="element-wrapper" style="padding-bottom: 0;">
             <h6 class="element-header">Historial Financiero <small class="text-muted">Detalle de Ganancias</small> </h6>
           </div>
@@ -30,31 +30,36 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="element-wrapper" style="padding-bottom: 0;">
+        <div class="col-md-8">
+          <div class="element-wrapper">
             <h6 class="element-header">Historial Financiero <small class="text-muted">Detalle de Ganancias</small> </h6>
-          </div>
-          <div class="element-box">
-            <div class="os-tabs-w">
-              <div class="os-tabs-controls">
-                <ul class="nav nav-tabs smaller">
-                  <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tab_overview">Financeiro</a> </li>
-                </ul>
-              </div>
-              <div class="tab-content">
-                <div class="tab-pane active" id="tab_overview">
-                  <div class="el-tablo">
-                    <div class="label"> Ganacia Unilevel </div>
-                    <div class="value" id="bonustotal">S/. <?php echo $obj_total->total_unilevel!=""?$obj_total->total_unilevel:"0.00";?></div>
+            <div class="row">
+              <div class="col-md-12">
+                <a class="element-box el-tablo centered trend-in-corner smaller" style="border-radius: 4px; padding: 0.5rem 2rem;">
+                  <div class="display-5" style="font-size: 30px;"> 
+                      <span id="totalInd">
+                          S/. <?php echo $obj_total->total_direct!=""?$obj_total->total_direct:"0.00";?>
+                      </span> 
                   </div>
-                </div>
+                  <div class="label"> Bono De Referido Directo </div>
+                </a>
+              </div>
+              <div class="col-md-12">
+                <a class="element-box el-tablo centered trend-in-corner smaller" style="border-radius: 4px; padding: 0.5rem 2rem;">
+                  <div class="display-5" style="font-size: 30px;">
+                      <span id="totalBin">
+                          S/. <?php echo $obj_total->total_unilevel!=""?$obj_total->total_unilevel:"0.00";?>
+                      </span> 
+                  </div>
+                  <div class="label"> Bono Unilevel </div>
+                </a>
               </div>
             </div>
           </div>
-        </div>
+        </div>  
         <div class="col-md-12">
           <div class="element-wrapper">
-            <h6 class="element-header">Histórico financeiro</h6>
+            <h6 class="element-header">Histórico financiero</h6>
             <div class="element-box">
               <!-------------------- END - Controls Above Table -------------------->
               <div class="table-responsive">

@@ -75,12 +75,53 @@ class B_finance extends CI_Controller {
         $this->tmp_backoffice->render("backoffice/b_invoice");
     }
     
+    public function invoice_detail($invoice_id){
+        //GET SESION ACTUALY
+        $this->get_session();
+        /// VISTA
+
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //GET DATA PRICE CRIPTOCURRENCY
+        $params = array(
+                        "select" =>"customer.username,
+                                    customer.email,
+                                    customer.first_name,
+                                    customer.last_name,
+                                    customer.phone,
+                                    customer.dni,
+                                    customer.active,
+                                    paises.nombre",
+                        "where" => "customer.customer_id = $customer_id and customer.status_value = 1 and paises.id_idioma = 7",
+                        "join" => array('paises, customer.country = paises.id'),
+                        );
+
+        $obj_customer = $this->obj_customer->get_search_row($params);
+        
+         $params = array(
+                        "select" =>"invoices.invoice_id,
+                                    invoices.date,
+                                    invoices.recompra,
+                                    invoices.total,
+                                    kit.price,
+                                    kit.name,
+                                    invoices.active",
+                "join" => array( 'kit, invoices.kit_id = kit.kit_id'),
+                "where" => "invoices.invoice_id = $invoice_id and invoices.status_value = 1");
+           //GET DATA FROM CUSTOMER
+        $obj_invoices = $this->obj_invoices->get_search_row($params);
+
+        //GET PRICE CURRENCY
+        $this->tmp_backoffice->set("obj_customer",$obj_customer);
+        $this->tmp_backoffice->set("obj_invoices",$obj_invoices);
+        $this->tmp_backoffice->render("backoffice/b_invoice_detail");
+    }
+    
     public function upload(){
         //GET SESION ACTUALY
         $this->get_session();
         $customer_id = $_SESSION['customer']['customer_id'];
         $invoice_id = $_POST['invoice_id'];
-         
+        
         //VERIFI ONLY 1 ROW 
             if(isset($_FILES["image_file"]["name"]))
             {

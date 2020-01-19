@@ -83,6 +83,8 @@ $route['backoffice/unilevel/([0-9a-z_A-Z-=+/]+)'] = "b_network/unilevel/unilevel
 $route['backoffice/history'] = "b_finance";
 $route['backoffice/invoice'] = "b_finance/invoice";
 $route['backoffice/invoice/upload'] = "b_finance/upload";
+$route['backoffice/invoice_detail/([0-9]+)'] = "b_finance/invoice_detail/$1";
+
 
 $route['backoffice/files'] = "b_files";
 
@@ -176,13 +178,11 @@ $route['dashboard/usuarios/validate'] = "d_users/validate";
 $route['dashboard/confirmation_activaciones'] = "d_activate/confirmation";
 
 $route['dashboard/activaciones'] = "d_activate";
-$route['dashboard/activaciones/active_customer'] = "d_activate/active_customer";
 $route['dashboard/activaciones/active'] = "d_activate/active";
 $route['dashboard/activaciones/update_confirmation'] = "d_activate/update_confirmation";
 
-$route['dashboard/activaciones_catalogo'] = "d_activate/activaciones_catalogo";
-$route['dashboard/activaciones_catalogo/([0-9]+)'] = "d_activate/order_catalog/$1";
-$route['dashboard/activaciones_catalogo/active_catalogo'] = "d_activate/active_catalogo";
+$route['dashboard/activaciones_recompra'] = "d_activate/recompra";
+$route['dashboard/activaciones_recompra/active_catalogo'] = "d_activate/active_catalogo";
 
 $route['dashboard/activar_pagos'] = "d_active_pays";
 $route['dashboard/activar_pagos/pagado'] = "d_active_pays/pagado";

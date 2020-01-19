@@ -71,7 +71,7 @@ class D_activate extends CI_Controller{
                 "order" => "invoices.invoice_id ASC");
            //GET DATA FROM CUSTOMER
         $obj_invoices = $this->obj_invoices->search($params);
-           
+        
            /// PAGINADO
             $modulos ='activaciones'; 
             $seccion = 'Lista';        

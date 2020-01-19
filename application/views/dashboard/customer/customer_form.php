@@ -148,25 +148,6 @@
                                     <?php endforeach; ?>
                             </select>
                               <br/>
-                              <label for="inputState">Rango</label>
-                                    <select name="rango" id="rango" class="form-control">
-                                    <option value="">[ Seleccionar ]</option>
-                                        <?php foreach ($obj_ranges as $value ): ?>
-                                    <option value="<?php echo $value->range_id;?>"
-                                        <?php 
-                                                if(isset($obj_customer->range_id)){
-                                                        if($obj_customer->range_id==$value->range_id){
-                                                            echo "selected";
-                                                        }
-                                                }else{
-                                                          echo "";
-                                                }
-
-                                        ?>><?php echo str_to_mayusculas($value->name);?>
-                                    </option>
-                                        <?php endforeach; ?>
-                                    </select>
-                              <br/>
                                 <label for="inputState">Activación Mensual</label>
                                     <select name="active_month" id="active_month" class="form-control">
                                      <option value="">[ Seleccionar ]</option>

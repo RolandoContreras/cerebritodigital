@@ -1,6 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="<?php echo site_url().'static/backoffice/css/jquery.modal.min.css';?>"/>
 <div class="content-w">
   <ul class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?php echo site_url().'backoffice';?>">Tablero</a></li>
@@ -55,10 +52,9 @@
                                           <?php }elseif($value->active == "2"){ ?>
                                                 <a class="badge badge-success-inverted text_status">Pagado</a>
                                           <?php }else{ ?>
-                                                <a href="#modal_<?php echo $value->invoice_id;?>" rel="modal:open">
-                                                      <button  class="mr-2 mb-2 btn btn-warning"> Subir Imagen</button>
-                                                  </a>
+                                                <a class="badge badge-info-inverted text_status">Sin Acción</a>
                                           <?php } ?>
+                                                <button onclick="invoice_detail(<?php echo $value->invoice_id;?>);" class="mr-2 mb-2 btn btn-warning"> Detalle</button>
                                       </td>
                                 </tr>
                          <?php } ?>
@@ -66,36 +62,6 @@
                       </tbody>
                   </table>
                 </div> 
-            <?php foreach ($obj_invoices as $value) { ?>
-                    <div class="modal text-center" id="modal_<?php echo $value->invoice_id;?>">
-                          <div class="onboarding-content with-gradient">
-                            <div class="onboarding-text" id="modalMsgBody">
-                              <form id="upload_form">
-                            <div class="onboarding-media" style="padding-top: 20px;">
-                                 <h4 class="onboarding-title" id="modalMsgTitle">SUBIR COMPROBANTE</h4>
-                            </div>
-                                <div class="form-group"><br>
-                                    <label>Seleccionar Imagen del envio</label>
-                                    <input type="file" value="Upload Imagen de Envio" name="image_file" id="image_file">
-                                    <input type="text" value="<?php echo $value->invoice_id;?>" name="invoice_id" id="invoice_id" style="display:none">
-                                </div>
-                                <hr>
-                                <div class="form-group text-right">
-                                    <button type="submit" name="upload" id="upload" class="btn btn-primary"><i class="fa fa-send"></i> Enviar</button>
-                                </div>
-                                <div class="form-group"> 
-                                    <div class="col-lg-12"> 
-                                        <div class="alert alert-info" role="alert"> <strong>Información de Activación </strong><br> 
-                                            Luego de hacer el envio, la cuenta se activar en las próximas horas. Gracias
-                                        </div>
-                                    </div>
-                                </div>
-                                 <div id="uploaded_image"></div>
-                        </form>
-                            </div>
-                          </div>
-                        </div>
-            <?php } ?>
               </div> 
             </div> 
           </div> 
@@ -112,31 +78,4 @@
 } );
 </script>
 <script src="<?php echo site_url().'static/cms/js/core/jquery-1.11.1.min.js'; ?>"></script>
-<script>
-$(document).ready(function(){
-    $("#upload_form").on('submit',function(e){
-        e.preventDefault();
-        if($('#image_file').val() == ''){
-            $("#uploaded_image").html('<div class="alert alert-danger" style="text-align: center">Seleccionar Imagen</div>  ');
-        }else{
-            if($('#message').val() == ''){
-                $("#uploaded_image").html('<div class="alert alert-danger" style="text-align: center">Debe llenar el campo</div>  ');
-            }else{
-                $.ajax({
-                url : "<?php echo site_url().'backoffice/invoice/upload'?>",
-                method: "POST",
-                data:new FormData(this),
-                contentType: false,
-                cache: false,
-                processData: false,
-                success:function(data){
-                    $("#uploaded_image").html(data);
-                    location.reload();
-                }
-            });
-            }
-            
-        }
-    });
-});
-</script>
+<script src='<?php echo site_url().'static/backoffice/js/script/invoice.js';?>'></script>

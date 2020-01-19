@@ -148,7 +148,7 @@
             </a>
             <ul class="pcoded-submenu">
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/activaciones";?>"><i class="icon-large icon-th"></i>Membresías</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/activaciones_catalogo";?>"><i class="icon-large icon-th"></i>Re-Compra</a></li>
+                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/activaciones_recompra";?>"><i class="icon-large icon-th"></i>Re-Compra</a></li>
             </ul>
         </li>
         <li class="nav-item">

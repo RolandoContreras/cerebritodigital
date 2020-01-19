@@ -112,16 +112,17 @@
                             <div class="form-group">
                               <div class="col-lg-12" align="right"> 
                                   <a href="#modal" rel="modal:open">
-                                     <button class="mr-2 mb-2 btn btn-success" style="margin-top: 30px;">Subir Comprabante <i class="os-icon os-icon-grid-18"></i></button>        
+                                      <?php 
+                                            if($obj_invoices->active == "2"){
+                                                $value = "disabled";
+                                            }else{
+                                                $value = "";  
+                                            }
+                                            ?>
+                                      <button class="mr-2 mb-2 btn btn-success" <?php echo $value;?> style="margin-top: 30px;">Subir Comprabante <i class="fa fa-upload"></i></button>        
                                   </a>
-                                  
-                                  <button class="mr-2 mb-2 btn btn-info" onclick="back_invoice();" style="margin-top: 30px;">Regresar <i class="os-icon os-icon-grid-18"></i></button>        
+                                  <a class="mr-2 mb-2 btn btn-info" onclick="back_invoice();" style="margin-top: 30px;">Regresar <i class="fa fa-backward"></i></a>        
                               </div>
-                            </div>
-                            <div class="form-group has-feedback" style="display: none;" id="wallet_success">
-                                <div class="alert alert-success validation-errors">
-                                    <p class="user_login_id" style="text-align: center;">Datos Bancarios Guardados.</p>
-                                </div>
                             </div>
                           </form>
                         <div class="modal text-center" id="modal">
@@ -138,7 +139,8 @@
                                     </div>
                                     <hr>
                                     <div class="form-group text-right">
-                                        <button type="submit" name="upload" id="upload" class="btn btn-primary"><i class="fa fa-send"></i> Enviar</button>
+                                         
+                                        <button type="submit" <?php echo $value;?>   name="upload" id="upload" class="btn btn-primary"><i class="fa fa-send"></i> Enviar</button>
                                     </div>
                                     <div class="form-group"> 
                                         <div class="col-lg-12"> 

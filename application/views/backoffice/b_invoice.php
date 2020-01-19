@@ -21,7 +21,7 @@
                         <th class="text-center sorting" tabindex="0" rowspan="1" colspan="1" style="width: 152.4px;"> Importe de <br>Factura </th>
                         <th class="text-center sorting" tabindex="0" rowspan="1" colspan="1" style="width: 142.4px;"> Tipo de<br>Factura </th>
                         <th class="text-center sorting" rowspan="1" colspan="1" style="width: 141.4px;"> Dato de<br>Fecha </th>
-                        <th class="text-center sorting" rowspan="1" colspan="1" style="width: 140.4px;"> Estado<br>Total </th>
+                        <th class="text-center sorting" rowspan="1" colspan="1" style="width: 140.4px;"> Estado / Acción</th>
                       </tr>
                     </thead>
                      <tbody>
@@ -54,7 +54,7 @@
                                           <?php }else{ ?>
                                                 <a class="badge badge-info-inverted text_status">Sin Acción</a>
                                           <?php } ?>
-                                                <button onclick="invoice_detail(<?php echo $value->invoice_id;?>);" class="mr-2 mb-2 btn btn-warning"> Detalle</button>
+                                                <button onclick="invoice_detail(<?php echo $value->invoice_id;?>);" class="mr-2 mb-2 btn btn-warning"> <i class="fa fa-eye"></i> Ver</button>
                                       </td>
                                 </tr>
                          <?php } ?>

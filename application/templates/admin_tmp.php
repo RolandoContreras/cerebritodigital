@@ -92,6 +92,12 @@
                 case "activar_pagos":
                     $pagos_syle = "active";
                     break;
+                case "activaciones":
+                    $activaciones_syle = "active";
+                    break;
+                case "activaciones_recompra":
+                    $activaciones_syle = "active";
+                    break;
                  case "report_global":
                     $report_syle = "active";
                     break;

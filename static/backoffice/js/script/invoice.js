@@ -4,5 +4,5 @@ function invoice_detail(invoice_id){
 }
 function back_invoice(){
     var url = 'backoffice/invoice';
-     location.href = site+url;   
+     location.href = site + url;   
 }

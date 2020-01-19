@@ -66,7 +66,7 @@ class B_finance extends CI_Controller {
                                     invoices.active",
                 "join" => array( 'kit, invoices.kit_id = kit.kit_id'),
                 "where" => "invoices.customer_id = $customer_id and invoices.status_value = 1",
-                "order" => "invoices.invoice_id ASC");
+                "order" => "invoices.invoice_id DESC");
            //GET DATA FROM CUSTOMER
         $obj_invoices = $this->obj_invoices->search($params);
 

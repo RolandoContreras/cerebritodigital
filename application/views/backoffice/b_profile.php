@@ -100,12 +100,10 @@
                             <div class="form-group"> 
                                 <label class="control-label"> Nombre del Banco </label> 
                                 <select class="form-control" name="bank_id" id="bank_id">
-                                    <option value="">Seleccionar</option>
-                                    <option value="1" <?php echo $obj_customer->bank_id == 1?"selected":"";?>>BCP (Banco de Crédito)</option>
-                                    <option value="2" <?php echo $obj_customer->bank_id == 2?"selected":"";?>>Interbank</option>
+                                    <option value="BCP (Banco de Crédito)">BCP (Banco de Crédito)</option>
                                 </select>
                             </div>
-                            <div class="form-group"> 
+                            <div class="form-group">
                                 <label class="control-label"> Titular de la cuenta </label> 
                                 <input type="text" name="bank_account" value="<?php echo $obj_customer->bank_account;?>" id="bank_account" class="form-control">
                             </div>

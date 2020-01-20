@@ -98,7 +98,7 @@
                                 <div class="col-lg-12" align="left"> 
                                     <label class="control-label"> Nombre del Banco:</label> 
                                 </div>
-                                <input type="text" name="wallet" disabled="" value="<?php echo $bank==1?"BCP (Crédito)":"Interbank";?>" id="wallet" class="form-control">
+                                <input type="text" name="wallet" disabled="" value="BCP (Crédito)" id="wallet" class="form-control">
                             </div>
                             <div class="form-group has-feedback"  id="wallet_error">
                                 <div class="col-lg-12" align="left"> 

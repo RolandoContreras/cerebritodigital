@@ -20,6 +20,7 @@ class D_report_pay extends CI_Controller{
                                     pay.active,
                                     customer.first_name,
                                     customer.bank_id,
+                                    customer.bank_number,
                                     customer.last_name",
                         "join" => array('customer, pay.customer_id = customer.customer_id'),
                         "order" => "pay.pay_id DESC"
@@ -30,13 +31,11 @@ class D_report_pay extends CI_Controller{
             $date_start = "";
             $date_end = "";
             $active = -1;
-            $bank_id = -1;
 
             //send data
             $this->tmp_mastercms->set("date_start",$date_start);
             $this->tmp_mastercms->set("date_end",$date_end);
             $this->tmp_mastercms->set("active",$active);
-            $this->tmp_mastercms->set("bank_id",$bank_id);
             $this->tmp_mastercms->set("obj_pay",$obj_pay);
             $this->tmp_mastercms->render("dashboard/reporte_pay/report_pay_list");
     }
@@ -48,7 +47,6 @@ class D_report_pay extends CI_Controller{
             //send data
             $date_start = $this->input->post('date_start');
             $date_end = $this->input->post('date_end');
-            $bank_id = $this->input->post('bank_id');
             $active = $this->input->post('active');
             
             if($date_start == "" || $date_end == ""){
@@ -59,19 +57,13 @@ class D_report_pay extends CI_Controller{
                 $where_date = "pay.date BETWEEN '$date_start' AND '$date_end'";
             }
             
-            if($bank_id == -1){
-                $where_bank = "";    
-            }else{
-                $where_bank = "and customer.bank_id = $bank_id";
-            }
-            
             if($active == -1){
                 $where_active = "";    
             }else{
                 $where_active = "and pay.active = $active";
             }
                 
-        $where = "$where_date $where_bank $where_active";
+        $where = "$where_date $where_active";
         $params = array(
                         "select" =>"pay.pay_id,
                                     pay.date,
@@ -80,6 +72,7 @@ class D_report_pay extends CI_Controller{
                                     pay.active,
                                     customer.first_name,
                                     customer.bank_id,
+                                    customer.bank_number,
                                     customer.last_name",
                         "join" => array('customer, pay.customer_id = customer.customer_id'),
                         "where" => "$where",
@@ -92,7 +85,6 @@ class D_report_pay extends CI_Controller{
         $this->tmp_mastercms->set("date_start",$date_start);
         $this->tmp_mastercms->set("date_end",$date_end);
         $this->tmp_mastercms->set("active",$active);
-        $this->tmp_mastercms->set("bank_id",$bank_id);
         $this->tmp_mastercms->set("obj_pay",$obj_pay);
         $this->tmp_mastercms->render("dashboard/reporte_pay/report_pay_list");
     }
@@ -103,7 +95,6 @@ class D_report_pay extends CI_Controller{
             //send data
             $date_start = $this->input->post('date_start');
             $date_end = $this->input->post('date_end');
-            $bank_id = $this->input->post('bank_id');
             $active = $this->input->post('active');
             
             if($date_start == "" || $date_end == ""){
@@ -114,19 +105,13 @@ class D_report_pay extends CI_Controller{
                 $where_date = "pay.date BETWEEN '$date_start' AND '$date_end'";
             }
             
-            if($bank_id == -1){
-                $where_bank = "";    
-            }else{
-                $where_bank = "and customer.bank_id = $bank_id";
-            }
-            
             if($active == -1){
                 $where_active = "";    
             }else{
                 $where_active = "and pay.active = $active";
             }
                 
-        $where = "$where_date $where_bank $where_active";
+        $where = "$where_date $where_active";
         $params = array(
                         "select" =>"pay.pay_id as codigo,
                                     pay.date as fecha,
@@ -135,6 +120,7 @@ class D_report_pay extends CI_Controller{
                                     customer.last_name as apellido,
                                     pay.amount_total as importe,
                                     customer.bank_id as banco,
+                                    customer.bank_number as n° cuenta,
                                     pay.active as estado",
                         "join" => array('customer, pay.customer_id = customer.customer_id'),
                         "where" => "$where",

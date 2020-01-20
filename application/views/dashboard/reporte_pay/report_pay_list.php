@@ -36,19 +36,11 @@
                              </div>
                           </div>
                          <div class="form-group col-md-2">
-                             <label>Banco</label>
-                              <select name="bank_id" id="bank_id" class="form-control">
-                                  <option value="-1">Todos</option>
-                                   <option value="1">BCP (crédito)</option>
-                                   <option value="2">Interbank</option>
-                              </select>
-                         </div>
-                         <div class="form-group col-md-2">
                              <label>Estado</label>
                               <select name="active" id="active" class="form-control">
                                       <option value="-1" selected="">Todos</option>
                                       <option value="1">En Proceso</option>
-                                      <option value="2">Pagado</option>
+                                      <option value="2">Procesado</option>
                                       <option value="3">Cancelado</option>
                               </select>
                          </div>
@@ -61,7 +53,6 @@
                     <form enctype="multipart/form-data" method="post" action="<?php echo site_url()."dashboard/report_pay/export";?>">
                             <input type="hidden" id="date_start" name="date_start" value="<?php echo $date_start;?>">
                             <input type="hidden" id="date_end" name="date_end" value="<?php echo $date_end;?>">
-                            <input type="hidden" id="bank_id" name="bank_id" value="<?php echo $bank_id;?>">
                             <input type="hidden" id="active" name="active" value="<?php echo $active;?>">
                             <div class="form-group col-md-2">
                              <button type="submit" class="btn btn-success form-control">Exportar</button>                    
@@ -76,7 +67,7 @@
                             <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="zero-configuration_info">
                               <thead>
                                 <tr role="row">
-                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;" aria-sort="ascending"
+                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 60px;" aria-sort="ascending"
                                     aria-label="Name: activate to sort column descending">ID</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Fecha</th>
@@ -88,6 +79,8 @@
                                     aria-label="Age: activate to sort column ascending">Cliente</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Banco</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
+                                    aria-label="Age: activate to sort column ascending">N° Cuenta</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Estado</th>
                                 </tr>
@@ -96,18 +89,17 @@
                                  <?php foreach ($obj_pay as $key => $value): ?>
                                 <td><?php echo $value->pay_id;?></td>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
-                                <td><?php echo $value->amount_total;?></td>
+                                <td>
+                                    <span class="badge badge-pill badge-success" style="font-size: 100%;">
+                                        S/. <?php echo $value->amount_total;?>
+                                    </span>
+                                </td>
                                 <td>@<?php echo $value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td>
-                                     <?php if ($value->bank_id == 1) {
-                                        $valor = "BCP (crédito)";
-                                        $stilo = "label label-info";
-                                    }else{
-                                        $valor = "Interbank";
-                                        $stilo = "label label-success";
-                                    }?>
-                                <span class="<?php echo $stilo ?>"><?php echo $valor;?></span>
+                                    <span class="label-info">BCP (crédito)</span>
+                                </td>
+                                <td><?php echo $value->bank_number;?></td>
                                 <td>
                                     <?php if ($value->active == 1) {
                                         $valor = "En proceso";

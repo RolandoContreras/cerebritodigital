@@ -35,6 +35,14 @@
                                 <input type="text" class="form-control text-right" id="date_end" name="date_end" placeholder="Fecha Final"/>
                              </div>
                           </div>
+                            <div class="form-group col-md-2">
+                             <label>Tipo</label>
+                              <select name="recompra" id="recompra" class="form-control">
+                                      <option value="-1" selected="">Todos</option>
+                                      <option value="0">Activacion de Membresía</option>
+                                      <option value="1">Reconsumos</option>
+                              </select>
+                         </div>
                          <div class="form-group col-md-2">
                              <label>Estado</label>
                               <select name="active" id="active" class="form-control">
@@ -55,6 +63,7 @@
                             <input type="hidden" id="date_start" name="date_start" value="<?php echo $date_start;?>">
                             <input type="hidden" id="date_end" name="date_end" value="<?php echo $date_end;?>">
                             <input type="hidden" id="active" name="active" value="<?php echo $active;?>">
+                            <input type="hidden" id="active" name="recompra" value="<?php echo $recompra;?>">
                             <div class="form-group col-md-2">
                              <button type="submit" class="btn btn-success form-control">Exportar</button>                    
                          </div>
@@ -68,10 +77,12 @@
                             <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="zero-configuration_info">
                               <thead>
                                 <tr role="row">
-                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;" aria-sort="ascending"
+                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 80px;" aria-sort="ascending"
                                     aria-label="Name: activate to sort column descending">ID</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Fecha</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 80px;"
+                                    aria-label="Age: activate to sort column ascending">Tipo</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Total</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
@@ -86,6 +97,18 @@
                                  <?php foreach ($obj_invoices as $key => $value): ?>
                                 <td><?php echo $value->invoice_id;?></td>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
+                                <td>
+                                    <?php if ($value->recompra == 1) {
+                                        $valor = "Reconsumo";
+                                        $style = "badge-info";
+                                    }else{
+                                        $valor = "Activacion de Membresía";
+                                        $style = "badge-success";
+                                    }?>
+                                    <span class="badge badge-pill <?php echo $style;?>" style="font-size: 100%;">
+                                        <?php echo $valor;?>
+                                    </span>
+                                </td>
                                 <td>$<?php echo $value->total;?></td>
                                 <td><?php echo $value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>

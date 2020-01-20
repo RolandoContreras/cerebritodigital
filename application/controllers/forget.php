@@ -52,7 +52,6 @@ class Forget extends CI_Controller {
         }
         
         public function message($username, $pass, $name, $email){    
-                $img = "https://cerebritodigitalperu.com/static/page_front/img/logo_header.png";           
                 $mensaje = wordwrap("<html>
                     
  <div bgcolor='#E9E9E9' style='background:#fff;margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
@@ -63,9 +62,6 @@ class Forget extends CI_Controller {
         <td valign='top' align='center'>
           <table style='border-collapse:collapse;margin:0;padding:0;max-width:600px' width='100%' height='100%' cellspacing='0' cellpadding='0' border='0' align='center'>
             <tbody>
-              <tr>
-                <td style='padding:39px 30px 31px;display:block;background:#fafafa'> <img src='$img' alt='bca-logo' style='display:inline-block;padding-right:12px' class='CToWUd'> </td>
-              </tr>
               <tr>
                 <td style='padding:0 30px;display:block;background:#fafafa'>
                   <p style='padding:32px 32px 0;color:#333333;background:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;line-height:14px;margin:0;font-size:14px;border-radius:5px 5px 0 0'

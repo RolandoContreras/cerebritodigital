@@ -10,7 +10,7 @@
         <h6 class="element-header">¿Dudas sobre el retiro? <small>Consulte las reglas de retiro.</small> </h6>
         <div class="element-box">
           <div class="alert alert-success" role="alert"> <strong>Reglas de Retiro </strong><br> 
-                Las solicitudes de retiro se realizan los fines de mes.<br>
+                Las solicitudes de retiro todos los Lunes.<br>
                 El importe mínimo de retiro es de S/.10.00
                 Los pagos se procesan en las primeras 48 horas hábiles de realizar la solicitud
             </div>
@@ -41,7 +41,17 @@
         
       <div class="col-lg-12" style="margin-bottom: 30px;" align="center">
         <a id="btnCreate"> 
-            <button id="show_pay" class="btn btn-primary btn-round animated infinite pulse" style="font-size:11px; font-weight: 900; text-transform: uppercase;">Clic aquí para realizar su retiro!</button>          
+            <?php 
+            $hoy = getdate();
+            $date = $hoy['weekday'];
+
+            if($date != "Monday"){
+                $value = "disabled";
+            }else{
+                $value = "";
+            }
+            ?>
+            <button id="show_pay" <?php echo $value;?> class="btn btn-primary btn-round animated infinite pulse" style="font-size:11px; font-weight: 900; text-transform: uppercase;">Clic aquí para realizar su retiro!</button>          
         </a>
           <div id="show_pay_div" class="col-xl-6 col-lg-6 col-md-6" style="padding-top: 30px; display: none; ">
             <div class="element-wrapper">
@@ -119,14 +129,12 @@
                             ?>
                             <div class="form-group">
                               <div class="col-lg-12" align="right"> 
+                                  
+                                  
                                   <button class="mr-2 mb-2 btn btn-success" <?php echo $disable;?> type="submit" style="margin-top: 30px;">Realizar Retiro <i class="os-icon os-icon-grid-18"></i></button>        
                               </div>
                             </div>
-                            <div class="form-group has-feedback" style="display: none;" id="pay_alert">
-                                <div class="alert alert-danger validation-errors">
-                                    <p class="user_login_id" style="text-align: center;">El importe es invalido.</p>
-                                </div>
-                            </div>
+                            <div id="pay_alert"></div>
                             <div class="form-group has-feedback" style="display: none;" id="pay_success">
                                 <div class="alert alert-success validation-errors">
                                     <p class="user_login_id" style="text-align: center;">Solicitud de retiro con éxito.</p>

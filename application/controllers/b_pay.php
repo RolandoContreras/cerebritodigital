@@ -17,6 +17,7 @@ class B_pay extends CI_Controller {
         //GET CUSTOMER_ID $_SESSION   
         $customer_id = $_SESSION['customer']['customer_id'];
         date_default_timezone_set('America/Lima');
+        
         $params = array(
                         "select" =>"pay.date,
                                     pay.amount,
@@ -65,12 +66,15 @@ class B_pay extends CI_Controller {
             if ($this->input->is_ajax_request()) {
                 //SELECT ID FROM CUSTOMER
             $customer_id = $_SESSION['customer']['customer_id'];    
+            $active_month = $_SESSION['customer']['active_month'];    
             $amount = trim($this->input->post('amount'));
             $tax = trim($this->input->post('tax'));
             $result = trim($this->input->post('result'));
             $total_disponible = trim($this->input->post('total_disponible'));
             
-            if($total_disponible >= $result){
+            
+            if($active_month == 1){
+                   if($total_disponible >= $result){
                     if($amount >= 10){
                         //INSERT PAY TABLE
                             $data = array(
@@ -107,16 +111,21 @@ class B_pay extends CI_Controller {
                                 'created_by' => $customer_id,
                             ); 
                             $this->obj_pay_commission->insert($data);    
-                      $message = 2;   
+                      $data['status'] = true;
+                      $data['message'] = "Solicitud de retiro con éxito";
                     }else{
-                      $message = 1;   
+                      $data['status'] = false;
+                      $data['message'] = "Importe invalido";
                     }
+                }else{
+                    $data['status'] = false;
+                    $data['message'] = "Importe invalido";
+                }
             }else{
-                $message = 1;   
+                     $data['status'] = false;
+                     $data['message'] = "Debe estar activo este mes para solicitar el retiro";
             }
-            
-            //SEDN DATA
-                $data['status'] = $message;
+            //SEND DATA
             echo json_encode($data);
             }
     }

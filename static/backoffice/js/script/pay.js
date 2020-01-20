@@ -4,18 +4,36 @@ function make_pay(){
       var result = document.getElementById("result").value;
       var total_disponible = document.getElementById("total_disponible").value;
       
-      
-      
       if(amount == ""){
-          document.getElementById("pay_alert").style.display = "block";
+          $("#pay_alert").html();
+            var texto = "";
+            texto = texto+'<div class="alert alert-danger">';
+            texto = texto+'<p style="text-align: center;">El importe es invalido</p>';
+            texto = texto+'</div>';                 
+            $("#pay_alert").html(texto);
           $("#amount").focus();
       }else if(tax == ""){
-          document.getElementById("pay_alert").style.display = "block";
+          $("#pay_alert").html();
+            var texto = "";
+            texto = texto+'<div class="alert alert-danger">';
+            texto = texto+'<p style="text-align: center;">El importe es invalido</p>';
+            texto = texto+'</div>';                 
+            $("#pay_alert").html(texto);
       }else if(result == ""){
-          document.getElementById("pay_alert").style.display = "block";
+          $("#pay_alert").html();
+            var texto = "";
+            texto = texto+'<div class="alert alert-danger">';
+            texto = texto+'<p style="text-align: center;">El importe es invalido</p>';
+            texto = texto+'</div>';                 
+            $("#pay_alert").html(texto);
       }else{
           if(result > total_disponible){
-              document.getElementById("pay_alert").style.display = "block";
+              $("#pay_alert").html();
+                var texto = "";
+                texto = texto+'<div class="alert alert-danger">';
+                texto = texto+'<p style="text-align: center;">El importe es invalido</p>';
+                texto = texto+'</div>';                 
+                $("#pay_alert").html(texto);
           }else{
               $.ajax({
                 type: "post",
@@ -26,15 +44,24 @@ function make_pay(){
                        result:result,
                        total_disponible:total_disponible},
                 success:function(data){
-                    if(data.status == '1'){
-                        document.getElementById("pay_alert").style.display = "block";
-                    }else{
-                        document.getElementById("pay_alert").style.display = "none";
-                        document.getElementById("pay_success").style.display = "block";
+                    if(data.status == true){
+                        $("#pay_alert").html();
+                        var texto = "";
+                        texto = texto+'<div class="alert alert-success">';
+                        texto = texto+'<p style="text-align: center;">.'+ data.message +'.</p>';
+                        texto = texto+'</div>';                 
+                        $("#pay_alert").html(texto);
                         location.reload();
+                    }else{
+                        $("#pay_alert").html();
+                        var texto = "";
+                        texto = texto+'<div class="alert alert-danger">';
+                        texto = texto+'<p style="text-align: center;">'+ data.message +'</p>';
+                        texto = texto+'</div>';                 
+                        $("#pay_alert").html(texto);
                     }
                 }            
-        });
+            });
           }
           
       }

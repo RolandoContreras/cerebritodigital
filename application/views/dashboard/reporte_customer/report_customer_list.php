@@ -46,13 +46,11 @@
                               </select>
                          </div>
                          <div class="form-group col-md-2">
-                             <label>Rangos</label>
-                              <select name="ranges" id="ranges" class="form-control">
+                             <label>Estado Mensual</label>
+                              <select name="month" id="month" class="form-control">
                                   <option value="-1">Todos</option>
-                                  <?php 
-                                  foreach ($obj_ranges as $value) { ?>
-                                        <option value="<?php echo $value->range_id;?>"><?php echo $value->name;?></option>
-                                  <?php } ?>
+                                  <option value="1">Activo</option>
+                                  <option value="0">Inactivo</option>
                               </select>
                          </div>
                          <div class="form-group col-md-2">
@@ -73,7 +71,7 @@
                             <input type="hidden" id="date_start" name="date_start" value="<?php echo $date_start;?>">
                             <input type="hidden" id="date_end" name="date_end" value="<?php echo $date_end;?>">
                             <input type="hidden" id="pack" name="pack" value="<?php echo $pack;?>">
-                            <input type="hidden" id="ranges" name="ranges" value="<?php echo $ranges;?>">
+                            <input type="hidden" id="month" name="month" value="<?php echo $month;?>">
                             <input type="hidden" id="active" name="active" value="<?php echo $active;?>">
                             <div class="form-group col-md-2">
                              <button type="submit" class="btn btn-success form-control">Exportar</button>                    
@@ -107,6 +105,8 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Fecha de Activación</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
+                                    aria-label="Age: activate to sort column ascending">Activos del Mes</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Estado</th>
                                 </tr>
                               </thead>
@@ -120,6 +120,18 @@
                                 <td><?php echo $value->pais;?></td>
                                 <td><?php echo $value->pack;?></td>
                                 <td><?php echo formato_fecha_barras($value->date_start);?></td>
+                                <td>
+                                    <?php if ($value->active_month == 1) {
+                                        $valor = "Activo";
+                                        $style = "badge-dark";
+                                    }else{
+                                        $valor = "Inactivo";
+                                        $style = "badge-secondary";
+                                    }?>
+                                    <span class="badge badge-pill <?php echo $style;?>" style="font-size: 100%;">
+                                        <?php echo $valor;?>
+                                    </span>
+                                </td>
                                 <td>
                                     <?php if ($value->active == 1) {
                                         $valor = "Activo";

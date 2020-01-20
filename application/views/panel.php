@@ -23,7 +23,9 @@
                 <div class="card user-card">
                   <div class="card-block">
                     <h5 class="m-b-15">Pagos Realizados</h5>
-                    <h4 class="f-w-300 mb-3"><?php echo $obj_total->total_pay;?></h4><span class="text-muted"><label class="label theme-bg text-white f-12 f-w-400"><?php echo $obj_pending->pending_pay;?></label> Pendientes</span></div>
+                    <h4 class="f-w-300 mb-3"><?php echo $obj_total->total_pay;?></h4>
+                    <span class="text-muted"><label class="label theme-bg text-white f-12 f-w-400"><?php echo $obj_pending->pending_pay;?></label> Pendientes</span>
+                  </div>
                 </div>
               </div>
               <div class="col-md-6 col-xl-4">
@@ -31,7 +33,8 @@
                   <div class="card-block">
                     <h5 class="f-w-400 m-b-15">Facturas</h5>
                     <h4 class="f-w-300 mb-3"><?php echo $obj_total->total_invoices;?></h4>
-                    <span class="text-muted">Total</span>
+                    <span class="text-muted"><label class="label theme-bg text-white f-12 f-w-400"><?php echo $obj_pending->pending_kit;?></label> Pendientes Membresías</span> &nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="text-muted"><label class="label theme-bg text-white f-12 f-w-400"><?php echo $obj_pending->pending_recompra;?></label> Pendientes Recompra</span>
                   </div>
                 </div>
               </div>

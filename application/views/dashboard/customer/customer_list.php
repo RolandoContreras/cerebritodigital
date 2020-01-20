@@ -61,12 +61,9 @@
                                 <td><?php echo "@".$value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td>
-                                    <?php if ($value->bank_id == 1) {
+                                    <?php if ($value->bank_id != "") {
                                         $valor = "BCP (Banco de Crédito)";
                                         $stilo = "label label-info";
-                                    }else if($value->bank_id == 2){
-                                        $valor = "interbank";
-                                        $stilo = "label label-success";
                                     }else{
                                         $valor = "---";
                                         $stilo = "";

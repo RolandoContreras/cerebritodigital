@@ -119,7 +119,9 @@
                                 <td><?php echo $value->phone;?></td>
                                 <td><?php echo $value->pais;?></td>
                                 <td><?php echo $value->pack;?></td>
-                                <td><?php echo formato_fecha_barras($value->date_start);?></td>
+                                <td>
+                                    <?php echo $value->date_start!=""?formato_fecha_barras($value->date_start):"---";?>
+                                </td>
                                 <td>
                                     <?php if ($value->active_month == 1) {
                                         $valor = "Activo";

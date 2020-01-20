@@ -53,6 +53,9 @@ $route['default_controller'] = 'home';
 $route['courses'] = 'courses';
 $route['404_override'] = '';
 
+$route['terminos-condiciones'] = 'home/term';
+$route['policy-cookies'] = 'home/policy';
+
 $route['courses'] = 'courses';
 $route['courses/([0-9]+)'] = 'courses/index/$1';
 $route['courses/([0-9a-z_-]+)'] = 'courses/category/$1';

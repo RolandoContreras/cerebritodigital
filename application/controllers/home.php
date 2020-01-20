@@ -23,6 +23,18 @@ class Home extends CI_Controller {
         $this->load->view('home',$data);
 	}
         
+        public function term(){
+             //get data nav courses category
+            $data['obj_category_videos'] = $this->nav_videos();
+            $this->load->view('term',$data);
+	}
+        
+        public function policy(){
+             //get data nav courses category
+            $data['obj_category_videos'] = $this->nav_videos();
+            $this->load->view('policy-cookies',$data);
+	}
+
         public function send_messages(){
 		if($this->input->is_ajax_request()){   
                 $name = $this->input->post("name");

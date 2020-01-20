@@ -37,7 +37,7 @@
                                 <tr role="row">
                                   <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;" aria-sort="ascending"
                                     aria-label="Name: activate to sort column descending">ID</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 392px;"
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 200px;"
                                     aria-label="Position: activate to sort column ascending">Título</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">Categoría</th>
@@ -65,12 +65,13 @@
                             <td class="label-info">
                                 <?php if ($value->type == 1) {
                                     $valor = "Libre";
-                                    $stilo = "label label-success";
                                 }else{
                                     $valor = "Pagado";
-                                    $stilo = "label label-info";
                                 } ?>
-                                <span><?php echo $valor;?></span>
+                                <span class="badge badge-pill badge-dark" style="font-size: 100%;">
+                                    <?php echo $valor;?>
+                                </span>
+                                
                             </td>
                             <td>
                                 <?php if ($value->active == 0) {

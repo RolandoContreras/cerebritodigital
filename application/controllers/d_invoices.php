@@ -79,7 +79,9 @@ class D_invoices extends CI_Controller{
     public function validate(){
         
         //GET CUSTOMER_ID
+        
         $invoice_id = $this->input->post("invoice_id");
+        $price = $this->input->post("price");
         $kit_id = $this->input->post("kit");
         $date =  $this->input->post('date');
         $active =  $this->input->post('active');
@@ -87,6 +89,7 @@ class D_invoices extends CI_Controller{
         $data = array(
                 'kit_id' => $kit_id,
                 'date' => $date,
+                'total' => $price,
                 'active' => $active,  
                 'updated_at' => date("Y-m-d H:i:s"),
                 'updated_by' => $_SESSION['usercms']['user_id']

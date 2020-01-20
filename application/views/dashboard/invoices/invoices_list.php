@@ -33,7 +33,7 @@
                             <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="zero-configuration_info">
                               <thead>
                                 <tr role="row">
-                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;" aria-sort="ascending"
+                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;" aria-sort="ascending"
                                     aria-label="Name: activate to sort column descending">ID</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
                                     aria-label="Age: activate to sort column ascending">Fecha</th>
@@ -62,7 +62,11 @@
                                 </td>
                                 <td><?php echo "@".$value->username;?></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
-                                <td><?php echo $value->name;?></td>
+                                <td>
+                                    <span class="badge badge-pill badge-dark" style="font-size: 100%;">
+                                        <?php echo $value->name;?>
+                                    </span>
+                                </td>
                                 <td>
                                     <?php if ($value->active == 1) {
                                         $valor = "Esperando Activación";

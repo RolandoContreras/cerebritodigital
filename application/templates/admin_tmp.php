@@ -173,7 +173,7 @@
                 <span class="pcoded-mtext">Reportes</span>
             </a>
             <ul class="pcoded-submenu">
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_global";?>"><i class="icon-large icon-th"></i>Datos</a></li>
+                <!--<li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_global";?>"><i class="icon-large icon-th"></i>Datos</a></li>-->
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_customer";?>"><i class="icon-large icon-th"></i>Clientes</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_invoice";?>"><i class="icon-large icon-th"></i>Ventas</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/report_pay";?>"><i class="icon-large icon-th"></i>Pagos</a></li>

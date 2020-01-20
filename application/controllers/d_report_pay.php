@@ -120,7 +120,7 @@ class D_report_pay extends CI_Controller{
                                     customer.last_name as apellido,
                                     pay.amount_total as importe,
                                     customer.bank_id as banco,
-                                    customer.bank_number as n° cuenta,
+                                    customer.bank_number as n_cuenta,
                                     pay.active as estado",
                         "join" => array('customer, pay.customer_id = customer.customer_id'),
                         "where" => "$where",

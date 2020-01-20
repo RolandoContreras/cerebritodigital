@@ -35,7 +35,7 @@
                             <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="zero-configuration_info">
                               <thead>
                                 <tr role="row">
-                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;" aria-sort="ascending"
+                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;" aria-sort="descending"
                                     aria-label="Name: activate to sort column descending">ID</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
                                     aria-label="Position: activate to sort column ascending">Fecha</th>
@@ -46,9 +46,9 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Banco</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Importe</th>
+                                    aria-label="Age: activate to sort column ascending">N° Cuenta</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Age: activate to sort column ascending">Tax</th>
+                                    aria-label="Age: activate to sort column ascending">N° Cuenta Interbancario</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Total</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
@@ -66,17 +66,10 @@
                                 <td><b><?php echo "@".$value->username;?></b></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td>
-                                    <?php if ($value->bank_id == 1) {
-                                        $valor = "BCP  (crédito)";
-                                        $stilo = "label label-info";
-                                    }elseif($value->bank_id == 2){
-                                        $valor = "Interbank";
-                                        $stilo = "label label-success";
-                                    } ?>
-                                    <span class="<?php echo $stilo ?>"><?php echo $valor; ?></span>
+                                    <span class="label label-info">BCP  (crédito)</span>
                                 </td>
-                                <td>S/. <?php echo $value->amount;?></td>
-                                <td>S/. <?php echo $value->descount;?></td>
+                                <td><?php echo $value->bank_number;?></td>
+                                <td><?php echo $value->bank_number_cci;?></td>
                                 <td>
                                     <span class="badge badge-pill badge-success" style="font-size: 100%;">S/. <?php echo $value->amount_total;?></span>
                                         </td>

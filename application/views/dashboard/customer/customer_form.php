@@ -64,12 +64,9 @@
                                   <label>Nombre de Banco</label>
                                   <select name="bank_id" id="bank_id" class="form-control">
                                 <option value="0">[ Seleccionar ]</option>
-                                    <option value="1" <?php if(isset($obj_customer)){
-                                          if($obj_customer->bank_id == 1){ echo "selected";}
+                                    <option value="BCP (Banco de Crédito)" <?php if(isset($obj_customer)){
+                                          if($obj_customer->bank_id){ echo "selected";}
                                       }else{echo "";} ?>>BCP (Banco de Crédito)</option>
-                                      <option value="2" <?php if(isset($obj_customer)){
-                                          if($obj_customer->bank_id == 2){ echo "selected";}
-                                      }else{echo "";} ?>>Interbank</option>
                                 </select>
                               </div>
                               <div class="form-group">

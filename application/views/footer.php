@@ -85,7 +85,11 @@
         <div class=copyright-content>
           <div class=row>
             <div class=col-sm-6>
-              <div class=copyright-text>Construido por <a href="https://evolutionweb.com">Evolution Web.</a></div>
+                <div class=copyright-text>Construido por <a href="http://evolucionweb.tech/" target="_blank">Evolución</a><img src="<?php echo site_url().'static/page_front/img/logo/evolucion_logo.png';?>" alt="evolucion logo" width="80"/></div>
+                <div class=copyright-text> 
+                    
+                </div>
+                
             </div>
             <div class="col-sm-6 text-right">
               <ul id=copyright-menu class=list-inline>

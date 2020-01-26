@@ -175,6 +175,633 @@ class B_network extends CI_Controller {
         $this->tmp_backoffice->render("backoffice/b_unilevel");
     }
     
+    public function binario()
+    {
+        //GET SESION ACTUALY
+        $this->get_session();
+        //GET DATA URL
+        $url = explode("/",uri_string());
+        
+        if(isset($url[2])){
+            $customer_id = decrypt($url[2]);
+        }else{
+            $customer_id = $_SESSION['customer']['customer_id'];
+        }    
+        
+        //GET CUSTOMER PRINCIPAL
+        $params = array(
+                        "select" =>"customer.customer_id,
+                                        customer.username,
+                                        customer.created_at,
+                                        customer.binaries_active,
+                                        customer.first_name,
+                                        customer.last_name,
+                                        (select sum(point_left) from binarys where customer_id = $customer_id and status_value = 1) as point_left,
+                                        (select sum(point_rigth) from binarys where customer_id = $customer_id and status_value = 1) as point_rigth,
+                                        customer.point_calification_left,
+                                        customer.point_calification_rigth,
+                                        customer.active_month,
+                                        customer.active,
+                                        kit.kit_id as kit_id,
+                                        kit.name as kit_name,
+                                        unilevel.parend_id,
+                                        unilevel.position,
+                                        unilevel.ident",
+                        "where" => "customer.customer_id = $customer_id and  customer.status_value = 1",
+                            "join" => array('kit, customer.kit_id = kit.kit_id',
+                                            'unilevel, customer.customer_id = unilevel.customer_id'));
+             $obj_customer = $this->obj_customer->get_search_row($params);  
+             $identificator = $obj_customer->ident;
+             
+             if($customer_id == 1){
+                $str = "unilevel.ident like '%1z' or unilevel.ident like '%1d'";
+             }else{
+                $str = "unilevel.ident like '%$identificator' and unilevel.ident <> '$identificator'";
+             }
+             
+             //SELECT ALL CUSTOMER IN THE TREE  
+                    $param_tree = array(
+                                "select" =>"customer.customer_id,
+                                            customer.first_name,
+                                            customer.last_name,
+                                            customer.username,
+                                            customer.active_month,
+                                            unilevel.parend_id,
+                                            unilevel.created_at,
+                                            unilevel.position,
+                                            unilevel.ident,
+                                            kit.name as kit_name,
+                                            kit.kit_id",
+                                 "where" => "$str",
+                                 "join" => array('kit, customer.kit_id = kit.kit_id',
+                                            'unilevel, customer.customer_id = unilevel.customer_id'));
+                    $obj_tree = $this->obj_customer->search($param_tree); 
+             //SET POSITION
+            $pierna = $obj_customer->position;        
+                    
+            if($customer_id == 1){
+                if($pierna == 1){
+                    $position_id1 = '1z';
+                }else{
+                    $position_id1 = '1d';
+                }
+                 //SEND TO $N1   
+                $n1 = array($obj_customer->first_name,
+                        $obj_customer->last_name,
+                        $obj_customer->customer_id,
+                        $obj_customer->created_at,
+                        $obj_customer->position,
+                        $obj_customer->username,
+                        $position_id1, 
+                        $obj_customer->kit_name,
+                        $obj_customer->active_month);
+                }else{
+                   $n1 = array($obj_customer->first_name,
+                        $obj_customer->last_name,
+                        $obj_customer->customer_id,
+                        $obj_customer->created_at,
+                        $obj_customer->position,
+                        $obj_customer->username,
+                        $obj_customer->ident,
+                        $obj_customer->kit_name,
+                        $obj_customer->active_month
+                        );             
+            }
+            
+          foreach ($obj_tree as $key => $value) {
+                $explo_ident =  explode(",", $n1[6]);
+                //SELECT LAST IDENTIFICATOR FOR N2_Z
+                $ultimo = intval($explo_ident[0]) + 1; 
+                
+                if($customer_id == 1){
+                    $n2_z = '2z,1z';
+                    $n2_d = '2d,1d';
+                }else{
+                    //SELECT LAST IDENTIFICATOR FOR N2_D
+                    $n2_z = $ultimo."z,".$n1[6];
+                    $n2_d = $ultimo."d,".$n1[6];
+                }
+                
+                //SELECT LAST IDENTIFICATOR FOR N3_Z
+                $ultimo = intval($n2_z) + 1; 
+                $n3_z = $ultimo."z,".$n2_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N3_2z
+                $ultimo = intval($n2_z) + 1; 
+                $n3_2_z = $ultimo."d,".$n2_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N3_D
+                $ultimo = intval($n2_d) + 1; 
+                $n3_d = $ultimo."d,".$n2_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N3_2z
+                $ultimo = intval($n2_d) + 1; 
+                $n3_2_d = $ultimo."z,".$n2_d;
+                
+                
+                //SELECT LAST IDENTIFICATOR FOR N4_Z
+                $ultimo = intval($n3_z) + 1; 
+                $n4_z = $ultimo."z,".$n3_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N4_2_Z
+                $ultimo = intval($n3_z) + 1; 
+                $n4_2_z = $ultimo."d,".$n3_z;
+                
+                
+               //SELECT LAST IDENTIFICATOR FOR N4_3z
+                $ultimo = intval($n3_2_z) + 1; 
+                $n4_3_z = $ultimo."z,".$n3_2_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N4_4z
+                $ultimo = intval($n3_2_z) + 1; 
+                $n4_4_z = $ultimo."d,".$n3_2_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N4_D
+                $ultimo = intval($n3_d) + 1; 
+                $n4_d = $ultimo."d,".$n3_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N4_2_D
+                $ultimo = intval($n3_d) + 1; 
+                $n4_2_d = $ultimo."z,".$n3_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N4_3d
+                $ultimo = intval($n3_2_d) + 1; 
+                $n4_3_d = $ultimo."d,".$n3_2_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N4_4d
+                $ultimo = intval($n3_2_d) + 1; 
+                $n4_4_d = $ultimo."z,".$n3_2_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_Z
+                $ultimo = intval($n4_z) + 1; 
+                $n5_z = $ultimo."z,".$n4_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_2_Z
+                $ultimo = intval($n4_z) + 1; 
+                $n5_2_z = $ultimo."d,".$n4_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_3z
+                $ultimo = intval($n4_2_z) + 1; 
+                $n5_3_z = $ultimo."z,".$n4_2_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_4z
+                $ultimo = intval($n4_2_z) + 1; 
+                $n5_4_z = $ultimo."d,".$n4_2_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_5z
+                $ultimo = intval($n4_3_z) + 1; 
+                $n5_5_z = $ultimo."z,".$n4_3_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_6z
+                $ultimo = intval($n4_3_z) + 1; 
+                $n5_6_z = $ultimo."d,".$n4_3_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_7z
+                $ultimo = intval($n4_4_z) + 1; 
+                $n5_7_z = $ultimo."z,".$n4_4_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_8z
+                $ultimo = intval($n4_4_z) + 1; 
+                $n5_8_z = $ultimo."d,".$n4_4_z;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_Z
+                $ultimo = intval($n4_d) + 1; 
+                $n5_d = $ultimo."d,".$n4_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_2_Z
+                $ultimo = intval($n4_d) + 1; 
+                $n5_2_d = $ultimo."z,".$n4_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_3z
+                $ultimo = intval($n4_2_d) + 1; 
+                $n5_3_d = $ultimo."d,".$n4_2_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_4z
+                $ultimo = intval($n4_2_d) + 1; 
+                $n5_4_d = $ultimo."z,".$n4_2_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_5z
+                $ultimo = intval($n4_3_d) + 1; 
+                $n5_5_d = $ultimo."d,".$n4_3_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_6z
+                $ultimo = intval($n4_3_d) + 1; 
+                $n5_6_d = $ultimo."z,".$n4_3_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_7z
+                $ultimo = intval($n4_4_d) + 1; 
+                $n5_7_d = $ultimo."d,".$n4_4_d;
+                
+                //SELECT LAST IDENTIFICATOR FOR N5_8z
+                $ultimo = intval($n4_4_d) + 1; 
+                $n5_8_d = $ultimo."z,".$n4_4_d;
+                
+                if($value->ident == $n2_z){
+                    $n2_iz = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,
+                                               );
+                    $this->tmp_backoffice->set("n2_iz",$n2_iz);
+                }
+                elseif($value->ident == $n2_d){
+                    $n2_de = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n2_de",$n2_de);
+                }
+                elseif($value->ident == $n3_2_z){
+                    $n3_2_iz = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n3_2_iz",$n3_2_iz);
+                }
+                elseif($value->ident == $n3_z){
+                    $n3_iz = array($value->first_name,
+                                              $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n3_iz",$n3_iz);
+                }
+                elseif($value->ident == $n3_d){
+                    $n3_de = array($value->first_name,
+                                              $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n3_de",$n3_de);
+                }
+                elseif($value->ident == $n3_2_d){
+                    $n3_2_de = array($value->first_name,
+                                              $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n3_2_de",$n3_2_de);
+                }
+                elseif($value->ident == $n4_z){
+                    $n4_iz = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n4_iz",$n4_iz);
+                }
+                elseif($value->ident == $n4_2_z){
+                    $n4_2_iz = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n4_2_iz",$n4_2_iz);
+                }
+                elseif($value->ident == $n4_3_z){
+                    $n4_3_iz = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n4_3_iz",$n4_3_iz);
+                }
+                elseif($value->ident == $n4_4_z){
+                    $n4_4_iz = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n4_4_iz",$n4_4_iz);
+                }
+                elseif($value->ident == $n4_d){
+                    $n4_de = array($value->first_name,
+                                              $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n4_de",$n4_de);
+                }
+                elseif($value->ident == $n4_2_d){
+                    $n4_2_de = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n4_2_de",$n4_2_de);
+                }
+                elseif($value->ident == $n4_3_d){
+                    $n4_3_de = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n4_3_de",$n4_3_de);
+                }
+                elseif($value->ident == $n4_4_d){
+                    $n4_4_de = array($value->first_name,
+                                              $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n4_4_de",$n4_4_de);
+                }
+                elseif($value->ident == $n5_z){
+                    $n5_iz = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_iz",$n5_iz);
+                }
+                elseif($value->ident == $n5_2_z){
+                    $n5_2_iz = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_2_iz",$n5_2_iz);
+                }
+                elseif($value->ident == $n5_3_z){
+                    $n5_3_iz = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_3_iz",$n5_3_iz);
+                }
+                elseif($value->ident == $n5_4_z){
+                    $n5_4_iz = array($value->first_name,
+                                              $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_4_iz",$n5_4_iz);
+                }
+                elseif($value->ident == $n5_5_z){
+                    $n5_5_iz = array($value->first_name,
+                                              $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_5_iz",$n5_5_iz);
+                }
+                elseif($value->ident == $n5_6_z){
+                    $n5_6_iz = array($value->first_name,
+                                              $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_6_iz",$n5_6_iz);
+                }
+                elseif($value->ident == $n5_7_z){
+                    $n5_7_iz = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_7_iz",$n5_7_iz);
+                }
+                elseif($value->ident == $n5_8_z){
+                    $n5_8_iz = array($value->first_name,
+                                              $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_8_iz",$n5_8_iz);
+                }
+                elseif($value->ident == $n5_d){
+                    $n5_de = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_de",$n5_de);
+                }
+                elseif($value->ident == $n5_2_d){
+                    $n5_2_de = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_2_de",$n5_2_de);
+                }
+                elseif($value->ident == $n5_3_d){
+                    $n5_3_de = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_3_de",$n5_3_de);
+                }
+                elseif($value->ident == $n5_4_d){
+                    $n5_4_de = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_4_de",$n5_4_de);
+                }
+                elseif($value->ident == $n5_5_d){
+                    $n5_5_de = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_5_de",$n5_5_de);
+                }
+                elseif($value->ident == $n5_6_d){
+                    $n5_6_de = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_6_de",$n5_6_de);
+                }
+                elseif($value->ident == $n5_7_d){
+                    $n5_7_de = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_7_de",$n5_7_de);
+                }
+                elseif($value->ident == $n5_8_d){
+                    $n5_8_de = array($value->first_name,
+                                               $value->last_name,
+                                               encrypt($value->customer_id),
+                                               $value->created_at,
+                                               $value->parend_id,
+                                               $value->position,
+                                               $value->username,
+                                               $value->active_month,
+                                               $value->kit_name,
+                                               $value->kit_id,);
+                    $this->tmp_backoffice->set("n5_8_de",$n5_8_de);
+                }
+            }   
+         
+        //GET TOTAL REFERRED
+        $params = array(
+                        "select" =>"unilevel_id",
+                        "where" => "ident like '%$customer_id%'"
+                        );
+        $obj_total_referidos = $this->obj_unilevel->total_records($params);    
+        
+        //GET PRICE CURRENCY
+        $this->tmp_backoffice->set("obj_total_referidos",$obj_total_referidos);
+        $this->tmp_backoffice->set("obj_customer",$obj_customer);
+        $this->tmp_backoffice->render("backoffice/b_binario");
+    }
+    
     public function get_session(){          
         if (isset($_SESSION['customer'])){
             if($_SESSION['customer']['logged_customer']=="TRUE" && $_SESSION['customer']['status']=='1'){               

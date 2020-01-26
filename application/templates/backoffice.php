@@ -4,9 +4,9 @@
   <title>Oficina Virtual - Cerebrito Digital</title>
   <meta charset="utf-8">
   <meta content="ie=edge" http-equiv="x-ua-compatible">
-  <meta name="description" content="Multiplica tu dinero en el mercado financiero con nosotros. BCA CAPITAL una empresa financiera que te ayudará a aumentar tus finanzas, Clic en el siguiente enlace.">
-  <meta name="author" content="Cevolution Web">
-  <meta name="keyword" content="bca capital, bca club, finanzas, fondo de inversión, bca red, bca networkmarketing">
+  <meta name="description" content="Somos un grupo de emprendedores peruanos con la finalidad de fortalecer la educación y llevar información transparente sobre las nuevas tendencias mundiales.">
+  <meta name="author" content="Cerebrito Digital Perú">
+  <meta name="keyword" content="cerebrito digital peru, cerebrito digital, mlm, negocio en red, plataforma de cursos">
   <meta content="width=device-width, initial-scale=1" name="viewport">
    <!--START FAVICON-->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url().'static/page_front/img/logo/favicon/apple-icon-57x57.png';?>">
@@ -107,8 +107,9 @@
               <div class="sub-menu-w">
                 <div class="sub-menu-i">
                   <ul class="sub-menu">
-                    <li> <a href="<?php echo site_url().'backoffice/referred';?>">Referidos Directos</a> </li>
-                    <li> <a href="<?php echo site_url().'backoffice/unilevel';?>">Arbol Unilevel</a> </li>
+                    <li> <a href="<?php echo site_url().'backoffice/referred';?>">Referidos Directos</a></li>
+                    <li> <a href="<?php echo site_url().'backoffice/binario';?>">Arbol Binario</a></li>
+                    <li> <a href="<?php echo site_url().'backoffice/unilevel';?>">Arbol Unilevel</a></li>
                   </ul>
                 </div>
               </div>
@@ -224,6 +225,7 @@
               <div class="sub-menu-i">
                 <ul class="sub-menu">
                   <li> <a href="<?php echo site_url().'backoffice/referred';?>">Referidos Directos</a> </li>
+                  <li> <a href="<?php echo site_url().'backoffice/binario';?>">Arbol Binario</a></li>
                   <li> <a href="<?php echo site_url().'backoffice/unilevel';?>">Arbol Unilevel</a> </li>
                 </ul>
               </div>

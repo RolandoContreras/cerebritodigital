@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3">
         <file>
-            <url>application/views/nav.php</url>
-            <bookmark id="2">
-                <name/>
-                <line>0</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
             <url>application/views/welcome.php</url>
             <bookmark id="1">
                 <name/>
@@ -25,10 +17,25 @@
                 <key/>
             </bookmark>
         </file>
+        <file>
+            <url>application/views/nav.php</url>
+            <bookmark id="2">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/cerebritodigital/application/controllers/b_pay.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/controllers/b_network.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/templates/backoffice.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/backoffice/b_binario.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/controllers/b_home.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/static/backoffice/js/script/home.js</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/backoffice/b_home.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/config/routes.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/controllers/register.php</file>
         </group>
     </open-files>
 </project-private>

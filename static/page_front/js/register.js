@@ -8,6 +8,8 @@ function register(){
     var phone = document.getElementById("phone").value;
     var country = document.getElementById("country").value;
     var parent_id = document.getElementById("parent_id").value;
+    var position_temporal = document.getElementById("position_temporal").value;
+    var ident = document.getElementById("ident").value;
     
     var response = grecaptcha.getResponse();
         if(response.length == 0){
@@ -99,6 +101,8 @@ function register(){
                                 dni : dni,
                                 phone : phone,
                                 pass : pass,
+                                position_temporal: position_temporal,
+                                ident:ident,
                                 country : country},
                         success:function(data){
                             if(data.status == "username"){

@@ -79,7 +79,10 @@
                         <div class=screen-reader-response></div>
                         <form action="javascript:void(0);" enctype="multipart/form-data" class="wpcf7-form">
                            <?php if(isset($obj_customer->username)){ 
-                                    $parent_id = $obj_customer->customer_id;?>
+                                    $parent_id = $obj_customer->customer_id;
+                                    $position_temporal = $obj_customer->position_temporal;
+                                    $ident = $obj_customer->ident;
+                                    ?>
                                         <div class="form-group">
                                             <p>Usted será patrocinado por:
                                                 <br><b><?php echo str_to_first_capital($obj_customer->first_name)." ".str_to_first_capital($obj_customer->last_name);?> <?php echo "- "."@".$obj_customer->username?></b>
@@ -87,10 +90,14 @@
                                         </div>
                             <?php }else{
                                 $parent_id = "1";
+                                $position_temporal = 1;
+                                $ident = "1z,1d";
                             } ?> 
                           <p>
                               <span class="wpcf7-form-control-wrap your-name">
                                   <input type="hidden" id="parent_id" name="parent_id" value="<?php echo $parent_id;?>">
+                                  <input type="hidden" id="position_temporal" name="position_temporal" value="<?php echo $position_temporal;?>">
+                                  <input type="hidden" id="ident" name="ident" value="<?php echo $ident;?>">
                                   <input type="text" onkeyup="this.value=Numtext(this.value)" onblur="validate_username(this.value);" name="user" id="user"  class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-tel" placeholder="Usuario">
                                   <span class="alert-0"></span>
                               </span>

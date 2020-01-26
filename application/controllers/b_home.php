@@ -21,18 +21,16 @@ class B_home extends CI_Controller {
                         "select" =>"customer.username,
                                     customer.active,
                                     customer.date_month,
+                                    unilevel.position_temporal,
+                                    unilevel.unilevel_id,
                                     kit.name as kit,
                                     kit.kit_id,
-                                    kit.img as kit_img,
-                                    ranges.range_id,
-                                    ranges.img,
-                                    ranges.name",
+                                    kit.img as kit_img",
                         "where" => "customer.customer_id = $customer_id and customer.status_value = 1",
                         "join" => array('kit, customer.kit_id = kit.kit_id',
-                                        'ranges, customer.range_id = ranges.range_id'),
+                                        'unilevel, customer.customer_id = unilevel.customer_id'),
                         );
         $obj_customer = $this->obj_customer->get_search_row($params);
-        
         $date_month = $obj_customer->date_month;
         
         $date = date("Y-m-d");
@@ -107,6 +105,28 @@ class B_home extends CI_Controller {
         $this->tmp_backoffice->set("active_month",$active_month);
         $this->tmp_backoffice->render("backoffice/b_home");
     }
+    
+    public function side_binary(){          
+        
+        if ($this->input->is_ajax_request()) {
+            $side_id = $this->input->post("side_id");
+            $unilevel_id = $this->input->post("unilevel_id");
+            $customer_id = $_SESSION['customer']['customer_id'];
+            //UPDATE UNILEVEL POSITION
+            $data_invoice = array(
+                    'position_temporal' => "$side_id",
+                    'updated_at' => date("Y-m-d H:i:s"),
+                    'updated_by' => $customer_id,
+                );
+            $this->obj_unilevel->update($unilevel_id, $data_invoice);
+            
+            $data['status'] = true;
+            $data['message'] = "Posición alterada con éxito";
+            //SEND DATA
+            echo json_encode($data);
+            
+        }
+    }  
     
     public function update_session_active_month($data_month){          
         $data_customer_session['customer_id'] = $_SESSION['customer']['customer_id'];

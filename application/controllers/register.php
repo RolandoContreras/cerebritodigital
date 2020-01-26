@@ -20,12 +20,18 @@ class Register extends CI_Controller {
                 $username = $url[1];
                 //Select params
                 $params = array(
-                    "select" => "customer_id,first_name,last_name, username",
-                    "where" => "username = '$username'");
+                   "select" => "customer.customer_id,
+                                customer.first_name,
+                                unilevel.position_temporal,
+                                customer.last_name,
+                                customer.username,
+                                unilevel.ident",
+                    "join" => array( 'unilevel, unilevel.customer_id = customer.customer_id'),
+                    "where" => "username = '$username'",
+                    );
                 $data['obj_customer'] = $this->obj_customer->get_search_row($params);
             }
             $data['obj_paises'] = $this->list_pais();
-            
 	    $this->load->view('register',$data);
 	}
         public function validate_username() {
@@ -68,6 +74,8 @@ class Register extends CI_Controller {
                 $pass = $this->input->post("pass");
                 $country = $this->input->post("country");
                 $parent_id = $this->input->post("parent_id");
+                $position_temporal = $this->input->post("position_temporal");
+                $ident = $this->input->post("ident");
                 
                 //INSERT TABLE CUSTOMER
                 $data = array(
@@ -87,24 +95,64 @@ class Register extends CI_Controller {
                         'created_at' => date("Y-m-d H:i:s"),
                     );
                     $customer_id = $this->obj_customer->insert($data);
-               
-                //GET IDENT    
-                if($parent_id == 1){
-                    $new_ident = 1;
-                }else{
-                    $param_customer = array(
-                            "select" => "ident",
-                            "where" => "customer_id = $parent_id");
-                    $customer = $this->obj_unilevel->get_search_row($param_customer);      
-                    $ident =  $customer->ident;
-                    $new_ident = $ident.",$parent_id";
-                }    
                     
                 //CREATE UNILEVEL
+                    
+                    //code from company
+                    if($parent_id == 1){
+                        if($position_temporal == 1){
+                            $new_ident = "1z";
+                            $last_id = 'z';
+                        }else{
+                            $new_ident = "1d";
+                            $last_id = 'z';
+                        }
+                    }else{
+                        $new_ident = $ident;
+                    }
+                    
+                    if ($position_temporal == 1) {
+                            $last_id = 'z';
+                    }else{
+                            $last_id = 'd';
+                    }
+                    
+                    //get data all unilevel where like ident
+                    $params = array(
+                       "select" => "ident",
+                       "where" => "ident like '%$new_ident'",
+                        "order" => "unilevel_id ASC",
+                        );
+                    $obj_identificator = $this->obj_unilevel->search($params);
+                    
+                    //SELECT NEW IDENTIFICATOR
+                    $identificador_explo = explode(',', $new_ident);
+                    $last_number = intval(preg_replace('/[^0-9]+/', '', $identificador_explo[0]), 10); 
+                    $last_number = $last_number + 1;
+                    $new_identification = $last_number.$last_id.",".$new_ident;
+                    
+                    if($obj_identificator != ""){
+                        foreach ($obj_identificator as $key => $value){
+                            if($value->ident == "$new_identification"){
+                                //VERIDY NEW IDENTIFICATOR
+                                $new_identification_param = explode(',', $value->ident);
+                                $last_number = intval(preg_replace('/[^0-9]+/', '', $new_identification_param[0]), 10); 
+                                $last_number = $last_number + 1;
+                                $new_identification = $last_number.$last_id.",".$new_identification;
+                                
+                            }
+                        }
+                    }
+                    
                 $data_unilevel = array(
                         'customer_id' => $customer_id,
                         'parend_id' => $parent_id,
-                        'ident' => $new_ident,
+                        'ident' => $new_identification,
+                        'position' => $position_temporal,
+                        'point_calification_left' => 0,
+                        'point_calification_rigth' => 0,
+                        'binaries_active' => 0,
+                        'position_temporal' => 1,
                         'status_value' => 1,
                         'created_at' => date("Y-m-d H:i:s"),
                         'created_by' => $customer_id,

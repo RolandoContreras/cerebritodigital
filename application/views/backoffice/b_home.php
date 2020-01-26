@@ -135,7 +135,7 @@
                     <div class="element-info">
                       <div class="element-info-with-icon">
                         <div class="element-info-icon">
-                          <div class="os-icon os-icon-ui-92"></div>
+                          <div class="os-icon os-icon-users"></div>
                         </div>
                         <div class="element-info-text">
                           <h5 class="element-inner-header"> Link de Referido </h5>
@@ -145,6 +145,38 @@
                           </div>
                         </div>
                       </div>
+                    </div>
+                      <div class="element-info">
+                        <div class="element-info-with-icon">
+                            <div class="element-info-icon">
+                                <div class="os-icon os-icon-hierarchy-structure-2"></div>
+                            </div>
+                            <div class="element-info-text">
+                                <h5 class="element-inner-header">
+                                   Dirección Binaria
+                                </h5>
+                                <div class="element-inner-desc">
+                                    <form>
+                                            <p>Posición del Binario:</p>
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input style="margin-right: 10px;" onclick="side_binary('1','<?php echo $obj_customer->unilevel_id?>');" class="form-check-input change_bin" <?php echo $obj_customer->position_temporal=="1"?'checked':'';?> type="radio"> Izquierda
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input style="margin-right: 10px;" onclick="side_binary('2','<?php echo $obj_customer->unilevel_id?>');" class="form-check-input change_bin" <?php echo $obj_customer->position_temporal=="2"?'checked':'';?> type="radio"> Derecha
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="side_binary"></div>
+                                        </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                   </div>
                 </div>

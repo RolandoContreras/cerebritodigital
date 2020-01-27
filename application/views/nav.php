@@ -16,7 +16,7 @@
           <div class="widget widget_text">
             <div class=textwidget>
               <ul>
-                <li><a>+(51) 929 498 649</a></li>
+                <li><a>(51) 993 764 410</a></li>
                 <li><a><span>contacto@cerebritodigital.com</span></a></li>
               </ul>
             </div>
@@ -28,7 +28,7 @@
                   <div class=wpb_wrapper>
                     <div class="thim-sc-social-links ">
                       <ul class=socials>
-                        <li><a target=_blank href="https://facebook.com">facebook</a></li>
+                        <li><a target=_blank href="https://www.facebook.com/cerebritodigitaloficial/">facebook</a></li>
                         <li><a target=_blank href="https://youtube.com">youtube</a></li>
                       </ul>
                     </div>

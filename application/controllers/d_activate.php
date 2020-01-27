@@ -11,6 +11,7 @@ class D_activate extends CI_Controller{
         $this->load->model("unilevel_model","obj_unilevel");
         $this->load->model("kit_model","obj_kit");
         $this->load->model("bonus_model","obj_bonus");
+        $this->load->model("binarys_model","obj_binarys");
     }   
                 
     public function index(){  
@@ -21,6 +22,7 @@ class D_activate extends CI_Controller{
                                     invoices.date,
                                     invoices.total,
                                     invoices.img,
+                                    invoices.operacion,
                                     customer.customer_id,
                                     customer.username,
                                     customer.first_name,
@@ -57,6 +59,7 @@ class D_activate extends CI_Controller{
                                     invoices.date,
                                     invoices.total,
                                     invoices.img,
+                                    invoices.operacion,
                                     customer.customer_id,
                                     customer.username,
                                     customer.first_name,
@@ -93,21 +96,24 @@ class D_activate extends CI_Controller{
                 $invoice_id = $this->input->post("invoice_id");
                 $customer_id = $this->input->post("customer_id");
                 $kit_id = $this->input->post("kit_id");
-                
-                
+                $total = $this->input->post("total");
                 
                     //GET DATA CUSTOMER UNILEVEL
                     $params = array(
-                            "select" =>"ident",
+                            "select" =>"ident,
+                                        parend_id,
+                                        position",
                             "where" => "customer_id = $customer_id"
                     );
                     //GET DATA FROM BONUS
                     $obj_unilevel = $this->obj_unilevel->get_search_row($params);
                     
+                    //INSERT AMOUNT ON COMMISION TABLE  type REFERRED  
+                    $this->pay_direct($invoice_id, $obj_unilevel->parend_id,$obj_unilevel->position, $total);
                     if(isset($obj_unilevel->ident) != ""){
                         $ident = $obj_unilevel->ident;
                         //INSERT AMOUNT ON COMMISION TABLE    
-                        $this->pay_unilevel($ident,$invoice_id, $obj_kit->bono_n1,$obj_kit->bono_n2,$obj_kit->bono_n3,$obj_kit->bono_n4,$obj_kit->bono_n5);
+                        $this->add_point_binary($ident,$total);
                     }
                     
                     $date_month =date("Y-m-d", strtotime("+30 day"));
@@ -169,64 +175,95 @@ class D_activate extends CI_Controller{
             $this->tmp_mastercms->set("obj_invoices",$obj_invoices);
             $this->tmp_mastercms->render("dashboard/activate/activate_catalogo_list");
     }
-        
-    public function pay_unilevel($ident,$invoice_id,$bono_n1,$bono_n2,$bono_n3,$bono_n4,$bono_n5){
+    
+    public function pay_direct($invoice_id,$parend_id,$position, $total){
                 
-                $new_ident = explode(",", $ident);
-                rsort($new_ident);
-
-                //BOUCLE ULTI 5 LEVEL
-                for ($x = 0; $x <= 4; $x++) {
-                        if(isset($new_ident[$x])){
-                            if($new_ident[$x] != ""){
-                                //get customer active
-                                $params = array(
-                                        "select" =>"active",
-                                        "where" => "customer_id = $new_ident[$x]"
-                                );
-                                //GET DATA FROM BONUS
-                                $obj_customer = $this->obj_customer->get_search_row($params);
-                                if($obj_customer->active == 1){
-                                    //INSERT COMMISSION TABLE
-                                    switch ($x) {
-                                        case 0:
-                                          $amount = $bono_n1;   
-                                          $bonus_id = 1;
-                                          break;
-                                        case 1:
-                                          $amount = $bono_n2;      
-                                          $bonus_id = 2;
-                                          break;
-                                        case 2:
-                                          $amount = $bono_n3;      
-                                          $bonus_id = 2;
-                                          break;
-                                        case 3:
-                                          $amount = $bono_n4;      
-                                          $bonus_id = 2;
-                                          break;
-                                        case 4:
-                                          $amount = $bono_n5;      
-                                          $bonus_id = 2;  
-                                          break;
-                                    }
-                                    $data = array(
-                                        'invoice_id' => $invoice_id,
-                                        'customer_id' => $new_ident[$x],
-                                        'bonus_id' => $bonus_id,
-                                        'amount' => $amount,
-                                        'active' => 1,
-                                        'status_value' => 1,
-                                        'date' => date("Y-m-d H:i:s"),
-                                        'created_at' => date("Y-m-d H:i:s"),
-                                        'created_by' => $_SESSION['usercms']['user_id'],
-                                    ); 
-                                    $this->obj_commissions->insert($data);
-                                }
-                            }
-                        }
+                if($parend_id <> 0){
+                    //calcule comission 20%
+                    $amount = $total * 0.2;
+                    //save comission
+                    $data = array(
+                    'invoice_id' => $invoice_id,
+                    'customer_id' => $parend_id,
+                    'bonus_id' => 1,
+                    'amount' => $amount,
+                    'active' => 1,
+                    'status_value' => 1,
+                    'date' => date("Y-m-d H:i:s"),
+                    'created_at' => date("Y-m-d H:i:s"),
+                    'created_by' => $_SESSION['usercms']['user_id'],
+                    ); 
+                    $this->obj_commissions->insert($data);
+                    
+                    //update calification binary
+                    if($position == 1){
+                        $data = array(
+                            'point_calification_left' => 1,
+                            'updated_at' => date("Y-m-d H:i:s"),
+                            'updated_by' => $_SESSION['usercms']['user_id'],
+                            ); 
+                            $this->obj_unilevel->update($parend_id, $data);
+                    }else{
+                        $data = array(
+                            'point_calification_rigth' => 1,
+                            'updated_at' => date("Y-m-d H:i:s"),
+                            'updated_by' => $_SESSION['usercms']['user_id'],
+                            ); 
+                            $this->obj_unilevel->update($parend_id, $data);
+                    }
                 }
         }    
+    
+    public function add_point_binary($ident,$total){
+                
+            $array_identificador =  explode(',', $ident);
+            foreach ($array_identificador as $key => $value) {
+                if($key <= 59){
+                    $identificador = substr(str_replace($value, "", $ident),1);
+                    $where = "unilevel.ident = '$identificador' and customer.customer_id <> 0";
+                    //GET DATA CUSTOMER
+                    $params = array(
+                        "select" =>"customer.customer_id,
+                                    unilevel.position,
+                                    customer.kit_id",
+                         "join" => array('customer, unilevel.customer_id = customer.customer_id'),
+                         "where" => $where);
+                    $obj_unilevel = $this->obj_unilevel->get_search_row($params);
+                        if(isset($obj_unilevel) != ""){
+                            //INSERT POINT ON BINARYS TABLE
+                           $rest = substr("$value", -1); 
+                            if($rest == "z"){
+                                $leg = 'point_left';
+                            }else{
+                                $leg = 'point_rigth';
+                            }
+                              //INSERT POINT LEG ON BINARYS TABLE
+                                if($obj_unilevel->kit_id == 1){
+                                    if($key <= 12){
+                                         $data = array(
+                                            'customer_id' => $obj_unilevel->customer_id,
+                                            "$leg" => $total,
+                                            'created_by' => $obj_unilevel->customer_id,
+                                            'status_value' => 1,
+                                            'created_at' => date("Y-m-d H:i:s"),
+                                        ); 
+                                        $this->obj_binarys->insert($data);
+                                    }
+                                }else{
+                                    $data = array(
+                                        'customer_id' => $obj_unilevel->customer_id,
+                                        "$leg" => $total,
+                                        'created_by' => $obj_unilevel->customer_id,
+                                        'status_value' => 1,
+                                        'created_at' => date("Y-m-d H:i:s"),
+                                    ); 
+                                    $this->obj_binarys->insert($data);
+                                }
+                                
+                        }
+                }
+            }
+    }    
         
     public function get_session(){          
         if (isset($_SESSION['usercms'])){

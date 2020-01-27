@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="element-wrapper">
-            <h6 class="element-header">Factura activación y recompras</h6>
+            <h6 class="element-header">Factura de activación y recompras</h6>
             <div class="element-box">
               <!-------------------- END - Controls Above Table -------------------->
               <div class="table-responsive">
@@ -31,7 +31,7 @@
                                           <span class="lighter"><?php echo $value->invoice_id;?></span>
                                       </td>
                                       <td align="center"> 
-                                          <span><?php echo format_number_dolar($value->price);?></span> <br> 
+                                          <span>S/. <?php echo $value->price;?></span> <br> 
                                       </td>
                                       <td align="center">
                                           <?php 

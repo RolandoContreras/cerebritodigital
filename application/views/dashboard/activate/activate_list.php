@@ -35,10 +35,12 @@
                             <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="zero-configuration_info">
                               <thead>
                                 <tr role="row">
-                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;" aria-sort="ascending"
+                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;" aria-sort="ascending"
                                     aria-label="Name: activate to sort column descending">ID</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Age: activate to sort column ascending">Fecha</th>
+                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;" aria-sort="ascending"
+                                    aria-label="Name: activate to sort column descending">N° Operación</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
                                     aria-label="Position: activate to sort column ascending">Usuario</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 150px;"
@@ -61,6 +63,7 @@
                                 <?php foreach ($obj_invoices as $key => $value): ?>
                                 <th><?php echo $value->invoice_id;?></th>
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
+                                <td><?php echo $value->operacion;?></td>
                                 <td><b><?php echo "@".$value->username;?></b></td>
                                 <td><?php echo $value->first_name." ".$value->last_name;?></td>
                                 <td>
@@ -100,7 +103,7 @@
                                     <div class="operation">
                                         <div class="btn-group">
                                             <?php if ($value->active == 1) { ?>
-                                                    <button class="btn btn-secondary" type="button" onclick="active('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>','<?php echo $value->kit_id;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Procesar</button>
+                                                    <button class="btn btn-secondary" type="button" onclick="active('<?php echo $value->invoice_id;?>','<?php echo $value->customer_id;?>','<?php echo $value->kit_id;?>','<?php echo $value->total;?>');"><span class="pcoded-micon"><i data-feather="check-circle"></i></span> Procesar</button>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -112,6 +115,7 @@
                                 <tr>
                                   <th rowspan="1" colspan="1">ID</th>
                                   <th rowspan="1" colspan="1">Fecha</th>
+                                  <th rowspan="1" colspan="1">N° Operación</th>
                                   <th rowspan="1" colspan="1">Usuario</th>
                                   <th rowspan="1" colspan="1">Cliente</th>
                                   <th rowspan="1" colspan="1">Kit</th>

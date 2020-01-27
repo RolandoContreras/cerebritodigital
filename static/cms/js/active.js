@@ -1,4 +1,4 @@
-function active(invoice_id,customer_id,kit_id,type){
+function active(invoice_id,customer_id,kit_id,total){
     bootbox.confirm({
     message: "Confirma que desea procesar el registro?",
     buttons: {
@@ -19,7 +19,7 @@ function active(invoice_id,customer_id,kit_id,type){
                    data: {invoice_id : invoice_id,
                           customer_id:customer_id,
                           kit_id : kit_id,
-                          type : type},
+                          total : total},
                    success:function(data){                             
                    location.reload();
                    }         

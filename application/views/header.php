@@ -10,7 +10,7 @@
                       <div class=wpb_wrapper>
                         <ul class=list-inline>
                           <li class=list-inline-item>¿Tienen alguna pregunta?</li>
-                          <li class=list-inline-item><a><ion-icon ios="ios-call" md="md-call"></ion-icon> (51) 929 498 649</a></li>
+                          <li class=list-inline-item><a><ion-icon ios="ios-call" md="md-call"></ion-icon>(51) 993 764 410</a></li>
                         </ul>
                       </div>
                     </div>

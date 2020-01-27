@@ -265,7 +265,7 @@ class D_activate extends CI_Controller{
                          "where" => $where);
                     $obj_unilevel = $this->obj_unilevel->get_search_row($params);
                     
-                        if(isset($obj_unilevel) != ""){
+                        if(isset($obj_unilevel->customer_id) != ""){
                             //INSERT POINT ON BINARYS TABLE
                            $rest = substr("$value", -1); 
                             if($rest == "z"){

@@ -15,9 +15,9 @@
               <div class="element-box p-2">
                 <div class="card">
                   <div class="body pad-materiais" align="center"> 
-                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/logo.png';?>">
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/plan.jpg';?>">
                     <p class="titulo-materiais">[ES] Presentación de negocios</p> 
-                    <a href="<?php echo site_url().'static/backoffice/files/presentacion_embajada_fk.pptx';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Descargar </a> 
+                    <a href="<?php echo site_url().'static/backoffice/files/presentacion_cerebrito_digital.pdf';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Descargar </a> 
                   </div>
                 </div>
               </div>
@@ -48,9 +48,20 @@
               <div class="element-box p-2">
                 <div class="card">
                   <div class="body pad-materiais" align="center"> 
-                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/cd.png';?>">
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/cd_show.png';?>">
                     <p class="titulo-materiais">Logo CD Cerebrito Digital</p> 
                     <a href="<?php echo site_url().'static/backoffice/files/cd.png';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Descargar </a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="element-box p-2">
+                <div class="card">
+                  <div class="body pad-materiais" align="center"> 
+                      <img class="img-fluid img-thumbnail" src="<?php echo site_url().'static/backoffice/files/cerebrito2_show.png';?>">
+                    <p class="titulo-materiais">Logo Cerebrito Digital 2</p> 
+                    <a href="<?php echo site_url().'static/backoffice/files/cerebrito2.png';?>" target="_blank" class="btn btn-primary btn-sm btn round btn-simple"> Descargar </a> 
                   </div>
                 </div>
               </div>

@@ -172,7 +172,7 @@ class Register extends CI_Controller {
             $data_customer_session['status'] = 1;
             $_SESSION['customer'] = $data_customer_session; 
             $data['status'] = "success";
-            $this->message($user, $pass, $first_name, $email);
+//            $this->message($user, $pass, $first_name, $email);
             echo json_encode($data);
             }
 	}

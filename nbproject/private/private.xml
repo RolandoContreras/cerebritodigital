@@ -10,16 +10,16 @@
             </bookmark>
         </file>
         <file>
-            <url>application/views/nav.php</url>
-            <bookmark id="2">
+            <url>application/views/home.php</url>
+            <bookmark id="3">
                 <name/>
                 <line>0</line>
                 <key/>
             </bookmark>
         </file>
         <file>
-            <url>application/views/home.php</url>
-            <bookmark id="3">
+            <url>application/views/nav.php</url>
+            <bookmark id="2">
                 <name/>
                 <line>0</line>
                 <key/>
@@ -28,8 +28,13 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/cerebritodigital/application/controllers/b_network.php</file>
-            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/backoffice/b_binario.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/static/cms/js/active.js</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/backoffice/b_invoice.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/controllers/d_activate.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/header.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/nav.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/models/binarys_model.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/dashboard/activate/activate_list.php</file>
         </group>
     </open-files>
 </project-private>

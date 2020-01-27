@@ -195,23 +195,58 @@ class D_activate extends CI_Controller{
                     ); 
                     $this->obj_commissions->insert($data);
                     
-                    //update calification binary
-                    if($position == 1){
-                        $data = array(
-                            'point_calification_left' => 1,
-                            'updated_at' => date("Y-m-d H:i:s"),
-                            'updated_by' => $_SESSION['usercms']['user_id'],
-                            ); 
-                            $this->obj_unilevel->update($parend_id, $data);
-                    }else{
-                        $data = array(
-                            'point_calification_rigth' => 1,
-                            'updated_at' => date("Y-m-d H:i:s"),
-                            'updated_by' => $_SESSION['usercms']['user_id'],
-                            ); 
-                            $this->obj_unilevel->update($parend_id, $data);
+                    //GET DATA PARENT
+                    $params = array(
+                            "select" =>"point_calification_left,
+                                        point_calification_rigth,
+                                        binaries_active",
+                            "where" => "customer_id = $parend_id"
+                    );
+                    //GET DATA FROM BONUS
+                    $obj_unilevel_parent = $this->obj_unilevel->get_search_row($params);
+                    
+                    if($obj_unilevel_parent->binaries_active == 0){
+                        //update calification binary
+                        if($position == 1){
+                            if($obj_unilevel_parent->point_calification_left == 0){
+                                $data = array(
+                                'point_calification_left' => 1,
+                                'updated_at' => date("Y-m-d H:i:s"),
+                                'updated_by' => $_SESSION['usercms']['user_id'],
+                                ); 
+                                $this->obj_unilevel->update($parend_id, $data);
+                                //verify binario
+                                if($obj_unilevel_parent->point_calification_rigth == 1){
+                                    $data = array(
+                                        'binaries_active' => 1,
+                                        ); 
+                                    $this->obj_unilevel->update($parend_id, $data);
+                                }
+                            }
+                        }else{
+                            if($obj_unilevel_parent->point_calification_rigth == 0){
+                                 $data = array(
+                                    'point_calification_rigth' => 1,
+                                    'updated_at' => date("Y-m-d H:i:s"),
+                                    'updated_by' => $_SESSION['usercms']['user_id'],
+                                    ); 
+                                $this->obj_unilevel->update($parend_id, $data);
+                                //verify binario
+                                if($obj_unilevel_parent->point_calification_left == 1){
+                                    $data = array(
+                                        'binaries_active' => 1,
+                                        ); 
+                                    $this->obj_unilevel->update($parend_id, $data);
+                                }
+                            }
+                           
+                        }
                     }
                 }
+                
+                //verify active binary
+                
+                
         }    
     
     public function add_point_binary($ident,$total){
@@ -229,6 +264,7 @@ class D_activate extends CI_Controller{
                          "join" => array('customer, unilevel.customer_id = customer.customer_id'),
                          "where" => $where);
                     $obj_unilevel = $this->obj_unilevel->get_search_row($params);
+                    
                         if(isset($obj_unilevel) != ""){
                             //INSERT POINT ON BINARYS TABLE
                            $rest = substr("$value", -1); 
@@ -238,7 +274,16 @@ class D_activate extends CI_Controller{
                                 $leg = 'point_rigth';
                             }
                               //INSERT POINT LEG ON BINARYS TABLE
-                                if($obj_unilevel->kit_id == 1){
+                                if($obj_unilevel->kit_id == 2){
+                                    $data = array(
+                                        'customer_id' => $obj_unilevel->customer_id,
+                                        "$leg" => $total,
+                                        'created_by' => $obj_unilevel->customer_id,
+                                        'status_value' => 1,
+                                        'created_at' => date("Y-m-d H:i:s"),
+                                    ); 
+                                    $this->obj_binarys->insert($data);
+                                }else{
                                     if($key <= 12){
                                          $data = array(
                                             'customer_id' => $obj_unilevel->customer_id,
@@ -249,18 +294,9 @@ class D_activate extends CI_Controller{
                                         ); 
                                         $this->obj_binarys->insert($data);
                                     }
-                                }else{
-                                    $data = array(
-                                        'customer_id' => $obj_unilevel->customer_id,
-                                        "$leg" => $total,
-                                        'created_by' => $obj_unilevel->customer_id,
-                                        'status_value' => 1,
-                                        'created_at' => date("Y-m-d H:i:s"),
-                                    ); 
-                                    $this->obj_binarys->insert($data);
                                 }
-                                
                         }
+                        $ident = $identificador;
                 }
             }
     }    

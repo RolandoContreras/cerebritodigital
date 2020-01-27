@@ -29,10 +29,10 @@
                                 </div>
                                 <div class="form-group"> 
                                     <div class="col-lg-12"> 
-                                        <label class="control-label"><br>Ahorro Dólares BCP:</label>
-                                        <b>125-26514981321</b>
-                                        <label class="control-label">Número Interbancario (CCI):</label>
-                                        <b>1351-125-26514981321-89</b>
+                                        <label class="control-label"><br>Ahorro Soles BCP:</label>
+                                        <b>191-96932034043</b>
+                                        <label class="control-label"><br>Gilda Marisa Sulca Cardenas</label>
+                                        <b>(Representante)</b>
                                     </div>
                                 </div>
                                 <div class="form-group">

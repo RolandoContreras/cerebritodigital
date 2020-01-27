@@ -5,52 +5,49 @@
   <div class="content-i">
     <div class="content-box">
       <div class="element-wrapper">
-        <h6 class="element-header"> Minha rede <small class="text-muted">Visão da Rede binária</small> </h6>
+        <h6 class="element-header"> Mi Red <small class="text-muted">Vista de Red Binaria</small> </h6>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="element-box">
               <h6 class="element-header">Calificación del Binario <br><small class="text-muted" style="text-transform:none !important; color:red">Consulte aquí las reglas de calificación!</small>                </h6>
               <div class="row text-center">
                   <div class="col-4">
                      <?php
-                     if($obj_customer->binaries_active == "1"){
-                         $text_binario = "Activo";
-                         $font = "fa-check";
-                         $style = "#4b9c3c";
+                     if($obj_customer->binaries_active == 1){
+                         $text_binario = "Activo";$font = "fa-check";$style = "#4b9c3c";
                      }else{
-                         $text_binario = "Inactivo";
-                         $font = "fa-times";
-                         $style = "#4b9c3c";
+                         $text_binario = "Inactivo";$font = "fa-times";$style = "#bb433e";
                      }
                      ?> 
                     <i class="fa <?php echo $font;?> fa-3x" style="color: <?php echo $style;?> !important"></i><br> 
                     <label><?php echo $text_binario;?></label> 
                   </div>
                 <div class="col-4"> 
-                    <i class="fa fa-times fa-3x text-danger" style="color: #bb433e !important"></i><br> 
-                    <label>Equipe Esquerda</label> 
+                    <?php
+                     if($obj_customer->point_calification_left == 1){
+                         $font = "fa-check";$style = "#4b9c3c";
+                     }else{
+                         $text_binario = "Inactivo";$font = "fa-times";$style = "#bb433e";
+                     }
+                     ?> 
+                    <i class="fa <?php echo $font;?> fa-3x text-danger" style="color: <?php echo $style;?> !important"></i><br> 
+                    <label>Equipo Izquierda</label> 
                 </div>
                 <div class="col-4">
-                    <i class="fa fa-check fa-3x text-success" style="color: #4b9c3c !important"></i><br> 
-                    <label>Equipe Direita</label> 
+                    <?php
+                     if($obj_customer->point_calification_rigth == 1){
+                         $font = "fa-check";$style = "#4b9c3c";
+                     }else{
+                         $text_binario = "Inactivo";$font = "fa-times";$style = "#bb433e";
+                     }
+                     ?> 
+                    <i class="fa <?php echo $font;?> fa-3x text-success" style="color: <?php echo $style;?> !important"></i><br> 
+                    <label>Equipo Derecha</label> 
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="element-box">
-              <h6 class="element-header"> Buscar <br><small class="text-muted" style="text-transform:none !important;">Procure utilizando <b>Login</b> ou <b>ID</b></small> </h6>
-              <form
-                class="formAjax form-horizontal" action="https://www.18kworld.com/bo/binary/search" method="POST" style="padding-bottom: 15px;"> <input type="hidden" name="_token" value="73crcQGXZXXSnao3wUFN3L0pJCyMLlyCbJpDvkf1">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group"> <input name="busca" class="form-control" placeholder="Login"> </div>
-                  </div>
-                  <div class="col-md-6"> <button type="submit" class="btn btn-primary btn-block">Buscar</button> </div>
-                </div>
-                </form>
-            </div>
-          </div>
+         
         </div>
       </div>
       <div class="row" id="tree-family">
@@ -67,25 +64,25 @@
                   <ul class="row clearfix list-unstyled m-b-0 text-center">
                     <li class="col-lg-3 col-md-6 col-sm-12">
                       <div class="element-box el-tablo centered trend-in-corner smaller" data-placement="top" data-toggle="tooltip" title="" data-original-title="Atualizado a 5 minutos atrás">
-                        <div class="display-5" style="font-size: 30px; font-weight: 700"> 0 </div>
-                        <div class="label"> Pessoas na Esquerda* </div>
+                        <div class="display-5" style="font-size: 30px; font-weight: 700"> - </div>
+                        <div class="label"> Personas en la izquierda* </div>
                       </div>
                     </li>
                     <li class="col-lg-3 col-md-6 col-sm-12">
                       <div class="element-box el-tablo centered trend-in-corner smaller">
-                        <div class="display-5" style="font-size: 30px; font-weight: 700"> 29 </div>
-                        <div class="label"> Pessoas na Direita </div>
+                        <div class="display-5" style="font-size: 30px; font-weight: 700"> - </div>
+                        <div class="label"> Personas en la derecha </div>
                       </div>
                     </li>
                     <li class="col-lg-3 col-md-6 col-sm-12">
                       <div class="element-box el-tablo centered trend-in-corner smaller">
-                        <div class="display-5" style="font-size: 30px; font-weight: 700"> 0 </div>
+                        <div class="display-5" style="font-size: 30px; font-weight: 700"> <?php echo $obj_customer->point_left==""?0:$obj_customer->point_left;?> </div>
                         <div class="label">Puntos Izquierda</div>
                       </div>
                     </li>
                     <li class="col-lg-3 col-md-6 col-sm-12">
                       <div class="element-box el-tablo centered trend-in-corner smaller">
-                        <div class="display-5" style="font-size: 30px; font-weight: 700"> 4290 </div>
+                        <div class="display-5" style="font-size: 30px; font-weight: 700"> <?php echo $obj_customer->point_rigth==""?0:$obj_customer->point_rigth;?> </div>
                         <div class="label">Puntos Derecha</div>
                       </div>
                     </li>

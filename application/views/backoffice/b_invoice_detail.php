@@ -104,6 +104,10 @@
                                 <label class="control-label"> Importe  </label> 
                                 <input type="text" name="total" value="S/. <?php echo $obj_invoices->total;?>" id="back_number_cci" class="form-control" disabled="">
                             </div>
+                            <div class="form-group"> 
+                                <label class="control-label"> Código de Operación  </label> 
+                                <input type="text" value="<?php echo $obj_invoices->operacion!=""?$obj_invoices->operacion:"";?>" class="form-control" disabled="">
+                            </div>
                             <div class="form-group has-feedback" style="display: none;" id="wallet_error">
                                 <div class="alert alert-danger validation-errors">
                                     <p class="user_login_id" style="text-align: center;">Ingrese datos validos</p>
@@ -113,7 +117,7 @@
                               <div class="col-lg-12" align="right"> 
                                   <a href="#modal" rel="modal:open">
                                       <?php 
-                                            if($obj_invoices->active == "2"){
+                                            if($obj_invoices->active == "2" || $obj_invoices->active == "1"){
                                                 $value = "disabled";
                                             }else{
                                                 $value = "";  
@@ -132,6 +136,10 @@
                                 <div class="onboarding-media" style="padding-top: 20px;">
                                      <h4 class="onboarding-title" id="modalMsgTitle">SUBIR COMPROBANTE</h4>
                                 </div>
+                                    <div class="form-group"> 
+                                        <label class="control-label"> Código de Operación  </label> 
+                                        <input type="text" value="<?php echo $obj_invoices->operacion!=""?$obj_invoices->operacion:"";?>" class="form-control" name="operacion" id="operacion">
+                                    </div>
                                     <div class="form-group"><br>
                                         <label>Seleccionar Imagen del envio</label>
                                         <input type="file" value="Upload Imagen de Envio" name="image_file" id="image_file">
@@ -139,7 +147,6 @@
                                     </div>
                                     <hr>
                                     <div class="form-group text-right">
-                                         
                                         <button type="submit" <?php echo $value;?>   name="upload" id="upload" class="btn btn-primary"><i class="fa fa-send"></i> Enviar</button>
                                     </div>
                                     <div class="form-group"> 
@@ -174,6 +181,8 @@ $(document).ready(function(){
         e.preventDefault();
         if($('#image_file').val() == ''){
             $("#uploaded_image").html('<div class="alert alert-danger" style="text-align: center">Seleccionar Imagen</div>  ');
+        }else if($('#operacion').val() == ''){
+            $("#uploaded_image").html('<div class="alert alert-danger" style="text-align: center">Ingrese el código de operación</div>  ');
         }else{
             if($('#message').val() == ''){
                 $("#uploaded_image").html('<div class="alert alert-danger" style="text-align: center">Debe llenar el campo</div>  ');

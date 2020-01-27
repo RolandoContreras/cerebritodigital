@@ -94,17 +94,8 @@ class D_activate extends CI_Controller{
                 $customer_id = $this->input->post("customer_id");
                 $kit_id = $this->input->post("kit_id");
                 
-                    //GET DATA FROM TABLE KIT
-                    $params = array(
-                            "select" =>"bono_n1,
-                                        bono_n2,
-                                        bono_n3,
-                                        bono_n4,
-                                        bono_n5",
-                            "where" => "kit_id = $kit_id"
-                    );
-                    //GET DATA FROM BONUS
-                    $obj_kit = $this->obj_kit->get_search_row($params);
+                
+                
                     //GET DATA CUSTOMER UNILEVEL
                     $params = array(
                             "select" =>"ident",

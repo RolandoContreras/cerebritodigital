@@ -101,6 +101,7 @@ class B_finance extends CI_Controller {
                         "select" =>"invoices.invoice_id,
                                     invoices.date,
                                     invoices.recompra,
+                                    invoices.operacion,
                                     invoices.total,
                                     kit.price,
                                     kit.name,
@@ -121,6 +122,7 @@ class B_finance extends CI_Controller {
         $this->get_session();
         $customer_id = $_SESSION['customer']['customer_id'];
         $invoice_id = $_POST['invoice_id'];
+        $operacion = $_POST['operacion'];
         
         //VERIFI ONLY 1 ROW 
             if(isset($_FILES["image_file"]["name"]))
@@ -143,6 +145,7 @@ class B_finance extends CI_Controller {
                         //UPDATE DATA EN CUSTOMER TABLE
                         $data = array(
                             'img' => $img,
+                            'operacion' => $operacion,
                             'active' => 1,
                             'updated_by' => $customer_id,
                             'updated_at' => date("Y-m-d H:i:s")

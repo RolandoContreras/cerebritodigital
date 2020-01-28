@@ -4,6 +4,8 @@ class Panel extends CI_Controller{
     public function __construct() {
         parent::__construct();    
         $this->load->model("comments_model","obj_comments");
+        $this->load->model("commissions_model","obj_commissions");
+        $this->load->model("binarys_model","obj_binarys");
         $this->load->model("customer_model","obj_customer");
         $this->load->model("invoices_model","obj_invoices");
         $this->load->model("unilevel_model","obj_unilevel");
@@ -177,6 +179,82 @@ class Panel extends CI_Controller{
                 }
             }
         }
+         
+     }
+     
+    public function cron_binary(){
+         
+         //GET DATA CUSTOMER ACTIVE
+         $params = array(
+                        "select" =>"customer_id",
+                        "where" => "binaries_active = 1",
+            );
+        $obj_customer = $this->obj_unilevel->search($params);
+        
+         foreach ($obj_customer as $value) {
+                            //GET DATA POINTS
+                            $params = array(
+                                        "select" =>"sum(point_left) as point_left,
+                                                    sum(point_rigth) as point_rigth",
+                                         "where" => "customer_id = $value->customer_id and status_value = 1"
+                            );
+                            $obj_points= $this->obj_binarys->get_search_row($params);
+                            $point_left = $obj_points->point_left;
+                            $point_rigth = $obj_points->point_rigth;
+                            //VERIFY MENOR
+                            if (($point_left == 0) || ($point_rigth == 0)) {
+                            }else{
+                                switch ($point_left) {
+                                    case $point_left < $point_rigth:
+                                          $data = $point_left * 0.1;
+                                          $row = "point_rigth";
+                                          //OPERATION
+                                          $result = $point_rigth - $point_left;
+                                        break;
+                                    case $point_left > $point_rigth:
+                                         $data = $point_rigth * 0.1;
+                                         $row = "point_left";
+                                          //OPERATION
+                                          $result = $point_left - $point_rigth;      
+                                        break;
+                                    default:
+                                         $data = $point_left * 0.1;
+                                         $result = 0;      
+                                }
+                                
+                                //INSERT COMMISSION TABLE PAY BINARY
+                                $data_table = array(
+                                    'customer_id' => $value->customer_id,
+                                    'bonus_id' => 2,
+                                    'amount' => $data,
+                                    'status_value' => 1,
+                                    'date' => date("Y-m-d H:i:s"),
+                                    'created_at' => date("Y-m-d H:i:s"),
+                                    'created_by' => $value->customer_id,
+                                ); 
+                                $this->obj_commissions->insert($data_table);
+                                
+                                //UPDATE NUMERB 2 POINTS PAY    
+                                $data = array(
+                                    'status_value' => 2,
+                                    'updated_at' => date("Y-m-d H:i:s"),
+                                    'updated_by' => $value->customer_id,
+                                ); 
+                                $this->obj_binarys->update_rows_customer($value->customer_id,$data);
+                                
+                                if($result != 0){
+                                    //INSERT POINT LEG ON BINARYS TABLE
+                                    $data_result = array(
+                                        'customer_id' => $value->customer_id,
+                                        "$row" => $result,
+                                        'status_value' => 1,
+                                        'created_at' => date("Y-m-d H:i:s"),
+                                        'created_by' => $value->customer_id,
+                                    ); 
+                                    $this->obj_binarys->insert($data_result);
+                                }
+                            }
+                    }
          
      }
      

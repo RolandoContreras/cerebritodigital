@@ -26,7 +26,7 @@
                   <h1>About us</h1>
                 </div>
                 <div class="text-description col-md-6">
-                  <div class=banner-description><strong class=br>The best demo education </strong> It is a long established fact that a reade.</div>
+                  <p><strong class=br>El mejor sistema de educación </strong> Sé parte de nuestra comunidad</p>
                 </div>
               </div>
             </div>

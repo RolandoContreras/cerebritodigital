@@ -60,6 +60,10 @@ class Home extends CI_Controller {
             }
 	}
         
+        public function error(){
+            $this->load->view('errors/html/error_404');
+	}
+        
         public function nav_videos(){
             $params_category_videos = array(
                         "select" =>"category_id,

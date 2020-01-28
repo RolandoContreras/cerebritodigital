@@ -34,7 +34,7 @@
                <ul>
                   <li><ion-icon name="mail"></ion-icon> contacto@cerebritodigital.com </li>
                   <li><ion-icon name="call"></ion-icon> <a>+ (51) 993 764 410</a></li>
-                  <li><ion-icon name="map"></ion-icon> Av. Benavides 2191, Perú.</li>
+                  <li><ion-icon name="map"></ion-icon> Av. Monteagudo #200 - Comas, Perú.</li>
                 </ul>
               </div>
             </aside>

@@ -249,6 +249,7 @@ class Panel extends CI_Controller{
                                     //INSERT POINT LEG ON BINARYS TABLE
                                     $data_result = array(
                                         'customer_id' => $value->customer_id,
+                                        'invoice_id' => $obj_points->invoice_id,
                                         "$row" => $result,
                                         'status_value' => 1,
                                         'created_at' => date("Y-m-d H:i:s"),

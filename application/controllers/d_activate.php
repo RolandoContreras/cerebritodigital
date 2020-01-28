@@ -113,7 +113,7 @@ class D_activate extends CI_Controller{
                     if(isset($obj_unilevel->ident) != ""){
                         $ident = $obj_unilevel->ident;
                         //INSERT AMOUNT ON COMMISION TABLE    
-                        $this->add_point_binary($ident,$total);
+                        $this->add_point_binary($ident,$total,$invoice_id);
                     }
                     
                     $date_month =date("Y-m-d", strtotime("+30 day"));
@@ -245,7 +245,7 @@ class D_activate extends CI_Controller{
                 
         }    
     
-    public function add_point_binary($ident,$total){
+    public function add_point_binary($ident,$total,$invoice_id){
                 
             $array_identificador =  explode(',', $ident);
             foreach ($array_identificador as $key => $value) {
@@ -274,6 +274,7 @@ class D_activate extends CI_Controller{
                                     $data = array(
                                         'customer_id' => $obj_unilevel->customer_id,
                                         "$leg" => $total,
+                                        'invoice_id' => $invoice_id,
                                         'created_by' => $obj_unilevel->customer_id,
                                         'status_value' => 1,
                                         'created_at' => date("Y-m-d H:i:s"),
@@ -284,6 +285,7 @@ class D_activate extends CI_Controller{
                                          $data = array(
                                             'customer_id' => $obj_unilevel->customer_id,
                                             "$leg" => $total,
+                                            'invoice_id' => $invoice_id,
                                             'created_by' => $obj_unilevel->customer_id,
                                             'status_value' => 1,
                                             'created_at' => date("Y-m-d H:i:s"),

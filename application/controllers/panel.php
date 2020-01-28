@@ -190,11 +190,11 @@ class Panel extends CI_Controller{
                         "where" => "binaries_active = 1",
             );
         $obj_customer = $this->obj_unilevel->search($params);
-        
          foreach ($obj_customer as $value) {
                             //GET DATA POINTS
                             $params = array(
-                                        "select" =>"sum(point_left) as point_left,
+                                        "select" =>"invoice_id,    
+                                                    sum(point_left) as point_left,
                                                     sum(point_rigth) as point_rigth",
                                          "where" => "customer_id = $value->customer_id and status_value = 1"
                             );
@@ -221,12 +221,15 @@ class Panel extends CI_Controller{
                                          $data = $point_left * 0.1;
                                          $result = 0;      
                                 }
+                                $point_left = $obj_points->point_left;
                                 
                                 //INSERT COMMISSION TABLE PAY BINARY
                                 $data_table = array(
                                     'customer_id' => $value->customer_id,
+                                    'invoice_id' => $obj_points->invoice_id,
                                     'bonus_id' => 2,
                                     'amount' => $data,
+                                    'active' => 1,
                                     'status_value' => 1,
                                     'date' => date("Y-m-d H:i:s"),
                                     'created_at' => date("Y-m-d H:i:s"),
@@ -255,6 +258,7 @@ class Panel extends CI_Controller{
                                 }
                             }
                     }
+                    echo "exito";
          
      }
      

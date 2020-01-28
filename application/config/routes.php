@@ -210,11 +210,13 @@ $route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
 $route['dashboard/comentarios/cambiar_status_no'] = "d_comments/change_status_no";
 
 $route['dashboard/usuarios'] = "d_users";
-$route['dashboard/usuarios'] = "d_users";
 $route['dashboard/usuarios/load'] = "d_users/load";
 $route['dashboard/usuarios/load/([0-9]+)'] = "d_users/load/$1";
 $route['dashboard/usuarios/validate'] = "d_users/validate";
 
+$route['dashboard/puntos_binario'] = "d_point_binary";
+$route['dashboard/puntos_binario/load/([0-9]+)'] = "d_point_binary/load/$1";
+$route['dashboard/puntos_binario/validate'] = "d_point_binary/validate";
 
 $route['dashboard/report_customer'] = "d_report_customer";
 $route['dashboard/report_customer/load'] = "d_report_customer/load";

@@ -197,7 +197,8 @@ class D_activate extends CI_Controller{
                     
                     //GET DATA PARENT
                     $params = array(
-                            "select" =>"point_calification_left,
+                            "select" =>"unilevel_id,
+                                        point_calification_left,
                                         point_calification_rigth,
                                         binaries_active",
                             "where" => "customer_id = $parend_id"
@@ -208,38 +209,33 @@ class D_activate extends CI_Controller{
                     if($obj_unilevel_parent->binaries_active == 0){
                         //update calification binary
                         if($position == 1){
-                            if($obj_unilevel_parent->point_calification_left == 0){
                                 $data = array(
-                                'point_calification_left' => 1,
-                                'updated_at' => date("Y-m-d H:i:s"),
-                                'updated_by' => $_SESSION['usercms']['user_id'],
+                                    'point_calification_left' => 1,
+                                    'updated_at' => date("Y-m-d H:i:s"),
+                                    'updated_by' => $_SESSION['usercms']['user_id'],
                                 ); 
-                                $this->obj_unilevel->update($parend_id, $data);
+                                $this->obj_unilevel->update($obj_unilevel_parent->unilevel_id, $data);
                                 //verify binario
                                 if($obj_unilevel_parent->point_calification_rigth == 1){
                                     $data = array(
                                         'binaries_active' => 1,
                                         ); 
-                                    $this->obj_unilevel->update($parend_id, $data);
+                                    $this->obj_unilevel->update($obj_unilevel_parent->unilevel_id, $data);
                                 }
-                            }
                         }else{
-                            if($obj_unilevel_parent->point_calification_rigth == 0){
                                  $data = array(
                                     'point_calification_rigth' => 1,
                                     'updated_at' => date("Y-m-d H:i:s"),
                                     'updated_by' => $_SESSION['usercms']['user_id'],
                                     ); 
-                                $this->obj_unilevel->update($parend_id, $data);
+                                $this->obj_unilevel->update($obj_unilevel_parent->unilevel_id, $data);
                                 //verify binario
                                 if($obj_unilevel_parent->point_calification_left == 1){
                                     $data = array(
                                         'binaries_active' => 1,
                                         ); 
-                                    $this->obj_unilevel->update($parend_id, $data);
+                                    $this->obj_unilevel->update($obj_unilevel_parent->unilevel_id, $data);
                                 }
-                            }
-                           
                         }
                     }
                 }

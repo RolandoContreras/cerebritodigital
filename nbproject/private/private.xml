@@ -28,13 +28,8 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/cerebritodigital/static/cms/js/active.js</file>
-            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/backoffice/b_invoice.php</file>
             <file>file:/C:/xampp/htdocs/cerebritodigital/application/controllers/d_activate.php</file>
-            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/header.php</file>
-            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/nav.php</file>
-            <file>file:/C:/xampp/htdocs/cerebritodigital/application/models/binarys_model.php</file>
-            <file>file:/C:/xampp/htdocs/cerebritodigital/application/views/dashboard/activate/activate_list.php</file>
+            <file>file:/C:/xampp/htdocs/cerebritodigital/application/controllers/panel.php</file>
         </group>
     </open-files>
 </project-private>

@@ -64,13 +64,13 @@
                   <ul class="row clearfix list-unstyled m-b-0 text-center">
                     <li class="col-lg-3 col-md-6 col-sm-12">
                       <div class="element-box el-tablo centered trend-in-corner smaller" data-placement="top" data-toggle="tooltip" title="" data-original-title="Atualizado a 5 minutos atrás">
-                        <div class="display-5" style="font-size: 30px; font-weight: 700"> - </div>
+                        <div class="display-5" style="font-size: 30px; font-weight: 700"> <?php echo $total_left==""?0:$total_left;?> </div>
                         <div class="label"> Personas en la izquierda* </div>
                       </div>
                     </li>
                     <li class="col-lg-3 col-md-6 col-sm-12">
                       <div class="element-box el-tablo centered trend-in-corner smaller">
-                        <div class="display-5" style="font-size: 30px; font-weight: 700"> - </div>
+                        <div class="display-5" style="font-size: 30px; font-weight: 700"> <?php echo $total_right==""?0:$total_right;?> </div>
                         <div class="label"> Personas en la derecha </div>
                       </div>
                     </li>

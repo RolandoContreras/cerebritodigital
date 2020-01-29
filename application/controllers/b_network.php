@@ -789,15 +789,23 @@ class B_network extends CI_Controller {
                 }
             }   
          
-        //GET TOTAL REFERRED
         $params = array(
-                        "select" =>"unilevel_id",
-                        "where" => "ident like '%$customer_id%'"
+                        "select" =>"count(*) as total_left",
+                        "where" => "ident like '%$n2_z'"
                         );
-        $obj_total_referidos = $this->obj_unilevel->total_records($params);    
+        $obj_total_binary = $this->obj_unilevel->get_search_row($params);
+        $total_left = $obj_total_binary->total_left;
+        
+        $params = array(
+                        "select" =>"count(*) as total_right",
+                        "where" => "ident like '%$n2_d'"
+                        );
+        $obj_total_binary = $this->obj_unilevel->get_search_row($params);
+        $total_right = $obj_total_binary->total_right;
         
         //GET PRICE CURRENCY
-        $this->tmp_backoffice->set("obj_total_referidos",$obj_total_referidos);
+        $this->tmp_backoffice->set("total_right",$total_right);
+        $this->tmp_backoffice->set("total_left",$total_left);
         $this->tmp_backoffice->set("obj_customer",$obj_customer);
         $this->tmp_backoffice->render("backoffice/b_binario");
     }

@@ -363,7 +363,7 @@
                           </p>
                           <p>
                               <span class="wpcf7-form-control-wrap phone">
-                                  <input type="tel" name="phone" id="phone" value size=40 class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-tel"placeholder="Teléfono *">
+                                  <input type="tel" name="phone" id="phone" value size=40 class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-tel" placeholder="Teléfono *">
                               </span>
                           </p>
                           <p>
@@ -407,7 +407,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400%2C300" rel=stylesheet property=stylesheet type=text/css media=all>
   <script defer src="<?php echo site_url().'static/page_front/js/automatize.js';?>"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script type="text/javascript">
+  <script>
 	$(document).ready(function() {
 		$("#ir").click(function(event) {
                     $.scrollTo($('#go'), 1000);

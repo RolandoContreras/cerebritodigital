@@ -53,7 +53,7 @@
                     <div class="col-md-3 d-none d-sm-block">
                       <div class="profile-tile">
                         <a class="profile-tile-box" href="<?php echo site_url().'backoffice/unilevel';?>" style="width: 100%;"> <i class="os-icon os-icon-hierarchy-structure-2" style="font-size: 35px; color: #4a3116;"></i>
-                          <div class="pt-user-name"> Personas en el Equipo <br><b><?php echo $obj_total_referidos->total_register;?></b> </div>
+                          <div class="pt-user-name"> Personas en el Equipo <br><b><?php echo $obj_total_referidos->total_binary;?></b> </div>
                         </a>
                       </div>
                     </div>

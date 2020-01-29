@@ -15,7 +15,7 @@
             <aside id=nav_menu-3 class="widget widget_nav_menu">
               <h3 class="widget-title">Cursos</h3>
               <div class=menu-links-container>
-                <ul id="menu-links" class="menu">
+                <ul class="menu">
                     <?php 
                      foreach ($obj_category_videos as $value) { ?>
                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
@@ -40,10 +40,10 @@
             </aside>
           </div>
             <div class="footer-col footer-col5 col-xs-12 col-md-2">
-            <aside id=nav_menu-3 class="widget widget_nav_menu">
+            <aside class="widget widget_nav_menu">
               <h3 class="widget-title">Terminos</h3>
               <div class=menu-links-container>
-                <ul id="menu-links" class="menu">
+                <ul class="menu">
                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                             <a href="<?php echo site_url().'terminos-condiciones';?>" class=tc-menu-inner>Términos y condiciones</a>
                         </li>

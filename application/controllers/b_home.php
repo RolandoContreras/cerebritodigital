@@ -23,6 +23,7 @@ class B_home extends CI_Controller {
                                     customer.date_month,
                                     unilevel.position_temporal,
                                     unilevel.unilevel_id,
+                                    unilevel.ident,
                                     kit.name as kit,
                                     kit.kit_id,
                                     kit.img as kit_img",
@@ -59,13 +60,19 @@ class B_home extends CI_Controller {
             }
         }
         
-        //GET TOTAL REFERRED
-        $params = array(
-                        "select" =>"count(*) as total_referred,
-                                    (select count(*) FROM unilevel WHERE ident like '%$customer_id%') as total_register",
-                        "where" => "unilevel.parend_id = $customer_id and unilevel.status_value = 1"
+        if($customer_id == 1){
+            $params = array(
+                        "select" =>"count(*) as total_binary,
+                                    (select count(*) FROM unilevel WHERE unilevel.parend_id = $customer_id and unilevel.status_value = 1) as total_referred");
+        }else{
+                $params = array(
+                        "select" =>"count(*) as total_binary,
+                                    (select count(*) FROM unilevel WHERE unilevel.parend_id = $customer_id and unilevel.status_value = 1) as total_referred",
+                        "where" => "ident like '%$obj_customer->ident' and ident <> '$obj_customer->ident'"
                         );
+        }
         $obj_total_referidos = $this->obj_unilevel->get_search_row($params);
+        
         //GET DATA COMISION
                 $params = array(
                         "select" =>"commissions.amount,

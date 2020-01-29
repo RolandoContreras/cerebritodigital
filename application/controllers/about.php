@@ -11,6 +11,8 @@ class About extends CI_Controller {
 	{
             //get data nav courses category
             $data['obj_category_videos'] = $this->nav_videos();
+            //SEND DATA TITLE
+            $data['title'] = "Acerca";
             $this->load->view('about',$data);
 	}
          public function nav_videos(){

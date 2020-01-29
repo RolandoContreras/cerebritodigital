@@ -20,18 +20,23 @@ class Home extends CI_Controller {
                             "where" => "otros_id = 1 and status_value = 1",
                                         );
             $data['video_home'] = $this->obj_otros->get_search_row($params);
+            //SEND DATA TITLE
+            $data['title'] = "Inicio";
         $this->load->view('home',$data);
 	}
         
         public function term(){
              //get data nav courses category
             $data['obj_category_videos'] = $this->nav_videos();
+            //SEND DATA TITLE
+            $data['title'] = "Terminos y Condiciones";
             $this->load->view('term',$data);
 	}
         
         public function policy(){
              //get data nav courses category
             $data['obj_category_videos'] = $this->nav_videos();
+            $data['title'] = "Política de privacidad";
             $this->load->view('policy-cookies',$data);
 	}
 

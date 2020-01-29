@@ -32,6 +32,8 @@ class Register extends CI_Controller {
                 $data['obj_customer'] = $this->obj_customer->get_search_row($params);
             }
             $data['obj_paises'] = $this->list_pais();
+            //SEND DATA TITLE
+            $data['title'] = "Registro";
 	    $this->load->view('register',$data);
 	}
         public function validate_username() {

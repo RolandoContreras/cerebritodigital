@@ -56,44 +56,44 @@ class Sitemap extends CI_Controller {
                 <loc>'.site_url()."courses/".$value->slug;
                 $codigo .='</loc>
                 <lastmod>'.$value->created_at.'</lastmod>
-                <changefreq>monthly</changefreq>
+                <changefreq>weekly</changefreq>
                 <priority>0.80</priority>
                 </url>';
             }
             
             $codigo .='<url>';
             $codigo .='<loc>'. site_url().'</loc>';
-            $codigo .='<changefreq>monthly</changefreq>
+            $codigo .='<changefreq>weekly</changefreq>
                        <priority>0.80</priority>';
             $codigo .='</url>';
             $codigo .='<url>';
             $codigo .='<loc>'. site_url().'home'.'</loc>';
-            $codigo .='<changefreq>monthly</changefreq>
+            $codigo .='<changefreq>weekly</changefreq>
                        <priority>0.80</priority>';
             $codigo .='</url>';
             $codigo .='<url>';
             $codigo .='<loc>'. site_url().'about'.'</loc>';
-            $codigo .='<changefreq>monthly</changefreq>
+            $codigo .='<changefreq>weekly</changefreq>
                        <priority>0.80</priority>';
             $codigo .='</url>';
             $codigo .='<url>';
             $codigo .='<loc>'. site_url().'courses'.'</loc>';
-            $codigo .='<changefreq>monthly</changefreq>
+            $codigo .='<changefreq>weekly</changefreq>
                        <priority>0.80</priority>';
             $codigo .='</url>';
             $codigo .='<url>';
             $codigo .='<loc>'. site_url().'register'.'</loc>';
-            $codigo .='<changefreq>monthly</changefreq>
+            $codigo .='<changefreq>weekly</changefreq>
                        <priority>0.80</priority>';
             $codigo .='</url>';
             $codigo .='<url>';
             $codigo .='<loc>'. site_url().'terminos-condiciones'.'</loc>';
-            $codigo .='<changefreq>monthly</changefreq>
+            $codigo .='<changefreq>weekly</changefreq>
                        <priority>0.80</priority>';
             $codigo .='</url>';
             $codigo .='<url>';
             $codigo .='<loc>'. site_url().'policy-cookies'.'</loc>';
-            $codigo .='<changefreq>monthly</changefreq>
+            $codigo .='<changefreq>weekly</changefreq>
                        <priority>0.80</priority>';
             $codigo .='</url>';
             $codigo .='</urlset>';

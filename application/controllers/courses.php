@@ -66,6 +66,8 @@ class Courses extends CI_Controller {
             $data['obj_videos_all'] = $this->obj_videos->search_data($params, $config["per_page"],$this->uri->segment(2));
             //send total row
             $data['total'] = $config["total_rows"];
+            //SEND DATA TITLE
+            $data['title'] = "Cursos";
             $this->load->view('courses',$data);
 	}
         
@@ -76,9 +78,10 @@ class Courses extends CI_Controller {
             
             //get data catalog
             $params_categogory_id = array(
-                        "select" =>"category_id",
+                        "select" =>"category_id, name",
                 "where" => "slug like '%$category%'");
             $obj_category = $this->obj_category->get_search_row($params_categogory_id);
+           
             $category_id = $obj_category->category_id;
             
             if(isset($_GET['search'])){
@@ -130,7 +133,8 @@ class Courses extends CI_Controller {
             $data['obj_videos_all'] = $this->obj_videos->search_data($params, $config["per_page"],$this->uri->segment(2));
             //send total row
             $data['total'] = $config["total_rows"];
-           
+            //SEND DATA TITLE
+            $data['title'] = "Cursos | ". $obj_category->name;
             //SEND DATA
             $this->load->view('courses',$data);
 	}
@@ -140,7 +144,7 @@ class Courses extends CI_Controller {
             $data['obj_category_videos'] = $this->nav_videos();
              //get data catalog
             $params_categogory_id = array(
-                        "select" =>"category_id",
+                        "select" =>"category_id,name",
                 "where" => "slug like '%$slug%'");
             $obj_category = $this->obj_category->get_search_row($params_categogory_id);
             $category_id = $obj_category->category_id;
@@ -167,7 +171,7 @@ class Courses extends CI_Controller {
                 "join" => array( 'category, category.category_id = videos.category_id'),
                 "where" => "videos.slug = '$slug_2' and videos.category_id = $category_id and videos.active = 1");
             $data['obj_video'] = $this->obj_videos->get_search_row($params);
-            
+            $name_video = $data['obj_video']->name;
             
             //get rand course
             $params = array(
@@ -188,6 +192,8 @@ class Courses extends CI_Controller {
             $data['obj_videos_rand'] = $this->obj_videos->search($params);
             
             //SEND DATA
+            //SEND DATA TITLE
+            $data['title'] = "Cursos | ". $obj_category->name." | ".$name_video;
             $this->load->view('courses_detail',$data);
 	}
         

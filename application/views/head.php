@@ -1,5 +1,5 @@
 <head>
-  <title>Cerebrito Digital | Cambia tu vida</title>
+  <title>Cerebrito Digital | <?php echo $title;?> </title>
   <meta charset=UTF-8>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Somos cerebrito digital una empresa de educación con un staff de emprendedores peruanos con la finalidad de fortalecer la educación y llevar información transparente sobre las nuevas tendencias mundiales.">

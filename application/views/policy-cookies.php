@@ -43,11 +43,10 @@
         </div>
         <div class="container site-content no-padding">
           <div class=row>
-            <main id=main class="site-main col-sm-12 full-width">
+            <div id=main class="site-main col-sm-12 full-width">
                 <div class="container site-content ">
                       <div class="row">
-                        <main id="main" class="site-main col-sm-12 full-width">
-                          <article id="post-0" class="post-0 forum type-forum status-publish hentry pmpro-no-access page type-page">
+                          <article class="post-0 forum type-forum status-publish hentry pmpro-no-access page type-page">
                             <div class="entry-content">
                               <div id="bbpress-forums" class="bbpress-wrapper">
                                 <div class="bbp-breadcrumb">
@@ -55,7 +54,7 @@
                                 <ul id="forums-list-0" class="bbp-forums">
                                   <li class="bbp-header">
                                     <ul class="forum-titles">
-                                      <li class="bbp-forum-info">Información</li>
+                                        <li class="bbp-forum-info"><h5>Información</h5></li>
                                     </ul>
                                   </li>
                                   <li class="bbp-body">
@@ -128,10 +127,9 @@
                                 </div>
                             </div>
                             </article>
-                         </main>
                        </div>
                 </div>
-            </main>
+            </div>
           </div>
         </div>
       </section>

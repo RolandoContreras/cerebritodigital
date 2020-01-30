@@ -3,7 +3,7 @@
       <div class=container>
         <div class="row footer-columns footer-sidebars">
           <div class="footer-col footer-col5 col-xs-12 col-md-3">
-            <aside id=text-3 class="home-6-info widget widget_text">
+            <aside class="home-6-info widget widget_text">
               <div class=textwidget>
                   <p><img class="wp-image-4261 size-full alignnone" src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>" alt width=131 height=45 data-mce-src="<?php echo site_url().'static/page_front/img/logo/logo.png';?>"></p>
                     <p>Somos un grupo de emprendedores peruanos con la finalidad de fortalecer la educación y llevar información.</p>
@@ -12,7 +12,7 @@
           </div>
           
           <div class="footer-col footer-col5 col-xs-12 col-md-2">
-            <aside id=nav_menu-3 class="widget widget_nav_menu">
+            <aside class="widget widget_nav_menu">
               <h3 class="widget-title">Cursos</h3>
               <div class=menu-links-container>
                 <ul class="menu">
@@ -28,7 +28,7 @@
             </aside>
           </div>
           <div class="footer-col footer-col5 col-xs-12 col-md-3">
-            <aside id=nav_menu-4 class="widget widget_nav_menu">
+            <aside class="widget widget_nav_menu">
               <h3 class="widget-title">Contacto</h3>
               <div class=menu-support-container>
                <ul>
@@ -57,7 +57,7 @@
             </aside>
           </div>
             <div class="footer-col footer-col5 col-xs-12 col-md-1">
-            <aside id=nav_menu-2 class="widget widget_nav_menu">
+            <aside class="widget widget_nav_menu">
               <h3 class="widget-title">Enlaces</h3>
               <div class=menu-company-container>
                 <ul id=menu-company class=menu>

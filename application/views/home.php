@@ -29,7 +29,7 @@
                       <p class="secondary-heading">Somos cerebrito digital te invito a conocernos, da clic abaj e inicia el recorrido.</p>
                   </div>
                     <br/>
-                    <a href="javascript:void(0)" id="ir"><button class="button_header">Iniciar Recorrido</button></a>
+                    <button class="button_header" id="ir">Iniciar Recorrido</button>
                 </div>
                 <div class=vc_empty_space style="height: 123px"><span class=vc_empty_space_inner></span></div>
               </div>
@@ -368,7 +368,7 @@
                           </p>
                           <p>
                               <span class="wpcf7-form-control-wrap phone">
-                                  <input type="text" name="message" id="message" value size=40 class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-tel"placeholder="Mensaje *">
+                                  <input type="text" name="message" id="message" value size=40 class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-tel" placeholder="Mensaje *">
                               </span>
                           </p>
                           <div class="form-group">

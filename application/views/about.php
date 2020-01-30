@@ -46,8 +46,8 @@
         </div>
         <div class="container site-content no-padding">
           <div class=row>
-            <main id=main class="site-main col-sm-12 full-width">
-              <article id=post-6 class="post-6 page type-page status-publish hentry pmpro-has-access">
+            <div id=main class="site-main col-sm-12 full-width">
+              <article class="post-6 page type-page status-publish hentry pmpro-has-access">
                 <div class=entry-content>
                   <div class="vc_row wpb_row vc_row-fluid vc_custom_1500885875234">
                     <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -55,13 +55,13 @@
                         <div class=wpb_wrapper>
                           <div class="thim-sc-scroll-heading ">
                             <div class=title data-scroll-to=#title1 data-scroll-speed=700 data-scroll-offset=-30>
-                              <div class=text>NUESTRA HISTORIA</div>
+                                <div class=text><h6>NUESTRA HISTORIA</h6></div>
                             </div>
                             <div class=title data-scroll-to=#title2 data-scroll-speed=700 data-scroll-offset=-30>
-                              <div class=text>VISIÓN</div>
+                                <div class=text><h6>VISIÓN</h6></div>
                             </div>
                             <div class=title data-scroll-to=#title3 data-scroll-speed=700 data-scroll-offset=-30>
-                              <div class=text>MISIÓN</div>
+                              <div class=text><h6>MISIÓN</h6></div>
                             </div>
                           </div>
                         </div>
@@ -76,11 +76,11 @@
                             <section id=title1>
                               <div class="row no-gutters">
                                 <div class="col-sm-12 col-lg-6 image-box">
-                                    <img src="<?php echo site_url().'static/page_front/img/history.jpg';?>" alt="historia">
+                                    <img src="<?php echo site_url().'static/page_front/img/history.jpg';?>" alt="Nuestra Historia">
                                   <span class=number style="color: rgba(255,255,255,0.6)">01</span>
                                 </div>
                                 <div class="col-sm-12 col-lg-6 text-content">
-                                    <img src="<?php echo site_url().'static/page_front/img/layer_42.png';?>" class=bg-content>
+                                    <img src="<?php echo site_url().'static/page_front/img/layer_42.png';?>" alt="Nuestra Historia" class=bg-content>
                                   <div class=text-content-inner>
                                     <h3 class="title-box">Nuestra Historia</h3>
                                     <p class=underline></p>
@@ -99,7 +99,7 @@
                                     <img src="<?php echo site_url().'static/page_front/img/vision.png';?>" alt="vision">
                                     <span class=number style="color: rgba(255,255,255,0.6)">02</span></div>
                                 <div class="col-sm-12 col-lg-6 text-content">
-                                    <img src="<?php echo site_url().'static/page_front/img/layer_42.png';?>" class=bg-content>
+                                    <img src="<?php echo site_url().'static/page_front/img/layer_42.png';?>" alt="vision" class=bg-content>
                                   <div class=text-content-inner>
                                     <h3 class="title-box">Visión</h3>
                                     <p class=underline></p>
@@ -117,11 +117,11 @@
                             <section id=title3>
                               <div class="row no-gutters">
                                 <div class="col-sm-12 col-lg-6 image-box">
-                                    <img src="<?php echo site_url().'static/page_front/img/mision.jpg';?>" alt="Our Expansion">
+                                    <img src="<?php echo site_url().'static/page_front/img/mision.jpg';?>" alt="Nuestra Misión">
                                   <span class=number style="color: rgba(255,255,255,0.6)">03</span>
                                 </div>
                                 <div class="col-sm-12 col-lg-6 text-content">
-                                    <img style="height:500px;" src="<?php echo site_url().'static/page_front/img/layer_42.png';?>" class=bg-content>
+                                    <img style="height:500px;" src="<?php echo site_url().'static/page_front/img/layer_42.png';?>" alt="Nuestra Misión" class="bg-content">
                                   <div class=text-content-inner>
                                     <h3 class="title-box">Misión</h3>
                                     <p class=underline></p>
@@ -210,7 +210,7 @@
                   </div>
                 </div>
                 </article>
-            </main>
+            </div>
           </div>
         </div>
       </section>

@@ -53,8 +53,8 @@
         </div>
         <div class="container site-content ">
           <div class=row>
-            <main id=main class="site-main col-sm-12 col-md-9 flex-first">
-              <article id=post-6797 class="post-6797 page type-page status-publish hentry pmpro-has-access">
+            <div id=main class="site-main col-sm-12 col-md-9 flex-first">
+              <div class="post-6797 page type-page status-publish hentry pmpro-has-access">
                 <div class=entry-content>
                   <div id=lp-archive-courses class=lp-archive-courses>
                   <div class=thim-course-top>
@@ -104,7 +104,7 @@
                                     <span class=date-meta><?php echo formato_fecha_dia_mes($value->date);?></span></div>
                                 <div class=content-list>
                                   <div class=course-description>
-                                    <p><?php echo $value->summary;?></p>
+                                    <?php echo $value->summary;?>
                                   </div>
                                   <ul class="courses_list_info">
                                     <li>
@@ -145,8 +145,8 @@
                   </div>
                 </div>
           </div>
-          </article>
-          </main>
+          </div>
+          </div>
           <aside id=secondary class="sidebar-courses widget-area col-md-3 sticky-sidebar flex-last">
             <aside id=thim-courses-categories-2 class="widget widget_thim-courses-categories">
               <h4 class="widget-title">Categorias</h4>

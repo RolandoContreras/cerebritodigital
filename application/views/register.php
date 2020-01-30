@@ -169,13 +169,6 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400%2C300" rel=stylesheet property=stylesheet type=text/css media=all>
   <script defer src="<?php echo site_url().'static/page_front/js/automatize.js';?>"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script type="text/javascript">
-	$(document).ready(function() {
-		$("#ir").click(function(event) {
-                    $.scrollTo($('#go'), 1000);
-		});
-	});
-</script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script src='<?php echo site_url().'static/page_front/js/register.js';?>'></script>
 </body>

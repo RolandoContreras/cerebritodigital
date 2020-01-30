@@ -46,7 +46,7 @@ class Sitemap extends CI_Controller {
                 <loc>'.site_url()."courses/".$value->slug;
                 $codigo .='</loc>
                 <lastmod>'.$value->date.'</lastmod>
-                <changefreq>monthly</changefreq>
+                <changefreq>weekly</changefreq>
                 <priority>0.80</priority>
                 </url>';
             }

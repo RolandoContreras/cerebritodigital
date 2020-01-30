@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Somos cerebrito digital una empresa de educación con un staff de emprendedores peruanos con la finalidad de fortalecer la educación y llevar información transparente sobre las nuevas tendencias mundiales.">
   <meta name="author" content="Cerebrito Digital">
-  <meta name="keyword" content="Cerebrito Digital, Cerebrito Digital Perú, Plataforma Educativa, mlm, mmn, cursos onlines">
+  <meta name="keyword" content="cerebro digital,Cerebrito Digital, Cerebrito Digital Perú, Plataforma Educativa, mlm, mmn, cursos onlines, bitcoin, criptomoneda, liderazgo, coach, cursos, desarollo personal, cursos de bitcoin">
   <script src="https://use.fontawesome.com/aa450ac9b4.js"></script>
   <link type="text/css" media="screen" href="<?php echo site_url().'static/page_front/css/responsive.css';?>" rel=stylesheet>
   <link type="text/css" media="screen" href="<?php echo site_url().'static/page_front/css/mystyle.css';?>" rel=stylesheet>

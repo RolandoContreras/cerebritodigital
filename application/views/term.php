@@ -43,11 +43,10 @@
         </div>
         <div class="container site-content no-padding">
           <div class=row>
-            <main id=main class="site-main col-sm-12 full-width">
                 <div class="container site-content ">
                       <div class="row">
-                        <main id="main" class="site-main col-sm-12 full-width">
-                          <article id="post-0" class="post-0 forum type-forum status-publish hentry pmpro-no-access page type-page">
+                        <div id="main" class="site-main col-sm-12 full-width">
+                          <article class="post-0 forum type-forum status-publish hentry pmpro-no-access page type-page">
                             <div class="entry-content">
                               <div id="bbpress-forums" class="bbpress-wrapper">
                                 <div class="bbp-breadcrumb">
@@ -55,7 +54,7 @@
                                 <ul id="forums-list-0" class="bbp-forums">
                                   <li class="bbp-header">
                                     <ul class="forum-titles">
-                                      <li class="bbp-forum-info">Información</li>
+                                        <li class="bbp-forum-info"><h5>Información</h5></li>
                                     </ul>
                                   </li>
                                   <li class="bbp-body">
@@ -115,20 +114,20 @@
                                                  <br/><br/>
                                                  <b>3.8.- Uso de los servicios ofrecidos en el sitio de conformidad con la política Anti Spamming de Cerebrito Digital</b><br/>
                                                  El usuario se compromete a hacer un uso de los servicios conforme a la Política Anti Spamming de Cerebrito Digital y en particular, se compromete a título a abstenerse de lo siguiente:
-                                                 <ol>•	Remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial a una pluralidad de personas sin que medie su previa solicitud o consentimiento.</ol>
-                                                 <ol>•	Remitir cualesquiera otros mensajes no solicitados ni consentidos previamente a una pluralidad de personas.</ol>
-                                                 <ol>•	Enviar cadenas de mensajes electrónicos no solicitados ni previamente consentidos.</ol>
-                                                 <ol>•	Utilizar listas de distribución a las que pueda accederse a través del sitio o de los servicios para la realización de las actividades señaladas en los ítems anteriores.</ol>
-                                                 <ol>•	Poner a disposición de terceros, con cualquier finalidad, datos captados a partir de listas de distribución.    </ol>
-                                                 <ol>•	Los usuarios perjudicados por la recepción de mensajes no solicitados, dirigidos a una pluralidad de personas podrán comunicarlo a Cerebrito Digital remitiendo un mensaje a la cuenta de correo contacto@cerebritodigitalperu.com</ol>
+                                                 <ol><li>Remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial a una pluralidad de personas sin que medie su previa solicitud o consentimiento.</li></ol>
+                                                 <ol><li>Remitir cualesquiera otros mensajes no solicitados ni consentidos previamente a una pluralidad de personas.</li></ol>
+                                                 <ol><li>Enviar cadenas de mensajes electrónicos no solicitados ni previamente consentidos.</li></ol>
+                                                 <ol><li>Utilizar listas de distribución a las que pueda accederse a través del sitio o de los servicios para la realización de las actividades señaladas en los ítems anteriores.</li></ol>
+                                                 <ol><li>Poner a disposición de terceros, con cualquier finalidad, datos captados a partir de listas de distribución.</li></ol>
+                                                 <ol><li>Los usuarios perjudicados por la recepción de mensajes no solicitados, dirigidos a una pluralidad de personas podrán comunicarlo a Cerebrito Digital remitiendo un mensaje a la cuenta de correo contacto@cerebritodigitalperu.com</li></ol>
                                                  <br/><br/>
                                                  <b>3.9.- Hiperenlaces</b><br/>
                                                  El sitio de Internet contiene enlaces a otros sitios de Internet que son mantenidos por terceros.
                                                  Los Usuarios y en general, aquellas personas que se propongan establecer un hiperenlace entre su página web y el Sitio (en adelante el "Hiperenlace"), deberán cumplir las condiciones siguientes
-                                                 <ol>•	El Hiperenlace únicamente permitirá el acceso a las páginas web del sitio, pero no podrá reproducirlas de ninguna forma.</ol>
-                                                 <ol>•	No se realizarán manifestaciones o indicaciones falsas, inexactas o incorrectas sobre las páginas web del Sitio, del Servicios y en particular no se declarará ni dará a entender que Cerebrito Digital ha autorizado el Hiperenlace o que ha supervisado o asumido de cualquier forma los contenidos o servicios ofrecidos o puestos a disposición de la página web en la que se establece el hiperenlace.</ol>
-                                                 <ol>•	A excepción de aquellos signos que formen parte del mismo hiperenlace, la página web en la que se establezca el hiperenlace no contendrá ninguna marca, nombre comercial, rótulo de establecimiento, denominación, logotipo, eslogan u otros signos distintivos pertenecientes a Cerebrito Digital.</ol>
-                                                 <ol>•	La página web en la que se establezca el hiperenlace no contendrá informaciones o contenidos ilícitos, contrarios al orden público, la moral y las buenas costumbres, así como tampoco contendrá contenidos contrarios a cualesquiera derechos de terceros.</ol>
+                                                 <ol><li>El Hiperenlace únicamente permitirá el acceso a las páginas web del sitio, pero no podrá reproducirlas de ninguna forma.</li></ol>
+                                                 <ol><li>No se realizarán manifestaciones o indicaciones falsas, inexactas o incorrectas sobre las páginas web del Sitio, del Servicios y en particular no se declarará ni dará a entender que Cerebrito Digital ha autorizado el Hiperenlace o que ha supervisado o asumido de cualquier forma los contenidos o servicios ofrecidos o puestos a disposición de la página web en la que se establece el hiperenlace.</li></ol>
+                                                 <ol><li>A excepción de aquellos signos que formen parte del mismo hiperenlace, la página web en la que se establezca el hiperenlace no contendrá ninguna marca, nombre comercial, rótulo de establecimiento, denominación, logotipo, eslogan u otros signos distintivos pertenecientes a Cerebrito Digital.</li></ol>
+                                                 <ol><li>La página web en la que se establezca el hiperenlace no contendrá informaciones o contenidos ilícitos, contrarios al orden público, la moral y las buenas costumbres, así como tampoco contendrá contenidos contrarios a cualesquiera derechos de terceros.</li></ol>
                                                  El establecimiento del hiperenlace no implica en ningún caso, la existencia de relaciones entre Cerebrito Digital y el sitio de Internet de Terceros en la que se establezca, ni la aceptación y aprobación por parte de Cerebrito Digital de sus contenidos o servicios.
                                                  <br/><br/>
                                                  <b>3.10.- Enlaces que permitan el acceso a otras páginas web desde el Sitio</b><br/>
@@ -172,13 +171,13 @@
                                               <br/><br/>
                                               <b>6.3.- Licitud, Fiabilidad y Utilidad</b><br/>
                                               Cerebrito Digital excluye cualquier responsabilidad por los daños y perjuicios de toda naturaleza que puedan deberse a la transmisión, difusión, almacenamiento, puesta a disposición, recepción, obtención o acceso a los contenidos, y en particular, aunque no de modo exclusivo, por los daños y perjuicios ocasionados por:
-                                              <ol>•	El incumplimiento de la ley, el orden público, la moral y las buenas costumbres como consecuencia de la transmisión, difusión, almacenamiento, puesta a disposición, recepción, obtención o acceso a los contenidos.</ol>
-                                              <ol>•	La infracción de los derechos de propiedad intelectual e industrial de los secretos empresariales, de compromisos contractuales de cualquier clase, de los derechos al honor, a la intimidad personal y familiar y a la imagen de las personas, de los derechos de propiedad y de toda otra naturaleza pertenecientes a un tercero como consecuencia de la transmisión, difusión, almacenamiento, puesta a disposición, recepción, obtención o acceso a los contenidos.</ol>
-                                              <ol>•	La realización de actos de competencia desleal y publicidad engañosa como consecuencia de la transmisión, difusión, almacenamiento, puesta a disposición, recepción, obtención o acceso a los contenidos.</ol>
-                                              <ol>•	La falta de veracidad, exactitud, exhaustividad, pertinencia y/o actualidad de los contenidos.</ol>
-                                              <ol>•	La inadecuación para cualquier clase de propósito y la defraudación de las expectativas generadas por los contenidos.</ol>
-                                              <ol>•	El incumplimiento, retraso en el cumplimiento, cumplimiento defectuoso o terminación por cualquier causa de las obligaciones contraídas por terceros y contratos realizados con terceros a través de los contenidos o con motivo del acceso a los contenidos.</ol>
-                                              <ol>•	Los vicios y defectos de toda clase de los contenidos transmitidos, difundidos, almacenados, puestos a disposición o de otra forma transmitidos o puestos a disposición, recibidos, obtenidos o a los que se haya accedido a través del sitio o de los servicios.</ol>
+                                              <ol><li>El incumplimiento de la ley, el orden público, la moral y las buenas costumbres como consecuencia de la transmisión, difusión, almacenamiento, puesta a disposición, recepción, obtención o acceso a los contenidos.</li></ol>
+                                              <ol><li>La infracción de los derechos de propiedad intelectual e industrial de los secretos empresariales, de compromisos contractuales de cualquier clase, de los derechos al honor, a la intimidad personal y familiar y a la imagen de las personas, de los derechos de propiedad y de toda otra naturaleza pertenecientes a un tercero como consecuencia de la transmisión, difusión, almacenamiento, puesta a disposición, recepción, obtención o acceso a los contenidos.</li></ol>
+                                              <ol><li>La realización de actos de competencia desleal y publicidad engañosa como consecuencia de la transmisión, difusión, almacenamiento, puesta a disposición, recepción, obtención o acceso a los contenidos.</li></ol>
+                                              <ol><li>La falta de veracidad, exactitud, exhaustividad, pertinencia y/o actualidad de los contenidos.</li></ol>
+                                              <ol><li>La inadecuación para cualquier clase de propósito y la defraudación de las expectativas generadas por los contenidos.</li></ol>
+                                              <ol><li>El incumplimiento, retraso en el cumplimiento, cumplimiento defectuoso o terminación por cualquier causa de las obligaciones contraídas por terceros y contratos realizados con terceros a través de los contenidos o con motivo del acceso a los contenidos.</li></ol>
+                                              <ol><li>Los vicios y defectos de toda clase de los contenidos transmitidos, difundidos, almacenados, puestos a disposición o de otra forma transmitidos o puestos a disposición, recibidos, obtenidos o a los que se haya accedido a través del sitio o de los servicios.</li></ol>
                                         </div>
                                      </li>
                                     </ul>
@@ -199,11 +198,11 @@
                                             <a class="bbp-forum-title"><b>8.- Procedimiento en Caso de Realización de actividades de Carácter Ilícito</b></a>
                                           <div class="bbp-forum-content">
                                               En el caso de que cualquier Usuario o un tercero considere que existen hechos o circunstancias que revelen el carácter ilícito de la utilización de cualquier contenido y/o de la realización de cualquier actividad en las páginas web incluidas en o accesibles a través del Sitio y, en particular, de la violación de derechos de propiedad intelectual o industrial (patentes, modelos y dibujos industriales, marcas y nombres comerciales, etc.) u otros derechos, deberán enviar una notificación a Cerebrito Digital en la que se contengan los siguientes extremos:
-                                              <ol>•	Datos Personales: nombre, dirección, número de teléfono y dirección de correo electrónicos del reclamante</ol>
-                                              <ol>•	Especificación de la supuesta actividad ilícita llevada a cabo en el Sitio y, en particular, cuando se trate de una supuesta violación de derechos, indicación precisa y concreta de los contenidos protegidos, así como de su localización en las páginas web.</ol>
-                                              <ol>•	Violación de derechos, firma auténtica o equivalente, con los datos personales del titular de los derechos supuestamente infringidos o de la persona autorizada para actuar en nombre y por cuenta de ésta.</ol>
-                                              <ol>•	Declaración expresa, clara y bajo la responsabilidad del reclamante de que la información proporcionada en la notificación es exacta y del carácter ilícito de la utilización de los contenidos o de la realización de las actividades descritas.</ol>
-                                              <ol>•	Estas notificaciones deberán ser enviadas a contacto@cerebritodigitalperu.com</ol>
+                                              <ol><li>Datos Personales: nombre, dirección, número de teléfono y dirección de correo electrónicos del reclamante</li></ol>
+                                              <ol><li>Especificación de la supuesta actividad ilícita llevada a cabo en el Sitio y, en particular, cuando se trate de una supuesta violación de derechos, indicación precisa y concreta de los contenidos protegidos, así como de su localización en las páginas web.</li></ol>
+                                              <ol><li>Violación de derechos, firma auténtica o equivalente, con los datos personales del titular de los derechos supuestamente infringidos o de la persona autorizada para actuar en nombre y por cuenta de ésta.</li></ol>
+                                              <ol><li>Declaración expresa, clara y bajo la responsabilidad del reclamante de que la información proporcionada en la notificación es exacta y del carácter ilícito de la utilización de los contenidos o de la realización de las actividades descritas.</li></ol>
+                                              <ol><li>Estas notificaciones deberán ser enviadas a contacto@cerebritodigitalperu.com</li></ol>
                                         </div>
                                      </li>
                                     </ul>
@@ -222,10 +221,9 @@
                                 </div>
                             </div>
                             </article>
-                         </main>
                        </div>
                 </div>
-            </main>
+            </div>
           </div>
         </div>
       </section>

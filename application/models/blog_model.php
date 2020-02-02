@@ -15,56 +15,40 @@ BITSHARE S.A.C
 * Fecha: 16/11/2016
 ****/
 
-class catalog_model_atributos{	
-    var $catalog_id='';
-    var $name='';
+class blog_model_atributos{	
+    var $blog_id='';
+    var $category_id='';
+    var $title='';
     var $slug='';
-    var $price='';
-    var $bono_n1='';
-    var $bono_n2='';
-    var $bono_n3='';
-    var $bono_n4='';
-    var $bono_n5='';
-    var $description='';
+    var $content='';
     var $date='';
     var $img='';
-    var $img2='';
-    var $img3='';
+    var $img_2='';
     var $active='';
     var $status_value='';
-    var $created_at='';
-    var $created_by='';
     var $updated_at='';
     var $updated_by='';
 }
 
-class Catalog_Model extends CI_Model{ 
+class Blog_Model extends CI_Model{ 
 
     public function __construct() {
         parent::__construct();  
-        $this->table = 'catalog';
-	$this->table_id = 'catalog_id';
-        $this->catalog_id='';
-        $this->name='';
+        $this->table = 'blog';
+	$this->table_id = 'blog_id';
+        $this->blod_id='';
+        $this->category_id='';
+        $this->title='';
         $this->slug='';
-        $this->price='';
-        $this->bono_n1='';
-        $this->bono_n2='';
-        $this->bono_n3='';
-        $this->bono_n4='';
-        $this->bono_n5='';
-	$this->description='';
-        $this->date='';
+        $this->content ='';
+	$this->date='';
         $this->img='';
-        $this->img2='';
-        $this->img3='';
+        $this->img_2='';
         $this->active='';
 	$this->status_value='';
-        $this->created_at='';
-        $this->created_by='';
         $this->updated_at='';
         $this->updated_by='';
-	$this->fields = new catalog_model_atributos();
+	$this->fields = new blog_model_atributos();
     }   
     
     public function fields(){

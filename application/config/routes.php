@@ -126,6 +126,11 @@ $route['dashboard/comisiones/load/([0-9]+)'] = "d_comission/load/$1";
 $route['dashboard/comisiones/validate_customer'] = "d_comission/validate_customer";
 $route['dashboard/comisiones/validate'] = "d_comission/validate";
 
+$route['dashboard/blog'] = "d_blog";
+$route['dashboard/blog/load'] = "d_blog/load";
+$route['dashboard/blog/load/([0-9]+)'] = "d_blog/load/$1";
+$route['dashboard/blog/validate'] = "d_blog/validate";
+
 $route['dashboard/noticias'] = "d_news";
 $route['dashboard/noticias/load'] = "d_news/load";
 $route['dashboard/noticias/load/([0-9]+)'] = "d_news/load/$1";

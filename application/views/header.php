@@ -65,11 +65,15 @@
             }
             $home_syle = "";
             $about_syle = "";
+            $blog_syle = "";
             $courses_syle = "";
             $register_syle = "";
             switch ($nav) {
                 case "about":
                     $about_syle = "current-menu-parent";
+                    break;
+                case "blog":
+                    $blog_syle = "current-menu-parent";
                     break;
                 case "courses":
                     $courses_syle = "current-menu-parent";
@@ -89,6 +93,9 @@
                 </li>
                 <li class="menu-item menu-item-object-custom menu-item-22 <?php echo $about_syle;?> tc-menu-item tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url().'about';?>" class=tc-menu-inner>Acerca</a>
+                </li>
+                <li class="menu-item menu-item-object-custom menu-item-22 <?php echo $blog_syle;?> tc-menu-item tc-menu-align-left tc-menu-layout-default">
+                    <a href="<?php echo site_url().'blog';?>" class=tc-menu-inner>Blog</a>
                 </li>
                 <li class="menu-item menu-item-object-custom menu-item-22 <?php echo $courses_syle;?> tc-menu-item tc-menu-align-left tc-menu-layout-default">
                     <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Cursos</a>

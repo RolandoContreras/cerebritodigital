@@ -51,6 +51,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'home';
 $route['courses'] = 'courses';
+$route['courses/([0-9a-z_-]+)'] = 'courses/category/$1';
+$route['blog'] = 'blog';
+$route['blog/([0-9a-z_-]+)'] = 'blog/category/$1';
+$route['blog/([0-9a-z_-]+)/([0-9]+)'] = 'blog/detail/$1';
 $route['404_override'] = 'home/error';
 
 $route['terminos-condiciones'] = 'home/term';

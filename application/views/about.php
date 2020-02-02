@@ -23,7 +23,7 @@
             <div class="content container">
               <div class=row>
                 <div class="text-title col-md-6">
-                  <h1>About us</h1>
+                  <h1>Acerca</h1>
                 </div>
                 <div class="text-description col-md-6">
                   <p><strong class=br>El mejor sistema de educación </strong> Sé parte de nuestra comunidad</p>

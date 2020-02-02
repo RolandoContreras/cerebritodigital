@@ -66,22 +66,22 @@
                                       </div>
                             <?php } ?>
                               <div class="form-group">
-                                    <label>Imagen 1 (Tamaño 365 x 405)</label>
+                                    <label>Imagen 1 (Tamaño 485 x 291)</label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file" id="image_file">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                     </div>
                               </div>
                               <?php 
-                                  if(isset($obj_blog->img2)){ ?>
+                                  if(isset($obj_blog->img_2)){ ?>
                                       <div class="form-group">
                                           <label>Imagen 2</label><br/>
-                                          <img src='<?php echo site_url()."static/course/img/blog/$obj_blog->img2";?>' width="100" />
-                                          <input class="form-control" type="hidden" name="img_3" id="img_3" value="<?php echo isset($obj_blog)?$obj_blog->img2:"";?>">
+                                          <img src='<?php echo site_url()."static/cms/img/blog/$obj_blog->img_2";?>' width="100" />
+                                          <input class="form-control" type="hidden" name="img_3" id="img_3" value="<?php echo isset($obj_blog)?$obj_blog->img_2:"";?>">
                                       </div>
                             <?php } ?>
                               <div class="form-group">
-                                    <label>Imagen 2 (Tamaño 1000 x 500)</label>
+                                    <label>Imagen 2 (Tamaño 1000 x 666)</label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file2" id="image_file2">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>

@@ -67,7 +67,7 @@ class D_blog extends CI_Controller{
         $category_id = $this->input->post('category_id');
         $content =  $this->input->post('content');
         $img_2 = $this->input->post("img_2");
-//        $img_3 = $this->input->post("img_3");
+        $img_3 = $this->input->post("img_3");
         $active =  $this->input->post('active');
         
         if(isset($_FILES["image_file"]["name"])){
@@ -87,22 +87,22 @@ class D_blog extends CI_Controller{
                  }   
             }
             
-//          if(isset($_FILES["image_file2"]["name"])){
-//                $config['upload_path']          = './static/cms/img/blog/';
-//                $config['allowed_types']        = 'gif|jpg|png';
-//                $config['max_size']             = 3000;
-//                $this->load->library('upload', $config);
-//                    if ( ! $this->upload->do_upload('image_file2')){
-//                         $error = array('error' => $this->upload->display_errors());
-//                          echo '<div class="alert alert-danger">'.$error['error'].'</div>';
-//                    }else{
-//                        $data = array('upload_data' => $this->upload->data());
-//                    }
-//                $img2 = $_FILES["image_file2"]["name"];        
-//                 if($img2 == ""){
-//                     $img2 = $img_3;
-//                 }   
-//            }
+          if(isset($_FILES["image_file2"]["name"])){
+                $config['upload_path']          = './static/cms/img/blog/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 3000;
+                $this->load->library('upload', $config);
+                    if ( ! $this->upload->do_upload('image_file2')){
+                         $error = array('error' => $this->upload->display_errors());
+                          echo '<div class="alert alert-danger">'.$error['error'].'</div>';
+                    }else{
+                        $data = array('upload_data' => $this->upload->data());
+                    }
+                $img2 = $_FILES["image_file2"]["name"];        
+                 if($img2 == ""){
+                     $img2 = $img_3;
+                 }   
+            }
         
         if($blog_id != ""){
              $data = array(
@@ -111,7 +111,7 @@ class D_blog extends CI_Controller{
                 'content' => $content,
                 'category_id' => $category_id,
                 'img' => $img,
-//                'img2' => $img2,
+                'img_2' => $img2,
                 'date' => date("Y-m-d"),  
                 'active' => $active,  
                 'updated_at' => date("Y-m-d H:i:s"),
@@ -125,7 +125,7 @@ class D_blog extends CI_Controller{
                 'content' => $content,
                 'category_id' => $category_id,
                 'img' => $img,
-//                'img2' => $img2,
+                'img_2' => $img2,
                 'date' => date("Y-m-d"),  
                 'active' => $active,  
                 'status_value' => 1,

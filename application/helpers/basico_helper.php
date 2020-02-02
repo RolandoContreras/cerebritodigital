@@ -37,6 +37,12 @@ function decrypt($cadena){
      return $decrypted;  //Devuelve el string desencriptado
 }
 
+function convert_url_social($url){
+    $search  = array(':', '/');
+    $replace = array('%3A', '%2F');    
+    return strtolower(str_replace($search, $replace, $url));
+}
+
 function convert_slug($url){
     $search  = array('á', 'é', 'í', 'ó', 'ú',' ','ñ','Á', 'É', 'Í', 'Ó', 'Ú');
     $replace = array('a', 'e', 'i', 'o', 'u','-','n','a', 'e', 'i', 'o', 'u');    

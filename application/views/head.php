@@ -30,4 +30,6 @@
         var site = '<?php echo site_url();?>';
   </script>
   <script src='<?php echo site_url().'static/page_front/js/login.js';?>'></script>
+  <!--agregar font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>

@@ -48,8 +48,14 @@
                                 <div class="form-group col-md-12">
                                     <label for="inputState">Tipo</label>
                                         <select name="type" id="type" class="form-control">
-                                            <option value="1" selected="">Videos</option>
-                                    </select>
+                                             <option value="">[ Seleccionar ]</option>
+                                              <option value="1" <?php if(isset($obj_category)){
+                                                  if($obj_category->type == 1){ echo "selected";}
+                                              }else{echo "";} ?>>Videos</option>
+                                              <option value="2" <?php if(isset($obj_category)){
+                                                  if($obj_category->type == 2){ echo "selected";}
+                                              }else{echo "";} ?>>Blog</option>
+                                        </select>
                                 </div>
                               </div>
                           </div>

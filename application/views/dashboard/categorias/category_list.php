@@ -53,7 +53,17 @@
                                 <tr>
                                 <th><?php echo $value->category_id;?></th>
                                 <td><?php echo strtoupper($value->name);?></td>
-                                <td><span class="label label-info">Videos</span>
+                                <td>
+                                    <?php if ($value->type == 1) {
+                                        $valor = "Videos";
+                                        $stilo = "label label-info";
+                                    }else{
+                                        $valor = "Blog";
+                                        $stilo = "label label-success";
+                                    } ?>
+                                    <span class="<?php echo $stilo;?>"><?php echo $valor;?></span>
+                                </td>    
+                                    
                                 </td>
                                 <td>
                                     <?php if ($value->active == 0) {

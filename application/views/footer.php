@@ -71,6 +71,9 @@
                       <a href="<?php echo site_url().'courses';?>" class=tc-menu-inner>Cursos</a>
                   </li>
                   <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
+                      <a href="<?php echo site_url().'blog';?>" class=tc-menu-inner>Blog</a>
+                  </li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
                       <a href="<?php echo site_url().'register';?>" class=tc-menu-inner>Regístrate</a>
                   </li>
                 </ul>

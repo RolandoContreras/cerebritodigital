@@ -19,14 +19,14 @@
   <div id=main-content>
     <section class=content-area>
       <div class="page-title layout-1">
-        <div class="main-top parallax" style=background-image:url(http://c2a2v9c8.stackpathcdn.com/demo-test-prep/wp-content/uploads/sites/9/2018/10/page_title_1.jpg);><span class=overlay-top-header style="background-color: rgba(0,0,0,0.1);"></span>
+        <div class="main-top parallax" style="background-image:url(<?php echo site_url().'static/page_front/img/learn_3.png';?>);"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.1);"></span>
           <div class="content container">
             <div class=row>
               <div class="text-title col-md-6">
                 <h1>Blog</h1>
               </div>
               <div class="text-description col-md-6">
-                <p><strong class=br>El mejor sistema de educación </strong> Sé parte de nuestra comunidad</p>
+                  <p>El mejor sistema de educación <br> Sé parte de nuestra comunidad</p>
               </div>
             </div>
           </div>

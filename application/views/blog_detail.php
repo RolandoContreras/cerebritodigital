@@ -78,33 +78,9 @@
                         <?php $url_social = site_url()."blog/$obj_blog->category_slug/$obj_blog->slug";
                                 $url = convert_url_social($url_social);?>
                       <li>
-                          <a class="link facebook" title="Facebook2" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwordpresslms.thimpress.com%2Fdemo-test-prep%2Fa-solution-built-for-teachers-and-students%2F&#38;"
+                          <a class="link facebook" title="Facebook2" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url;?>"
                           rel=nofollow onclick="window.open(this.href,this.title,'width=600,height=600,top=200px,left=200px'); return false;" target="_blank">
                             <i class="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="link twitter" title=Twitter href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwordpresslms.thimpress.com%2Fdemo-test-prep%2Fa-solution-built-for-teachers-and-students%2F&#38;text=A+solution+built+for+teachers+and+students"
-                          rel=nofollow onclick="window.open(this.href,this.title,'width=600,height=600,top=200px,left=200px'); return false;" target=_blank>
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                          <a class="link pinterest" title=Pinterest href="https://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwordpresslms.thimpress.com%2Fdemo-test-prep%2Fa-solution-built-for-teachers-and-students%2F&#38;media=http://c2a2v9c8.stackpathcdn.com/demo-test-prep/wp-content/uploads/sites/9/2017/06/shutterstock_184641842-5-e1503472000521-300x200.jpg&description=A+solution+built+for+teachers+and+students"
-                          onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;">
-                              <i class="fab fa-pinterest"></i>
-                          </a>
-                      </li>
-                      <li>
-                          <a title=LinkedIn target=_blank class="link linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwordpresslms.thimpress.com%2Fdemo-test-prep%2Fa-solution-built-for-teachers-and-students%2F&title=A%20solution%20built%20for%20teachers%20and%20students&summary=&source=If%20you%20are%20a%20newbie%20to%20managing%20a%20WordPress%20website%2C%20then%20congratulations%21%20You%20are%20here%20at%20the%20right%20track%20with%20us%20because%20we%20are%20going%20to%20introduce%20you%20one%20of%20the%20most%20basic%20knowledge%20when%20owning%20a%20WordPress%20page%3A%20how%20to%20find%20your%20site%20the%20best%20WordPress%20Hosting%20service.%20This%20process%20is%20often%20overlooked%20by..."
-                          onclick="window.open(this.href,this.title,'width=600,height=600,top=200px,left=200px'); return false;">
-                              <i class="fab fa-linkedin-in"></i>
-                          </a>
-                      </li>
-                      <li>
-                        <a target=_blank title=Google class="link google" href="https://plus.google.com/share?url=http%3A%2F%2Fwordpresslms.thimpress.com%2Fdemo-test-prep%2Fa-solution-built-for-teachers-and-students%2F&#38;title=A%20solution%20built%20for%20teachers%20and%20students"
-                          title="Google Plus" onclick='javascript:window.open(this.href, "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600");return false;'>
-                            <i class="fab fa-google-plus-g"></i>
                         </a>
                       </li>
                     </ul>

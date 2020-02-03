@@ -32,4 +32,14 @@
   <script src='<?php echo site_url().'static/page_front/js/login.js';?>'></script>
   <!--agregar font awesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <?php 
+  $url = explode("/",uri_string());
+  if(isset($url[0])){
+      if($url[0] == "blog"){ ?>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="<?php echo $meta_title_blog;?>"/>
+    <meta property="og:description" content="<?php echo corta_texto($meta_description_blog,300);?>" />
+    <meta property="og:image" content="<?php echo $meta_img_blog;?>" />
+      <?php  } ?>
+    <?php  } ?>
 </head>

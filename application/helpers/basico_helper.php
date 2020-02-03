@@ -42,6 +42,11 @@ function convert_url_social($url){
     $replace = array('%3A', '%2F');    
     return strtolower(str_replace($search, $replace, $url));
 }
+function convert_url_social_twitter($url){
+    $search  = array(' ');
+    $replace = array('+');    
+    return strtolower(str_replace($search, $replace, $url));
+}
 
 function convert_slug($url){
     $search  = array('á', 'é', 'í', 'ó', 'ú',' ','ñ','Á', 'É', 'Í', 'Ó', 'Ú');

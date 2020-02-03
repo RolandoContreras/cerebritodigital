@@ -53,7 +53,7 @@ class Blog extends CI_Controller {
             $data['obj_blog'] = $this->obj_blog->search_data($params, $config["per_page"],$this->uri->segment(2));
             //SEND DATA META OG: FACEBOOK
             $data['meta_title_blog'] = "Blog";
-            $data['meta_description_blog'] = "Descubre todo la información que tenemos para ti";
+            $data['meta_description_blog'] = "Aprende todo lo que necesitas saber acerca del mundo financiero y las criptomonedas. Visita nuestro blog y entérate al respecto.";
             $data['meta_img_blog'] = site_url()."static/page_front/img/logo/favicon/android-chrome-512x512.png";
             
             //SEND DATA TITLE
@@ -146,7 +146,7 @@ class Blog extends CI_Controller {
             $data['obj_blog'] = $this->obj_blog->get_search_row($params);
             //SEND DATA META OG FACEBOOK
             $data['meta_title_blog'] = $data['obj_blog']->title;
-            $data['meta_description_blog'] = $data['obj_blog']->content;
+            $data['meta_description_blog'] = "Aprende todo lo que necesitas saber acerca del mundo financiero y las criptomonedas. Visita nuestro blog y entérate al respecto.";
             $data['meta_img_blog'] = site_url()."static/cms/img/blog/".$data['obj_blog']->img;
             $title_blog = $data['obj_blog']->title;
             

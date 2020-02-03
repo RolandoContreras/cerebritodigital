@@ -1,44 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
                 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"><url>
-                <loc>http://localhost/cerebritodigital/courses/ultima-prueba555</loc>
+                <loc>http://localhost/cerebritodigital/courses/desarrollo-personal/ultima-prueba555</loc>
                 <lastmod>2020-01-16 00:53:25</lastmod>
-                <changefreq>monthly</changefreq>
+                <changefreq>weekly</changefreq>
                 <priority>0.80</priority>
                 </url><url>
-                <loc>http://localhost/cerebritodigital/courses/¿que-es-marketing-digital?</loc>
+                <loc>http://localhost/cerebritodigital/courses/desarrollo-personal/¿que-es-marketing-digital?</loc>
                 <lastmod>2020-01-15 04:02:13</lastmod>
-                <changefreq>monthly</changefreq>
+                <changefreq>weekly</changefreq>
                 <priority>0.80</priority>
                 </url><url>
-                <loc>http://localhost/cerebritodigital/courses/desarollo-de-marketing</loc>
+                <loc>http://localhost/cerebritodigital/courses/marketing/desarollo-de-marketing</loc>
                 <lastmod>2020-01-15 04:01:21</lastmod>
-                <changefreq>monthly</changefreq>
+                <changefreq>weekly</changefreq>
                 <priority>0.80</priority>
                 </url><url>
-                <loc>http://localhost/cerebritodigital/courses/prueba25</loc>
+                <loc>http://localhost/cerebritodigital/courses/desarrollo-personal/prueba25</loc>
                 <lastmod>2020-01-15 03:58:47</lastmod>
-                <changefreq>monthly</changefreq>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/cerebritodigital/blog/finanzas/realizando-una-ultima-prueba</loc>
+                <lastmod>2020-02-02</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/cerebritodigital/blog/finanzas/soy-tu-padre-2595</loc>
+                <lastmod>2020-02-02</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/cerebritodigital/blog/finanzas/marketing-para-expertos</loc>
+                <lastmod>2020-02-02</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/cerebritodigital/blog/criptomonedas/informacion-financiera</loc>
+                <lastmod>2020-02-02</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/cerebritodigital/blog/criptomonedas/que-son-las-criptomonedas</loc>
+                <lastmod>2020-02-02</lastmod>
+                <changefreq>weekly</changefreq>
                 <priority>0.80</priority>
                 </url><url>
                 <loc>http://localhost/cerebritodigital/courses/desarrollo-personal</loc>
                 <lastmod>2019-12-26 19:24:27</lastmod>
-                <changefreq>monthly</changefreq>
+                <changefreq>weekly</changefreq>
                 <priority>0.80</priority>
                 </url><url>
                 <loc>http://localhost/cerebritodigital/courses/finanzas</loc>
                 <lastmod>2019-12-26 19:24:35</lastmod>
-                <changefreq>monthly</changefreq>
+                <changefreq>weekly</changefreq>
                 <priority>0.80</priority>
                 </url><url>
                 <loc>http://localhost/cerebritodigital/courses/marketing</loc>
                 <lastmod>2020-01-10 15:52:21</lastmod>
-                <changefreq>monthly</changefreq>
+                <changefreq>weekly</changefreq>
                 <priority>0.80</priority>
-                </url><url><loc>http://localhost/cerebritodigital/</loc><changefreq>monthly</changefreq>
-                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/home</loc><changefreq>monthly</changefreq>
-                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/about</loc><changefreq>monthly</changefreq>
-                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/courses</loc><changefreq>monthly</changefreq>
-                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/register</loc><changefreq>monthly</changefreq>
-                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/terminos-condiciones</loc><changefreq>monthly</changefreq>
-                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/policy-cookies</loc><changefreq>monthly</changefreq>
+                </url><url>
+                <loc>http://localhost/cerebritodigital/blog/criptomonedas</loc>
+                <lastmod>2020-02-02 18:21:58</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url>
+                <loc>http://localhost/cerebritodigital/blog/finanzas</loc>
+                <lastmod>2020-02-02 18:22:14</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.80</priority>
+                </url><url><loc>http://localhost/cerebritodigital/</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/home</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/about</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/blog</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/courses</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/register</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/terminos-condiciones</loc><changefreq>weekly</changefreq>
+                       <priority>0.80</priority></url><url><loc>http://localhost/cerebritodigital/policy-cookies</loc><changefreq>weekly</changefreq>
                        <priority>0.80</priority></url></urlset>

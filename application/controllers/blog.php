@@ -18,7 +18,6 @@ class Blog extends CI_Controller {
                                         blog.date,
                                         blog.slug,
                                         blog.img,
-                                        blog.date,
                                         blog.content,
                                         category.name as category_name,
                                         category.slug as category_slug,
